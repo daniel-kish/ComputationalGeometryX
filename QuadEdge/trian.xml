@@ -8,242 +8,320 @@ height = "1000px"  width = "1200px">
 <rect x="0" y="0" width="1000" height="500" fill="none" stroke="black" stroke-width="5px"/>
 <g transform="translate(500,250) scale(30,-30)"> 
 <circle cx="-5" cy="-5" r="0.1"  fill="black" />
-<circle cx="-5" cy="-4.5" r="0.1"  fill="black" />
+<circle cx="-5" cy="-4.66667" r="0.1"  fill="black" />
+<circle cx="-5" cy="-4.33333" r="0.1"  fill="black" />
 <circle cx="-5" cy="-4" r="0.1"  fill="black" />
-<circle cx="-5" cy="-3.5" r="0.1"  fill="black" />
+<circle cx="-5" cy="-3.66667" r="0.1"  fill="black" />
+<circle cx="-5" cy="-3.33333" r="0.1"  fill="black" />
 <circle cx="-5" cy="-3" r="0.1"  fill="black" />
-<circle cx="-5" cy="-2.5" r="0.1"  fill="black" />
+<circle cx="-5" cy="-2.66667" r="0.1"  fill="black" />
+<circle cx="-5" cy="-2.33333" r="0.1"  fill="black" />
 <circle cx="-5" cy="-2" r="0.1"  fill="black" />
-<circle cx="-5" cy="-1.5" r="0.1"  fill="black" />
+<circle cx="-5" cy="-1.66667" r="0.1"  fill="black" />
+<circle cx="-5" cy="-1.33333" r="0.1"  fill="black" />
 <circle cx="-5" cy="-1" r="0.1"  fill="black" />
-<circle cx="-5" cy="-0.5" r="0.1"  fill="black" />
-<circle cx="-5" cy="0" r="0.1"  fill="black" />
-<circle cx="-5" cy="0.5" r="0.1"  fill="black" />
+<circle cx="-5" cy="-0.666667" r="0.1"  fill="black" />
+<circle cx="-5" cy="-0.333333" r="0.1"  fill="black" />
+<circle cx="-5" cy="1.77636e-15" r="0.1"  fill="black" />
+<circle cx="-5" cy="0.333333" r="0.1"  fill="black" />
+<circle cx="-5" cy="0.666667" r="0.1"  fill="black" />
 <circle cx="-5" cy="1" r="0.1"  fill="black" />
-<circle cx="-5" cy="1.5" r="0.1"  fill="black" />
+<circle cx="-5" cy="1.33333" r="0.1"  fill="black" />
+<circle cx="-5" cy="1.66667" r="0.1"  fill="black" />
 <circle cx="-5" cy="2" r="0.1"  fill="black" />
-<circle cx="-4.5" cy="-5" r="0.1"  fill="black" />
-<circle cx="-4.5" cy="2" r="0.1"  fill="black" />
-<circle cx="-4" cy="-5" r="0.1"  fill="black" />
-<circle cx="-4" cy="2" r="0.1"  fill="black" />
-<circle cx="-3.5" cy="-5" r="0.1"  fill="black" />
-<circle cx="-3.5" cy="2" r="0.1"  fill="black" />
-<circle cx="-3" cy="-5" r="0.1"  fill="black" />
-<circle cx="-3" cy="2" r="0.1"  fill="black" />
-<circle cx="-2.5" cy="-5" r="0.1"  fill="black" />
-<circle cx="-2.5" cy="2" r="0.1"  fill="black" />
-<circle cx="-2" cy="-5" r="0.1"  fill="black" />
-<circle cx="-2" cy="2" r="0.1"  fill="black" />
-<circle cx="-1.5" cy="-5" r="0.1"  fill="black" />
-<circle cx="-1.5" cy="2" r="0.1"  fill="black" />
-<circle cx="-1" cy="-5" r="0.1"  fill="black" />
-<circle cx="-1" cy="2" r="0.1"  fill="black" />
-<circle cx="-0.5" cy="-5" r="0.1"  fill="black" />
-<circle cx="-0.5" cy="2" r="0.1"  fill="black" />
-<circle cx="0" cy="-5" r="0.1"  fill="black" />
-<circle cx="0" cy="2" r="0.1"  fill="black" />
-<circle cx="0.5" cy="-5" r="0.1"  fill="black" />
-<circle cx="0.5" cy="2" r="0.1"  fill="black" />
-<circle cx="1" cy="-5" r="0.1"  fill="black" />
-<circle cx="1" cy="2" r="0.1"  fill="black" />
+<circle cx="-4.59375" cy="-5" r="0.1"  fill="black" />
+<circle cx="-4.59375" cy="2" r="0.1"  fill="black" />
+<circle cx="-4.1875" cy="-5" r="0.1"  fill="black" />
+<circle cx="-4.1875" cy="2" r="0.1"  fill="black" />
+<circle cx="-3.78125" cy="-5" r="0.1"  fill="black" />
+<circle cx="-3.78125" cy="2" r="0.1"  fill="black" />
+<circle cx="-3.375" cy="-5" r="0.1"  fill="black" />
+<circle cx="-3.375" cy="2" r="0.1"  fill="black" />
+<circle cx="-2.96875" cy="-5" r="0.1"  fill="black" />
+<circle cx="-2.96875" cy="2" r="0.1"  fill="black" />
+<circle cx="-2.5625" cy="-5" r="0.1"  fill="black" />
+<circle cx="-2.5625" cy="2" r="0.1"  fill="black" />
+<circle cx="-2.15625" cy="-5" r="0.1"  fill="black" />
+<circle cx="-2.15625" cy="2" r="0.1"  fill="black" />
+<circle cx="-1.75" cy="-5" r="0.1"  fill="black" />
+<circle cx="-1.75" cy="2" r="0.1"  fill="black" />
+<circle cx="-1.34375" cy="-5" r="0.1"  fill="black" />
+<circle cx="-1.34375" cy="2" r="0.1"  fill="black" />
+<circle cx="-0.9375" cy="-5" r="0.1"  fill="black" />
+<circle cx="-0.9375" cy="2" r="0.1"  fill="black" />
+<circle cx="-0.53125" cy="-5" r="0.1"  fill="black" />
+<circle cx="-0.53125" cy="2" r="0.1"  fill="black" />
+<circle cx="-0.125" cy="-5" r="0.1"  fill="black" />
+<circle cx="-0.125" cy="2" r="0.1"  fill="black" />
+<circle cx="0.28125" cy="-5" r="0.1"  fill="black" />
+<circle cx="0.28125" cy="2" r="0.1"  fill="black" />
+<circle cx="0.6875" cy="-5" r="0.1"  fill="black" />
+<circle cx="0.6875" cy="2" r="0.1"  fill="black" />
+<circle cx="1.09375" cy="-5" r="0.1"  fill="black" />
+<circle cx="1.09375" cy="2" r="0.1"  fill="black" />
 <circle cx="1.5" cy="-5" r="0.1"  fill="black" />
 <circle cx="1.5" cy="2" r="0.1"  fill="black" />
-<circle cx="2" cy="-5" r="0.1"  fill="black" />
-<circle cx="2" cy="2" r="0.1"  fill="black" />
-<circle cx="2.5" cy="-5" r="0.1"  fill="black" />
-<circle cx="2.5" cy="2" r="0.1"  fill="black" />
-<circle cx="3" cy="-5" r="0.1"  fill="black" />
-<circle cx="3" cy="2" r="0.1"  fill="black" />
-<circle cx="3.5" cy="-5" r="0.1"  fill="black" />
-<circle cx="3.5" cy="2" r="0.1"  fill="black" />
-<circle cx="4" cy="-5" r="0.1"  fill="black" />
-<circle cx="4" cy="2" r="0.1"  fill="black" />
-<circle cx="4.5" cy="-5" r="0.1"  fill="black" />
-<circle cx="4.5" cy="2" r="0.1"  fill="black" />
-<circle cx="5" cy="-5" r="0.1"  fill="black" />
-<circle cx="5" cy="2" r="0.1"  fill="black" />
-<circle cx="5.5" cy="-5" r="0.1"  fill="black" />
-<circle cx="5.5" cy="2" r="0.1"  fill="black" />
-<circle cx="6" cy="-5" r="0.1"  fill="black" />
-<circle cx="6" cy="2" r="0.1"  fill="black" />
-<circle cx="6.5" cy="-5" r="0.1"  fill="black" />
-<circle cx="6.5" cy="2" r="0.1"  fill="black" />
-<circle cx="7" cy="-5" r="0.1"  fill="black" />
-<circle cx="7" cy="2" r="0.1"  fill="black" />
-<circle cx="7.5" cy="-5" r="0.1"  fill="black" />
-<circle cx="7.5" cy="2" r="0.1"  fill="black" />
+<circle cx="1.90625" cy="-5" r="0.1"  fill="black" />
+<circle cx="1.90625" cy="2" r="0.1"  fill="black" />
+<circle cx="2.3125" cy="-5" r="0.1"  fill="black" />
+<circle cx="2.3125" cy="2" r="0.1"  fill="black" />
+<circle cx="2.71875" cy="-5" r="0.1"  fill="black" />
+<circle cx="2.71875" cy="2" r="0.1"  fill="black" />
+<circle cx="3.125" cy="-5" r="0.1"  fill="black" />
+<circle cx="3.125" cy="2" r="0.1"  fill="black" />
+<circle cx="3.53125" cy="-5" r="0.1"  fill="black" />
+<circle cx="3.53125" cy="2" r="0.1"  fill="black" />
+<circle cx="3.9375" cy="-5" r="0.1"  fill="black" />
+<circle cx="3.9375" cy="2" r="0.1"  fill="black" />
+<circle cx="4.34375" cy="-5" r="0.1"  fill="black" />
+<circle cx="4.34375" cy="2" r="0.1"  fill="black" />
+<circle cx="4.75" cy="-5" r="0.1"  fill="black" />
+<circle cx="4.75" cy="2" r="0.1"  fill="black" />
+<circle cx="5.15625" cy="-5" r="0.1"  fill="black" />
+<circle cx="5.15625" cy="2" r="0.1"  fill="black" />
+<circle cx="5.5625" cy="-5" r="0.1"  fill="black" />
+<circle cx="5.5625" cy="2" r="0.1"  fill="black" />
+<circle cx="5.96875" cy="-5" r="0.1"  fill="black" />
+<circle cx="5.96875" cy="2" r="0.1"  fill="black" />
+<circle cx="6.375" cy="-5" r="0.1"  fill="black" />
+<circle cx="6.375" cy="2" r="0.1"  fill="black" />
+<circle cx="6.78125" cy="-5" r="0.1"  fill="black" />
+<circle cx="6.78125" cy="2" r="0.1"  fill="black" />
+<circle cx="7.1875" cy="-5" r="0.1"  fill="black" />
+<circle cx="7.1875" cy="2" r="0.1"  fill="black" />
+<circle cx="7.59375" cy="-5" r="0.1"  fill="black" />
+<circle cx="7.59375" cy="2" r="0.1"  fill="black" />
 <circle cx="8" cy="-5" r="0.1"  fill="black" />
-<circle cx="8" cy="-4.5" r="0.1"  fill="black" />
+<circle cx="8" cy="-4.66667" r="0.1"  fill="black" />
+<circle cx="8" cy="-4.33333" r="0.1"  fill="black" />
 <circle cx="8" cy="-4" r="0.1"  fill="black" />
-<circle cx="8" cy="-3.5" r="0.1"  fill="black" />
+<circle cx="8" cy="-3.66667" r="0.1"  fill="black" />
+<circle cx="8" cy="-3.33333" r="0.1"  fill="black" />
 <circle cx="8" cy="-3" r="0.1"  fill="black" />
-<circle cx="8" cy="-2.5" r="0.1"  fill="black" />
+<circle cx="8" cy="-2.66667" r="0.1"  fill="black" />
+<circle cx="8" cy="-2.33333" r="0.1"  fill="black" />
 <circle cx="8" cy="-2" r="0.1"  fill="black" />
-<circle cx="8" cy="-1.5" r="0.1"  fill="black" />
+<circle cx="8" cy="-1.66667" r="0.1"  fill="black" />
+<circle cx="8" cy="-1.33333" r="0.1"  fill="black" />
 <circle cx="8" cy="-1" r="0.1"  fill="black" />
-<circle cx="8" cy="-0.5" r="0.1"  fill="black" />
-<circle cx="8" cy="0" r="0.1"  fill="black" />
-<circle cx="8" cy="0.5" r="0.1"  fill="black" />
+<circle cx="8" cy="-0.666667" r="0.1"  fill="black" />
+<circle cx="8" cy="-0.333333" r="0.1"  fill="black" />
+<circle cx="8" cy="-8.88178e-16" r="0.1"  fill="black" />
+<circle cx="8" cy="0.333333" r="0.1"  fill="black" />
+<circle cx="8" cy="0.666667" r="0.1"  fill="black" />
 <circle cx="8" cy="1" r="0.1"  fill="black" />
-<circle cx="8" cy="1.5" r="0.1"  fill="black" />
+<circle cx="8" cy="1.33333" r="0.1"  fill="black" />
+<circle cx="8" cy="1.66667" r="0.1"  fill="black" />
 <circle cx="8" cy="2" r="0.1"  fill="black" />
- <line x1="-5" y1="-5" x2="-5" y2="-4.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-5" y1="-4" x2="-5" y2="-3.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-5" y1="-3.5" x2="-5" y2="-3" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-5" y1="-4" x2="-5" y2="-4.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-5" y1="-2.5" x2="-5" y2="-2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-5" y1="-1.5" x2="-5" y2="-1" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-5" y1="-1" x2="-5" y2="-0.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-5" y1="-1.5" x2="-5" y2="-2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-5" y1="-2.5" x2="-5" y2="-3" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-5" y1="0" x2="-5" y2="0.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-5" y1="1" x2="-5" y2="1.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-5" y1="1.5" x2="-5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-5" y1="1" x2="-5" y2="0.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-3.5" y1="-5" x2="-4" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-4" y1="-5" x2="-4.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-4" y1="2" x2="-4.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-4" y1="2" x2="-5" y2="0.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-4" y1="2" x2="-5" y2="1" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-4" y1="2" x2="-5" y2="1.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-4.5" y1="2" x2="-5" y2="1.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-4.5" y1="2" x2="-5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-4.5" y1="-5" x2="-5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-4.5" y1="-5" x2="-5" y2="-4.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-4.5" y1="-5" x2="-5" y2="-4" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-4" y1="-5" x2="-5" y2="-4" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-4" y1="-5" x2="-5" y2="-3.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-3.5" y1="-5" x2="-5" y2="-3.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-3.5" y1="-5" x2="-5" y2="-3" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-5" y1="0" x2="-5" y2="-0.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-2.5" y1="2" x2="-3" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-2.5" y1="-5" x2="-3" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-3" y1="2" x2="-3.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-1.5" y1="-5" x2="-1.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-1.5" y1="2" x2="-1" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-1" y1="-5" x2="-1.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-1.5" y1="-5" x2="-2" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-1.5" y1="2" x2="-2" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-2" y1="-5" x2="-2.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-2" y1="2" x2="-2.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-1" y1="2" x2="-0.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-0.5" y1="2" x2="0" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="0" y1="-5" x2="0" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="0" y1="2" x2="-0.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="0" y1="-5" x2="-0.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-0.5" y1="2" x2="-0.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-0.5" y1="2" x2="-1" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="0.5" y1="-5" x2="0.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="1" y1="-5" x2="1" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="1" y1="2" x2="1.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="1.5" y1="-5" x2="1" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="1" y1="-5" x2="0.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="1" y1="-5" x2="0.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="1" y1="2" x2="0.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="0.5" y1="-5" x2="0" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="0.5" y1="-5" x2="0" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="0.5" y1="2" x2="0" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-0.5" y1="-5" x2="-1" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-1" y1="2" x2="-1" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-1" y1="2" x2="-1.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-3" y1="-5" x2="-3.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-3" y1="-5" x2="-5" y2="-3" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-3" y1="-5" x2="-5" y2="-2.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-2.5" y1="-5" x2="-5" y2="-2.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-2.5" y1="-5" x2="-5" y2="-2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-2" y1="-5" x2="-5" y2="-2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-2" y1="-5" x2="-5" y2="-1.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-1.5" y1="-5" x2="-5" y2="-1.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-1.5" y1="2" x2="-5" y2="-1.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-1.5" y1="2" x2="-5" y2="-1" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-2" y1="2" x2="-5" y2="-1" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-2" y1="2" x2="-5" y2="-0.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-2.5" y1="2" x2="-5" y2="-0.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-2.5" y1="2" x2="-5" y2="0" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-3" y1="2" x2="-5" y2="0" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-3" y1="2" x2="-5" y2="0.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-3.5" y1="2" x2="-5" y2="0.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="-3.5" y1="2" x2="-4" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="1.5" y1="2" x2="2" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="2" y1="2" x2="2.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="2.5" y1="-5" x2="2.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="2.5" y1="2" x2="2" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="2.5" y1="-5" x2="2" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="2" y1="2" x2="2" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="2" y1="2" x2="1.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="3" y1="-5" x2="3" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="3.5" y1="-5" x2="3.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="3.5" y1="2" x2="4" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="4" y1="-5" x2="3.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="3.5" y1="-5" x2="3" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="3.5" y1="-5" x2="3" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="3.5" y1="2" x2="3" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="3" y1="-5" x2="2.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="3" y1="-5" x2="2.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="3" y1="2" x2="2.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="4" y1="2" x2="4.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="5" y1="2" x2="4.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="5" y1="-5" x2="4.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="4.5" y1="2" x2="4.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="4.5" y1="2" x2="4" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="6.5" y1="-5" x2="6" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="6" y1="-5" x2="5.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="6" y1="2" x2="5.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="5.5" y1="-5" x2="5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="5.5" y1="2" x2="5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="4.5" y1="-5" x2="4" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="4" y1="2" x2="4" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="4" y1="2" x2="3.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="7.5" y1="2" x2="7" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="7.5" y1="-5" x2="7" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="7" y1="2" x2="6.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-5" x2="8" y2="-4.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-4" x2="8" y2="-3.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-3.5" x2="8" y2="-3" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-4" x2="8" y2="-4.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-5" x2="7.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-4.5" x2="7.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-4.5" x2="7" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-4" x2="7" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-3.5" x2="7" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-2.5" x2="8" y2="-2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-1.5" x2="8" y2="-1" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-1" x2="8" y2="-0.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-1.5" x2="8" y2="-2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="0" x2="8" y2="0.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="1" x2="8" y2="1.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="1.5" x2="8" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="1" x2="8" y2="0.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="0" x2="8" y2="-0.5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-2.5" x2="8" y2="-3" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="0" x2="6.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="0.5" x2="6.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="0.5" x2="7" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="1" x2="7" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="1" x2="7.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="1.5" x2="7.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="2" x2="7.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="7" y1="-5" x2="6.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-3.5" x2="6.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-3.5" x2="6" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-3" x2="6" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-3" x2="5.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-2.5" x2="5.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-2.5" x2="5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-2" x2="5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-2" x2="4.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-1.5" x2="4.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-1.5" x2="4.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-1.5" x2="5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-1" x2="5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-1" x2="5.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-0.5" x2="5.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="-0.5" x2="6" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="8" y1="0" x2="6" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="6.5" y1="2" x2="6" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="2" y1="-5" x2="1.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-5" x2="-5" y2="-4.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-4.66667" x2="-5" y2="-4.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-4" x2="-5" y2="-3.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-3.66667" x2="-5" y2="-3.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-4" x2="-5" y2="-4.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-3" x2="-5" y2="-2.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-2.66667" x2="-5" y2="-2.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-2" x2="-5" y2="-1.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-1.33333" x2="-5" y2="-1" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-1.33333" x2="-5" y2="-1.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-2" x2="-5" y2="-2.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-3" x2="-5" y2="-3.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-0.666667" x2="-5" y2="-0.333333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-0.333333" x2="-5" y2="1.77636e-15" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="0.333333" x2="-5" y2="0.666667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="0.666667" x2="-5" y2="1" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="0.333333" x2="-5" y2="1.77636e-15" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="1.33333" x2="-5" y2="1.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="1.66667" x2="-5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-4.1875" y1="-5" x2="-4.59375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-4.1875" y1="2" x2="-4.59375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-4.1875" y1="2" x2="-5" y2="1.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-4.59375" y1="2" x2="-5" y2="1.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-4.59375" y1="2" x2="-5" y2="1.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-4.59375" y1="2" x2="-5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-4.1875" y1="2" x2="-5" y2="1" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="1.33333" x2="-5" y2="1" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-4.59375" y1="-5" x2="-5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-4.59375" y1="-5" x2="-5" y2="-4.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-4.59375" y1="-5" x2="-5" y2="-4.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-4.1875" y1="-5" x2="-5" y2="-4.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-4.1875" y1="-5" x2="-5" y2="-4" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-5" y1="-0.666667" x2="-5" y2="-1" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-3.375" y1="-5" x2="-3.78125" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.96875" y1="2" x2="-3.375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.96875" y1="-5" x2="-3.375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-3.375" y1="2" x2="-3.78125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.15625" y1="-5" x2="-2.5625" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-1.34375" y1="-5" x2="-1.75" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-1.75" y1="2" x2="-2.15625" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-1.75" y1="-5" x2="-2.15625" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.15625" y1="2" x2="-2.5625" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.5625" y1="-5" x2="-2.96875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.5625" y1="2" x2="-2.96875" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-1.34375" y1="2" x2="-0.9375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-0.9375" y1="-5" x2="-0.9375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-0.9375" y1="2" x2="-1.34375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-0.53125" y1="-5" x2="-0.53125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-0.125" y1="-5" x2="-0.125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-0.125" y1="-5" x2="-0.53125" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-0.125" y1="-5" x2="-0.53125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-0.125" y1="2" x2="-0.53125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-0.53125" y1="-5" x2="-0.9375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-0.53125" y1="-5" x2="-0.9375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-0.53125" y1="2" x2="-0.9375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="0.28125" y1="-5" x2="0.28125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="0.28125" y1="2" x2="0.6875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="0.6875" y1="-5" x2="0.28125" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="0.6875" y1="2" x2="1.09375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="1.09375" y1="2" x2="1.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="1.5" y1="-5" x2="1.09375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="1.09375" y1="2" x2="1.09375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="1.09375" y1="2" x2="0.6875" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="1.09375" y1="-5" x2="0.6875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="0.6875" y1="2" x2="0.6875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="0.6875" y1="2" x2="0.28125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="0.28125" y1="-5" x2="-0.125" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="0.28125" y1="-5" x2="-0.125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="0.28125" y1="2" x2="-0.125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-0.9375" y1="-5" x2="-1.34375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-1.34375" y1="2" x2="-1.34375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-1.34375" y1="2" x2="-1.75" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-3.78125" y1="-5" x2="-4.1875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-3.78125" y1="-5" x2="-5" y2="-4" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-3.78125" y1="-5" x2="-5" y2="-3.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-3.375" y1="-5" x2="-5" y2="-3.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-3.375" y1="-5" x2="-5" y2="-3.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.96875" y1="-5" x2="-5" y2="-3.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.96875" y1="-5" x2="-5" y2="-3" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.96875" y1="-5" x2="-5" y2="-2.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.5625" y1="-5" x2="-5" y2="-2.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.5625" y1="-5" x2="-5" y2="-2.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.15625" y1="-5" x2="-5" y2="-2.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.15625" y1="-5" x2="-5" y2="-2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-1.75" y1="-5" x2="-5" y2="-2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-1.75" y1="-5" x2="-5" y2="-1.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-1.34375" y1="-5" x2="-5" y2="-1.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-1.34375" y1="2" x2="-5" y2="-1.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-1.34375" y1="2" x2="-5" y2="-1.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-1.75" y1="2" x2="-5" y2="-1.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-1.75" y1="2" x2="-5" y2="-1" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.15625" y1="2" x2="-5" y2="-1" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.15625" y1="2" x2="-5" y2="-0.666667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.5625" y1="2" x2="-5" y2="-0.666667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.5625" y1="2" x2="-5" y2="-0.333333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.96875" y1="2" x2="-5" y2="-0.333333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.96875" y1="2" x2="-5" y2="1.77636e-15" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-2.96875" y1="2" x2="-5" y2="0.333333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-3.375" y1="2" x2="-5" y2="0.333333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-3.375" y1="2" x2="-5" y2="0.666667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-3.78125" y1="2" x2="-5" y2="0.666667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-3.78125" y1="2" x2="-5" y2="1" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="-3.78125" y1="2" x2="-4.1875" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="1.5" y1="2" x2="1.90625" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="1.90625" y1="-5" x2="1.90625" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="1.90625" y1="2" x2="1.5" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="2.3125" y1="-5" x2="2.3125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="2.3125" y1="2" x2="2.71875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="2.71875" y1="-5" x2="2.3125" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="2.3125" y1="-5" x2="1.90625" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="2.3125" y1="-5" x2="1.90625" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="2.3125" y1="2" x2="1.90625" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="2.71875" y1="2" x2="3.125" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="3.125" y1="-5" x2="3.125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="3.125" y1="2" x2="2.71875" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="3.53125" y1="-5" x2="3.53125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="3.9375" y1="-5" x2="3.9375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="3.9375" y1="-5" x2="3.53125" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="3.9375" y1="-5" x2="3.53125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="3.9375" y1="2" x2="3.53125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="3.53125" y1="-5" x2="3.125" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="3.53125" y1="-5" x2="3.125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="3.53125" y1="2" x2="3.125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="3.125" y1="-5" x2="2.71875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="2.71875" y1="2" x2="2.71875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="2.71875" y1="2" x2="2.3125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="4.34375" y1="-5" x2="4.34375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="4.75" y1="-5" x2="4.34375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="5.15625" y1="2" x2="4.75" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="5.15625" y1="-5" x2="4.75" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="4.75" y1="2" x2="4.34375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="5.96875" y1="-5" x2="5.5625" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="6.78125" y1="-5" x2="6.375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="6.375" y1="2" x2="5.96875" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="6.375" y1="-5" x2="5.96875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="5.96875" y1="2" x2="5.5625" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="5.5625" y1="-5" x2="5.15625" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="5.5625" y1="2" x2="5.15625" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="4.34375" y1="-5" x2="3.9375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="4.34375" y1="-5" x2="3.9375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="4.34375" y1="2" x2="3.9375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="7.1875" y1="2" x2="6.78125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-5" x2="7.59375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="7.59375" y1="-5" x2="7.1875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="7.59375" y1="2" x2="7.1875" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-4.66667" x2="8" y2="-4.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-4.33333" x2="8" y2="-4" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-3.66667" x2="8" y2="-3.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-3" x2="8" y2="-2.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-3" x2="8" y2="-3.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-3.66667" x2="8" y2="-4" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-4.66667" x2="8" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-4.66667" x2="7.59375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-4.33333" x2="7.59375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-4.33333" x2="7.1875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-4" x2="7.1875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-2.33333" x2="8" y2="-2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-2" x2="8" y2="-1.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-1.33333" x2="8" y2="-1" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-0.666667" x2="8" y2="-0.333333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-0.666667" x2="8" y2="-1" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-1.33333" x2="8" y2="-1.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-8.88178e-16" x2="8" y2="0.333333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="0.333333" x2="8" y2="0.666667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="1" x2="8" y2="1.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="1.66667" x2="8" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="1.66667" x2="8" y2="1.33333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="1" x2="8" y2="0.666667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-8.88178e-16" x2="8" y2="-0.333333" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-2.33333" x2="8" y2="-2.66667" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="0.666667" x2="6.78125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="1" x2="6.78125" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="1" x2="7.1875" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="1.33333" x2="7.1875" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="1.33333" x2="7.59375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="1.66667" x2="7.59375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="2" x2="7.59375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="7.1875" y1="-5" x2="6.78125" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-4" x2="6.78125" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-3.66667" x2="6.78125" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-3.66667" x2="6.375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-3.33333" x2="6.375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-3.33333" x2="5.96875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-3" x2="5.96875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-2.66667" x2="5.96875" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-2.66667" x2="5.5625" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-2.33333" x2="5.5625" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-2.33333" x2="5.15625" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-2" x2="5.15625" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-2" x2="4.75" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-1.66667" x2="4.75" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-1.66667" x2="4.34375" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-1.66667" x2="4.34375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-1.33333" x2="4.34375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-1.33333" x2="4.75" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-1" x2="4.75" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-1" x2="5.15625" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-0.666667" x2="5.15625" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-0.666667" x2="5.5625" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-0.333333" x2="5.5625" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-0.333333" x2="5.96875" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="-8.88178e-16" x2="5.96875" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="0.333333" x2="5.96875" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="0.333333" x2="6.375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="8" y1="0.666667" x2="6.375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="6.78125" y1="2" x2="6.375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="1.90625" y1="-5" x2="1.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
  <line x1="1.5" y1="2" x2="1.5" y2="-5" style="stroke:black;stroke-width:0.0666667"/> 
- <line x1="1.5" y1="2" x2="1" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
+ <line x1="1.5" y1="2" x2="1.09375" y2="2" style="stroke:black;stroke-width:0.0666667"/> 
 
 </g>
 </svg>
