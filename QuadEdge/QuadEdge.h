@@ -1,10 +1,11 @@
 #pragma once
 #include <list>
+#include <array>
 
 template <class T>
 class QuadEdgeList {
 public:
-	struct QuadEdge;
+	class QuadEdge;
 private:
 	using List = std::list<QuadEdge>;
 	using QuadEdgeRef = typename List::iterator;
@@ -19,8 +20,9 @@ public:
 			auto alpha = a.Onext().Rot();
 			auto beta = b.Onext().Rot();
 
-			std::swap(a.ptr->edges[a.n].next, b.ptr->edges[b.n].next);
-			std::swap(alpha.ptr->edges[alpha.n].next, beta.ptr->edges[beta.n].next);
+			a.ptr->recs[a.n];
+			std::swap(a.ptr->recs[a.n].next, b.ptr->recs[b.n].next);
+			std::swap(alpha.ptr->recs[alpha.n].next, beta.ptr->recs[beta.n].next);
 		}
 	public:
 		EdgeRef(QuadEdgeRef, int);
@@ -37,13 +39,22 @@ public:
 		bool operator!=(EdgeRef const& other);
 	};
 
-	struct QuadEdge { 
-		struct {
+	class QuadEdge { 
+	public:
+		struct Record {
 			EdgeRef next;
 			T data;
-		} edges[4];
+		};
+		friend void splice(EdgeRef a, EdgeRef b);
+	private:
+		std::array<Record,4> recs[4];
+	public:
+		QuadEdge();
+		std::array<Record, 4> const& records() const {
+			return records;
+		}
 	};
-
+	
 private:
 	List quadEdges;
 public:
@@ -51,11 +62,11 @@ public:
 	void deleteEdge(EdgeRef e);
 	std::size_t size();
 
-	typename List::const_iterator begin() {
-		return quadEdges.cbegin();
+	typename List::iterator begin() {
+		return quadEdges.begin();
 	}
-	typename List::const_iterator end() {
-		return quadEdges.cend();
+	typename List::iterator end() {
+		return quadEdges.end();
 	}
 };
 
@@ -64,10 +75,10 @@ typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::makeEdge()
 {
 	quadEdges.push_back(QuadEdge{});
 	QuadEdgeRef qref = std::prev(quadEdges.end());
-	qref->edges[0] = {{qref,0},T{}};
-	qref->edges[1] = {{qref,3},T{}};
-	qref->edges[2] = {{qref,2},T{}};
-	qref->edges[3] = {{qref,1},T{}};
+	qref->recs[0] = {{qref,0},T{}};
+	qref->recs[1] = {{qref,3},T{}};
+	qref->recs[2] = {{qref,2},T{}};
+	qref->recs[3] = {{qref,1},T{}};
 	return EdgeRef(qref, 0);
 }
 
@@ -85,6 +96,10 @@ std::size_t QuadEdgeList<T>::size()
 	return quadEdges.size();
 }
 
+template<class T>
+QuadEdgeList<T>::QuadEdge::QuadEdge()
+{}
+
 template <class T>
 QuadEdgeList<T>::EdgeRef::EdgeRef(QuadEdgeRef qref, int n_) : ptr{qref}, n{n_}
 {}
@@ -96,14 +111,14 @@ QuadEdgeList<T>::EdgeRef::EdgeRef()
 template <class T>
 T& QuadEdgeList<T>::EdgeRef::data()
 {
-	return ptr->edges[n].data;
+	return ptr->recs[n].data;
 }
 
 
 // EdgeRef ifc
 template <class T>
 typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Onext() {
-	return ptr->edges[n].next;
+	return ptr->recs[n].next;
 }
 
 template <class T>
