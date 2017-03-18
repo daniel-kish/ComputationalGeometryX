@@ -52,5 +52,5 @@ int main()
 		std::cout << *boost::get<Point*>(q.edges[0].data)
 			<< ' ' << *boost::get<Point*>(q.edges[2].data) << '\n';
 	}
-
+	 
 }
