@@ -20,7 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h">
+    <ClInclude Include="QuadEdge.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>
