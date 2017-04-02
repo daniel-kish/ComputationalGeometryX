@@ -16,6 +16,7 @@ public:
 	std::size_t size() const;
 	QuadEdgeRef begin();
 	QuadEdgeRef end();
+	void merge(QuadEdgeList& other);
 private:
 	List quadEdges;
 };
@@ -26,18 +27,19 @@ class QuadEdgeList<T>::EdgeRef
 	typename QuadEdgeList<T>::QuadEdgeRef qref;
 	int n;
 public:
-	EdgeRef(typename QuadEdgeList<T>::QuadEdgeRef, int);
+	EdgeRef(typename QuadEdgeList<T>::QuadEdgeRef, int n=0);
 	EdgeRef();
 	T& data();
-	EdgeRef Onext();
-	EdgeRef Rot();
-	EdgeRef InvRot();
-	EdgeRef Sym();
-	EdgeRef Lnext();
-	EdgeRef Oprev();
-	EdgeRef Rprev();
-	bool operator==(EdgeRef const& other);
-	bool operator!=(EdgeRef const& other);
+	T const& data() const;
+	EdgeRef Onext() const;
+	EdgeRef Rot() const;
+	EdgeRef InvRot() const;
+	EdgeRef Sym() const;
+	EdgeRef Lnext() const;
+	EdgeRef Oprev() const;
+	EdgeRef Rprev() const;
+	bool operator==(EdgeRef const& other) const;
+	bool operator!=(EdgeRef const& other) const;
 	
 	friend QuadEdgeList;
 	friend void splice(typename QuadEdgeList<T>::EdgeRef a, typename QuadEdgeList<T>::EdgeRef b)
@@ -83,7 +85,7 @@ QuadEdgeList<T>::QuadEdge::records() const
 
 // EdgeRef 
 template <class T>
-QuadEdgeList<T>::EdgeRef::EdgeRef(typename QuadEdgeList<T>::QuadEdgeRef qref_, int n_)
+QuadEdgeList<T>::EdgeRef::EdgeRef(typename QuadEdgeList<T>::QuadEdgeRef qref_, int n_=0)
 	: qref{qref_}, n{n_}
 {}
 
@@ -98,13 +100,19 @@ T& QuadEdgeList<T>::EdgeRef::data()
 }
 
 template <class T>
-typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Onext()
+T const& QuadEdgeList<T>::EdgeRef::data() const
+{
+	return qref->recs[n].data;
+}
+
+template <class T>
+typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Onext() const
 {
 	return qref->recs[n].next;
 }
 
 template <class T>
-typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Rot()
+typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Rot() const
 {
 	typename QuadEdgeList<T>::EdgeRef copy = *this;
 	copy.n = (copy.n + 1) % 4;
@@ -112,7 +120,7 @@ typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Rot()
 }
 
 template <class T>
-typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::InvRot()
+typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::InvRot() const
 {
 	typename QuadEdgeList<T>::EdgeRef copy = *this;
 	copy.n = (copy.n + 3) % 4;
@@ -120,7 +128,7 @@ typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::InvRot()
 }
 
 template <class T>
-typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Sym()
+typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Sym() const
 {
 	typename QuadEdgeList<T>::EdgeRef copy = *this;
 	copy.n = (copy.n + 2) % 4;
@@ -128,30 +136,30 @@ typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Sym()
 }
 
 template <class T>
-typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Lnext()
+typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Lnext() const
 {
 	return this->InvRot().Onext().Rot();
 }
 
 template <class T>
-typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Oprev()
+typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Oprev() const
 {
 	return this->Rot().Onext().Rot();
 }
 
 template <class T>
-typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Rprev()
+typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Rprev() const
 {
 	return this->Sym().Onext();
 }
 
 template <class T>
-bool QuadEdgeList<T>::EdgeRef::operator==(typename QuadEdgeList<T>::EdgeRef const& other) {
+bool QuadEdgeList<T>::EdgeRef::operator==(typename QuadEdgeList<T>::EdgeRef const& other) const {
 	return this->qref == other.qref && this->n == other.n;
 }
 
 template <class T>
-bool QuadEdgeList<T>::EdgeRef::operator!=(typename QuadEdgeList<T>::EdgeRef const& other) {
+bool QuadEdgeList<T>::EdgeRef::operator!=(typename QuadEdgeList<T>::EdgeRef const& other) const {
 	return !(*this == other);
 }
 
@@ -192,4 +200,10 @@ template<class T>
 typename QuadEdgeList<T>::QuadEdgeRef QuadEdgeList<T>::end()
 {
 	return quadEdges.end();
+}
+
+template<class T>
+void QuadEdgeList<T>::merge(QuadEdgeList<T>& other)
+{
+	quadEdges.splice(quadEdges.end(), other.quadEdges);
 }
