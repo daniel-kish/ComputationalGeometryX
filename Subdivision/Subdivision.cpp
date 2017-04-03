@@ -58,7 +58,7 @@ Edge Subdivision::add_vertex(Edge e, Point p)
 	a.data() = EdgeData{{},Dest(e)};
 	a.Sym().data() = EdgeData{{},vert};
 
-	splice(e.Sym().Oprev(), a);
+	splice(e.Lnext(), a);
 
 	return a;
 }
