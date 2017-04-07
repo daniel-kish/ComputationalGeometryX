@@ -28,7 +28,7 @@ class QuadEdgeList<T>::EdgeRef
 	int n;
 public:
 	EdgeRef(typename QuadEdgeList<T>::QuadEdgeRef, int n=0);
-	EdgeRef();
+	EdgeRef(); // nullEdgeRef by default
 	T& data();
 	T const& data() const;
 	EdgeRef Onext() const;
@@ -42,6 +42,7 @@ public:
 	EdgeRef Dprev() const;
 	bool operator==(EdgeRef const& other) const;
 	bool operator!=(EdgeRef const& other) const;
+	operator bool() const;
 	
 	friend QuadEdgeList;
 	friend void splice(typename QuadEdgeList<T>::EdgeRef a, typename QuadEdgeList<T>::EdgeRef b)
@@ -93,6 +94,7 @@ QuadEdgeList<T>::EdgeRef::EdgeRef(typename QuadEdgeList<T>::QuadEdgeRef qref_, i
 
 template <class T>
 QuadEdgeList<T>::EdgeRef::EdgeRef()
+	: qref{}, n{-1}
 {}
 
 template <class T>
@@ -175,6 +177,11 @@ bool QuadEdgeList<T>::EdgeRef::operator==(typename QuadEdgeList<T>::EdgeRef cons
 template <class T>
 bool QuadEdgeList<T>::EdgeRef::operator!=(typename QuadEdgeList<T>::EdgeRef const& other) const {
 	return !(*this == other);
+}
+
+template <class T>
+QuadEdgeList<T>::EdgeRef::operator bool() const {
+	return n >= 0;
 }
 
 // QuadEdgeList

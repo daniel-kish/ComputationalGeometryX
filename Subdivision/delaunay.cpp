@@ -2,7 +2,7 @@
 #include "predicates.h"
 
 
-void swap(Edge e)
+void swap(EdgeRef e)
 {
 	auto a = e.Oprev();
 	auto b = e.Sym().Oprev();
@@ -12,33 +12,33 @@ void swap(Edge e)
 	e.Sym().data() = b.Sym().data();
 }
 
-bool rightOf(Point p, Edge e)
+bool rightOf(Point p, EdgeRef e)
 {
 	return orient2d(p, Dest(e)->point, Org(e)->point) > 0.0;
 }
 
-bool leftOf(Point p, Edge e)
+bool leftOf(Point p, EdgeRef e)
 {
 	return orient2d(p, Org(e)->point, Dest(e)->point) > 0.0;
 }
 
-bool rightOf(Vertex v, Edge e)
+bool rightOf(VertexRef v, EdgeRef e)
 {
 	return orient2d(v->point, Dest(e)->point, Org(e)->point) > 0.0;
 }
 
-bool leftOf(Vertex v, Edge e)
+bool leftOf(VertexRef v, EdgeRef e)
 {
 	return orient2d(v->point, Org(e)->point, Dest(e)->point) > 0.0;
 }
 
-bool incircle(Vertex a, Vertex b, Vertex c, Vertex d) {
+bool incircle(VertexRef a, VertexRef b, VertexRef c, VertexRef d) {
 	double det = incircle((double*)&(a->point), (double*)&(b->point),
 		(double*)&(c->point), (double*)&(d->point));
 	return det > 0.0;
 }
 
-bool onEdge(Point c, Edge e) {
+bool onEdge(Point c, EdgeRef e) {
 
 	Point const& a = Org(e)->point;
 	Point const& b = Dest(e)->point;
@@ -57,12 +57,12 @@ bool onEdge(Point c, Edge e) {
 	return false;
 }
 
-std::tuple<Subdivision, Edge, Edge>
+std::tuple<Subdivision, EdgeRef, EdgeRef>
 delaunay_dnc(std::vector<Point>::iterator b, std::vector<Point>::iterator e)
 {
 	if (std::distance(b, e) == 2) {
 		Subdivision s(*b, *(b + 1));
-		Edge e(s.edges.begin());
+		EdgeRef e(s.edges.begin());
 
 		return std::make_tuple(std::move(s), e, e.Sym());
 	}
@@ -72,17 +72,16 @@ delaunay_dnc(std::vector<Point>::iterator b, std::vector<Point>::iterator e)
 		auto s3 = b + 2;
 
 		Subdivision s(*b, *(b + 1));
-		Edge e1(s.edges.begin());
-		Edge e2 = s.add_vertex(e1, *(b + 2));
-
+		EdgeRef e1(s.edges.begin());
+		EdgeRef e2 = s.add_vertex(e1, *(b + 2));
 
 		double det = orient2d(*s1, *s2, *s3);
 		if (det > 0.0) {
-			s.connect(e2, e1); //connect(s, b, a);
+			s.connect(e2, e1);
 			return std::make_tuple(std::move(s), e1, e2.Sym());
 		}
 		else if (det < 0.0) {
-			Edge e3 = s.connect(e2, e1);
+			EdgeRef e3 = s.connect(e2, e1);
 			return std::make_tuple(std::move(s), e3.Sym(), e3);
 		}
 		else
@@ -92,7 +91,7 @@ delaunay_dnc(std::vector<Point>::iterator b, std::vector<Point>::iterator e)
 
 	auto mid{b}; std::advance(mid, std::distance(b, e) / 2);
 	Subdivision L, R;
-	Edge ldo, ldi, rdi, rdo;
+	EdgeRef ldo, ldi, rdi, rdo;
 	std::tie(L, ldo, ldi) = delaunay_dnc(b, mid);
 	std::tie(R, rdi, rdo) = delaunay_dnc(mid, e);
 
@@ -109,7 +108,7 @@ delaunay_dnc(std::vector<Point>::iterator b, std::vector<Point>::iterator e)
 	if (Org(ldi) == Org(ldo)) ldo = basel.Sym();
 	if (Org(rdi) == Org(rdo)) rdo = basel;
 
-	auto valid = [&basel](Edge e) {return rightOf(Dest(e), basel); };
+	auto valid = [&basel](EdgeRef e) {return rightOf(Dest(e), basel); };
 	do // merge loop
 	{
 		auto lcand = basel.Sym().Onext();
@@ -139,10 +138,10 @@ delaunay_dnc(std::vector<Point>::iterator b, std::vector<Point>::iterator e)
 	return std::make_tuple(std::move(L), ldo, rdo);
 }
 
-std::tuple<Edge,bool> locate(Subdivision & s, Point x)
+EdgeRef locate(Subdivision & s, Point x)
 {
 	std::size_t N = s.edges.size(); // ?
-	Edge e(s.edges.begin());
+	EdgeRef e(s.edges.begin());
 
 	do {
 		N--;
@@ -154,13 +153,13 @@ std::tuple<Edge,bool> locate(Subdivision & s, Point x)
 			e = e.Dprev();
 		else {
 			//std::cout << s.edges.size() - N << '\n';
-			return{e,true};
+			return e;
 		}
 	} while (N);
-	return {e,false};
+	return EdgeRef{};
 }
 
-std::tuple<Edge, bool> locate(Subdivision & s, Point x, Edge e)
+EdgeRef locate(Subdivision& s, Point x, EdgeRef e)
 {
 	std::size_t N = s.edges.size(); // ?
 	do {
@@ -173,38 +172,35 @@ std::tuple<Edge, bool> locate(Subdivision & s, Point x, Edge e)
 			e = e.Dprev();
 		else {
 			//std::cout << s.edges.size() - N << '\n';
-			return{e,true};
+			return e;
 		}
 	} while (N);
-	return{e,false};
+	return EdgeRef{};
 }
 
-std::tuple<Edge, bool> insertSite(Subdivision& s, Point x)
+VertexRef insertSite(Subdivision& s, Point x)
 {
-	Edge e; bool fnd;
-	std::tie(e,fnd) = locate(s, x);
-	if (!fnd) 
-		return {e,fnd};
+	EdgeRef e = locate(s, x);
+	if (!e) 
+		return s.vertices.end();
 	
 	if (x == Org(e)->point || x == Dest(e)->point) // ignore
-		return {e,false};
+		return s.vertices.end();
 	else if (onEdge(x, e)) {
-		std::cout << "here\n";
 		e = e.Oprev();
 		s.deleteEdge(e.Onext());
 	}
 	
 	// connect
-	Vertex first = Org(e);
-	Edge base = s.add_vertex(e.Lprev(), x);
-	Vertex X = Dest(base);
+	VertexRef first = Org(e);
+	EdgeRef base = s.add_vertex(e.Lprev(), x);
+	VertexRef X = Dest(base);
 	
 	do {
 		base = s.connect(e, base.Sym());
 		e = base.Oprev();
 	} while (Dest(e) != first);
 
-	Edge close;
 	do {
 		auto t = e.Oprev();
 		if (rightOf(Dest(t), e) && incircle(Org(e), Dest(t), Dest(e), X)) {
@@ -214,41 +210,35 @@ std::tuple<Edge, bool> insertSite(Subdivision& s, Point x)
 		}
 		else if (Org(e) == first)
 			break;
-		else {
-			close = e;
+		else 
 			e = e.Onext().Lprev();
-		}
 	} while (true);
-	close = close.Onext().Sym();
-	return {close,true};
+	return X;
 }
 
-std::tuple<Edge, bool> insertSite(Subdivision& s, Point x, Edge start)
+VertexRef insertSite(Subdivision& s, Point x, EdgeRef start)
 {
-	Edge e; bool fnd;
-	std::tie(e, fnd) = locate(s, x, start);
-	if (!fnd)
-		return{e,fnd};
+	EdgeRef e = locate(s, x, start);
+	if (!e)
+		return s.vertices.end();
 
 	if (x == Org(e)->point || x == Dest(e)->point) // ignore
-		return{e,false};
+		return s.vertices.end();
 	else if (onEdge(x, e)) {
-		std::cout << "here\n";
 		e = e.Oprev();
 		s.deleteEdge(e.Onext());
 	}
 
 	// connect
-	Vertex first = Org(e);
-	Edge base = s.add_vertex(e.Lprev(), x);
-	Vertex X = Dest(base);
+	VertexRef first = Org(e);
+	EdgeRef base = s.add_vertex(e.Lprev(), x);
+	VertexRef X = Dest(base);
 
 	do {
 		base = s.connect(e, base.Sym());
 		e = base.Oprev();
 	} while (Dest(e) != first);
 
-	Edge close;
 	do {
 		auto t = e.Oprev();
 		if (rightOf(Dest(t), e) && incircle(Org(e), Dest(t), Dest(e), X)) {
@@ -258,13 +248,10 @@ std::tuple<Edge, bool> insertSite(Subdivision& s, Point x, Edge start)
 		}
 		else if (Org(e) == first)
 			break;
-		else {
-			close = e;
+		else
 			e = e.Onext().Lprev();
-		}
 	} while (true);
-	close = close.Onext().Sym();
-	return{close,true};
+	return X;
 }
 
 void insertSiteSequence(Subdivision & s, std::vector<Point> seq)
@@ -272,12 +259,13 @@ void insertSiteSequence(Subdivision & s, std::vector<Point> seq)
 	if (seq.empty())
 		return;
 
-	Edge close; bool succ;
-	std::tie(close,succ) = insertSite(s, seq[0]);
-	if (!succ)
+	VertexRef v = insertSite(s, seq[0]);
+	if (v == s.vertices.end())
 		return;
 
+	EdgeRef close = v->leaves;
 	for (int i = 1; i < seq.size(); ++i) {
-		std::tie(close,succ) = insertSite(s, seq[i], close);
+		v = insertSite(s, seq[i], close);
+		close = v->leaves;
 	}
 }

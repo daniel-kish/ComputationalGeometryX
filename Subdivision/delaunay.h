@@ -3,18 +3,18 @@
 #include <tuple>
 #include <vector>
 
-void swap(Edge e);
-bool rightOf(Vertex v, Edge e);
-bool rightOf(Point p, Edge e);
-bool leftOf(Vertex v, Edge e);
-bool leftOf(Point p, Edge e);
-bool incircle(Vertex a, Vertex b, Vertex c, Vertex d);
+void swap(EdgeRef e);
+bool rightOf(VertexRef v, EdgeRef e);
+bool rightOf(Point p, EdgeRef e);
+bool leftOf(VertexRef v, EdgeRef e);
+bool leftOf(Point p, EdgeRef e);
+bool incircle(VertexRef a, VertexRef b, VertexRef c, VertexRef d);
 
-std::tuple<Subdivision, Edge, Edge>
+std::tuple<Subdivision, EdgeRef, EdgeRef>
 delaunay_dnc(std::vector<Point>::iterator b, std::vector<Point>::iterator e);
 
-std::tuple<Edge,bool> locate(Subdivision& s, Point x);
-std::tuple<Edge, bool> locate(Subdivision & s, Point x, Edge e);
-std::tuple<Edge, bool> insertSite(Subdivision& s, Point x);
-std::tuple<Edge, bool> insertSite(Subdivision& s, Point x, Edge start);
+EdgeRef locate(Subdivision& s, Point x);
+EdgeRef locate(Subdivision & s, Point x, EdgeRef e);
+VertexRef insertSite(Subdivision& s, Point x);
+VertexRef insertSite(Subdivision& s, Point x, EdgeRef start);
 void insertSiteSequence(Subdivision& s, std::vector<Point> seq);

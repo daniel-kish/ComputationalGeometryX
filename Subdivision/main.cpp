@@ -131,41 +131,44 @@ int main()
 	using namespace std::chrono;
 	exactinit();
 
+	std::vector<Point> points = rectHull(Rect{{-5,-5},{10,10}}, 10, 10);
 
-	auto hull = circleHull({0,0}, 8, 8);
-	std::sort(hull.begin(), hull.end());
+	//std::random_device rd;
+	//std::mt19937 mt{rd()};
+	//std::uniform_real_distribution<double> dist(-4, 4);
 
+	//std::generate_n(points.begin(), points.size(), [&]() {
+	//	return Point{dist(mt),dist(mt)};
+	//});
+	//std::sort(points.begin(), points.end());
+
+	
 	Subdivision dt;
-	Edge l, r;
-	std::tie(dt, l, r) = delaunay_dnc(hull.begin(), hull.end());
+	EdgeRef l, r;
+	std::tie(dt, l, r) = delaunay_dnc(points.begin(), points.end());
 
-	std::vector<Point> inner(50);
-	std::random_device rd; std::mt19937 mt{rd()}; std::uniform_real_distribution<double> dist(-4, 4);
-	std::generate_n(inner.begin(), inner.size(), [&]() {
-		return Point{dist(mt),dist(mt)};
-	});
+	VertexRef v = insertSite(dt, {0,0.1});
+	if (v == dt.vertices.end())
+		std::cerr << "404 not found\n";
+	else {
+		EdgeRef iter = v->leaves;
+		EdgeRef first{iter};
+		do {
+			std::cout << Org(iter)->point << ' ' << Dest(iter)->point << '\n';
+			iter = iter.Onext();
+		} while (iter != first);
+	}
 
-	auto t1 = high_resolution_clock::now();
-	insertSiteSequence(dt, inner);
-	auto t2 = high_resolution_clock::now();
-
-	std::cout << duration_cast<milliseconds>(t2 - t1).count() << '\n';
-
-	int I = inner.size();
-	int N = dt.vertices.size();
-	std::cout << dt.edges.size() << " == " << 2 * dt.vertices.size() + I - 3 << '\n';
-
-	// output
 	Graphics g;
+	for (Point const& p : points)
+		g.addPoint(p);
 
 	for (auto qref = dt.edges.begin(); qref != dt.edges.end(); ++qref)
 	{
-		Edge e(qref);
+		EdgeRef e(qref);
 		g.addLine(Org(e)->point, Dest(e)->point);
 	}
 
-	for (auto const& p : hull)
-		g.addPoint(p);
 	std::ofstream xml{"trian.xml"};
 	g.output(xml);
 }
