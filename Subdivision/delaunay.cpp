@@ -6,10 +6,17 @@ void swap(EdgeRef e)
 {
 	auto a = e.Oprev();
 	auto b = e.Sym().Oprev();
+
+	if (Org(e)->leaves == e)
+		Org(e)->leaves = e.Onext();
+	if (Dest(e)->leaves == e.Sym())
+		Dest(e)->leaves = e.Sym().Onext();
+
 	splice(e, a); splice(e.Sym(), b);
 	splice(e, a.Lnext()); splice(e.Sym(), b.Lnext());
-	e.data() = a.Sym().data();
-	e.Sym().data() = b.Sym().data();
+	
+	e.data().var = a.Sym().data().var;
+	e.Sym().data().var = b.Sym().data().var;
 }
 
 bool rightOf(Point p, EdgeRef e)
@@ -30,6 +37,16 @@ bool rightOf(VertexRef v, EdgeRef e)
 bool leftOf(VertexRef v, EdgeRef e)
 {
 	return orient2d(v->point, Org(e)->point, Dest(e)->point) > 0.0;
+}
+
+bool leftOf(VertexRef v, std::pair<VertexRef, VertexRef> e)
+{
+	return orient2d(e.first->point, e.second->point, v->point) > 0.0;
+}
+
+bool rightOf(VertexRef v, std::pair<VertexRef, VertexRef> e)
+{
+	return orient2d(e.first->point, v->point, e.second->point) > 0.0;
 }
 
 bool incircle(VertexRef a, VertexRef b, VertexRef c, VertexRef d) {
@@ -196,23 +213,49 @@ VertexRef insertSite(Subdivision& s, Point x)
 	EdgeRef base = s.add_vertex(e.Lprev(), x);
 	VertexRef X = Dest(base);
 	
+	for (auto v = s.vertices.begin(); v != s.vertices.end(); ++v)
+	{
+		if (Org(v->leaves) != v) {
+			std::cerr << "trouble 1\n";
+			std::exit(1);
+		}
+	}
+
 	do {
 		base = s.connect(e, base.Sym());
 		e = base.Oprev();
 	} while (Dest(e) != first);
 
+	for (auto v = s.vertices.begin(); v != s.vertices.end(); ++v)
+	{
+		if (Org(v->leaves) != v) {
+			std::cerr << "trouble 2\n";
+			std::exit(1);
+		}
+	}
+	assert(Dest(e) == first);
+	assert(Dest(e.Onext()) == X);
 	do {
 		auto t = e.Oprev();
-		if (rightOf(Dest(t), e) && incircle(Org(e), Dest(t), Dest(e), X)) {
+		if (!e.data().fixed && rightOf(Dest(t), e) && incircle(Org(e), Dest(t), Dest(e), X)) {
 			swap(e);
 			assert(X == Dest(e));
 			e = e.Oprev();
 		}
 		else if (Org(e) == first)
 			break;
-		else 
+		else
 			e = e.Onext().Lprev();
 	} while (true);
+
+	//for (auto v = s.vertices.begin(); v != s.vertices.end(); ++v)
+	//{
+	//	if (Org(v->leaves) != v) {
+	//		std::cerr << "trouble 3\n";
+	//		std::exit(1);
+	//	}
+	//}
+
 	return X;
 }
 
@@ -241,7 +284,7 @@ VertexRef insertSite(Subdivision& s, Point x, EdgeRef start)
 
 	do {
 		auto t = e.Oprev();
-		if (rightOf(Dest(t), e) && incircle(Org(e), Dest(t), Dest(e), X)) {
+		if (!e.data().fixed && rightOf(Dest(t), e) && incircle(Org(e), Dest(t), Dest(e), X)) {
 			swap(e);
 			assert(X == Dest(e));
 			e = e.Oprev();
@@ -264,8 +307,107 @@ void insertSiteSequence(Subdivision & s, std::vector<Point> seq)
 		return;
 
 	EdgeRef close = v->leaves;
-	for (int i = 1; i < seq.size(); ++i) {
+	for (unsigned int i = 1; i < seq.size(); ++i) {
 		v = insertSite(s, seq[i], close);
 		close = v->leaves;
 	}
+}
+
+void triangulatePseudoPolygon(Subdivision& s, EdgeRef c)
+{
+	VertexRef a{Org(c)}, b{Dest(c)};
+
+	if (Dest(c.Lnext().Lnext()) == a)
+		return;
+
+	auto begin = c.Lnext();
+	auto end = c.Lprev();
+	auto last = end.Lprev();
+	auto e = begin;
+	do {
+		auto p = begin;
+		bool fnd = true;
+		do {
+			if (incircle(a, b, Dest(e), Dest(p))) {
+				fnd = false;
+				break;
+			}
+			p = p.Lnext();
+		} while (p != end);
+
+		if (fnd) {
+			if (e != begin) {
+				auto r = s.connect(e, begin);
+				triangulatePseudoPolygon(s, r);
+			}
+			if (e != last) {
+				auto l = s.connect(e, c).Sym();
+				triangulatePseudoPolygon(s, l);
+			}
+			break;
+		}
+		e = e.Lnext();
+	} while (e != end);
+
+}
+
+EdgeRef insertEdge(Subdivision& s, VertexRef a, VertexRef b)
+{
+	EdgeRef e = a->leaves;
+
+	EdgeRef p = e;
+	do {
+		if (Dest(e) == b) {
+			e.data().fixed = true;
+			e.Sym().data().fixed = true;
+			return e;
+		}
+		e = e.Onext();
+	} while (e != p);
+
+	p = e;
+	do {
+		if (rightOf(Dest(e), {a,b}) && leftOf(Dest(e.Onext()), {a,b}))
+			break;
+		e = e.Onext();
+	} while (e != p);
+	
+	assert(Dest(e.Onext()) == Dest(e.Lnext()));
+
+	EdgeRef first = e.Onext().Sym();
+	assert(Dest(first) == a);
+
+	e = e.Lnext();
+	p = e;
+	do {
+		if (Dest(e.Oprev()) == b) {
+			s.deleteEdge(e);
+			break;
+		}
+		VertexRef n = Dest(e.Oprev());
+		double det = orient2d(a->point, b->point, n->point);
+		if (det > 0.0) // leftOf
+			p = e.Oprev();
+		else if (det < 0.0) // rightOf
+			p = e.Dnext();
+		s.deleteEdge(e);
+		e = p;
+	} while (true);
+
+	auto ei = first;
+	do
+		ei = ei.Lnext();
+	while (Dest(ei) != b);
+
+	EdgeRef last = ei;
+	
+	auto c = s.connect(first,last.Lnext());
+
+	c.data().fixed = true;
+	c.Sym().data().fixed = true;
+
+	triangulatePseudoPolygon(s, c);
+	triangulatePseudoPolygon(s, c.Sym());
+
+	return c;
 }

@@ -11,68 +11,16 @@
 #include "predicates.h"
 #include "delaunay.h"
 #include "boost/math/constants/constants.hpp"
+#include "geom.h"
+#include "mesh.h"
 
-struct Rect {
-	Point origin;
-	Point dir;
-};
-std::vector<Point> rectHull(Rect r, int Nx, int Ny)
-{
-	std::vector<Point> hull;
 
-	double W = r.dir.x;
-	double H = r.dir.y;
-
-	double x0 = r.origin.x;
-	double y0 = r.origin.y;
-	double xend = x0 + W;
-	double yend = y0 + H;
-	double dx = W / Nx;
-	double dy = H / Ny;
-
-	hull.push_back(Point{x0,y0}); // SW
-
-	for (int i = 1; i <= Nx - 1; ++i)
-		hull.push_back(Point{x0 + dx*i,y0});
-
-	hull.push_back(Point{xend,y0}); // SE
-
-	for (int i = 1; i <= Ny - 1; ++i)
-		hull.push_back(Point{xend,y0 + dy*i});
-
-	hull.push_back(Point{xend,yend}); // NE
-
-	for (int i = 1; i <= Nx - 1; ++i)
-		hull.push_back(Point{xend - dx*i,yend});
-
-	hull.push_back(Point{x0,yend}); // NW
-
-	for (int i = 1; i <= Ny - 1; ++i)
-		hull.push_back(Point{x0, yend - dy*i});
-
-	return hull;
-}
-
-std::vector<Point> circleHull(Point cen, double rad, int N = 20)
-{
-	using boost::math::double_constants::pi;
-
-	std::vector<Point> hull;
-	hull.reserve(N);
-	double step = 2.0*pi/N;
-
-	for (int i = 0; i < N; ++i)
-	{
-		double phi{step*i};
-		Point p{rad*cos(phi),rad*sin(phi)};
-		hull.push_back(p);
-	}
-	return hull;
-}
 
 struct Graphics
 {
-	double scale{30};
+	std::random_device rdev;
+	std::mt19937 mt;
+	double scale{100};
 	double wid, height;
 	double X0, Y0;
 	std::string main_code;
@@ -80,7 +28,7 @@ struct Graphics
 	double pointRad{2.0};
 	double lineWidth{1.0};
 	Graphics(double w = 1000.0, double h = 500.0, double X = 0.0, double Y = 0.0)
-		: X0{X}, Y0{Y}, wid{w}, height{h}
+		: X0{X}, Y0{Y}, wid{w}, height{h}, mt{rdev()}
 	{
 		main_code =
 			R"(<?xml version="1.0" encoding="UTF-8" standalone="no"?>)"
@@ -103,15 +51,18 @@ struct Graphics
 		ending = "\n</g>\n</svg>";
 	}
 
-	void addLine(Point const& p, Point const& q)
+	void addLine(Point const& p, Point const& q, double width = 0.0)
 	{
+		if (width == 0.0)
+			width = lineWidth;
 		std::ostringstream str;
 		str << R"( <line x1=")" << p.x << R"(" y1=")" << p.y
 			<< R"(" x2=")" << q.x << R"(" y2=")" << q.y
-			<< R"(" style="stroke:black;stroke-width:)" << lineWidth / scale << R"("/> )"
+			<< R"(" style="stroke:black;stroke-width:)" << width / scale << R"("/> )"
 			<< '\n';
 		main_code.append(str.str());
 	}
+
 	void addPoint(Point const& p)
 	{
 		std::ostringstream str;
@@ -120,55 +71,188 @@ struct Graphics
 			<< '\n';
 		main_code.append(str.str());
 	}
+	void add_polygon(Point a, Point b, Point c, std::string color = std::string{}, double opacity = 1.0)
+	{
+		std::ostringstream str;
+		int R = 255, G = 255, B = 255;
+		if (color.empty()) {
+			std::uniform_int_distribution<int> dist_int(0, 255);
+			R = dist_int(mt);
+			G = dist_int(mt);
+			B = dist_int(mt);
+			str << "<polygon points = \"" <<
+				a.x << ',' << a.y << ' ' <<
+				b.x << ',' << b.y << ' ' <<
+				c.x << ',' << c.y << "\" style=\"fill: rgb("
+				<< R << ',' << G << ',' << B << "); opacity:" << opacity << "; stroke-width:0\" />";
+		}
+		else {
+			str << "<polygon points = \"" <<
+				a.x << ',' << a.y << ' ' <<
+				b.x << ',' << b.y << ' ' <<
+				c.x << ',' << c.y << "\" style=\"fill:" << color
+				<< "; opacity:" << opacity << "; stroke-width:0\" />";
+		}
+		main_code.append(str.str());
+	}
 	void output(std::ofstream& svgfile)
 	{
 		svgfile << main_code << ending;
 	}
 };
 
+
 int main()
 {
 	using namespace std::chrono;
+	using namespace std::literals;
 	exactinit();
 
-	std::vector<Point> points = rectHull(Rect{{-5,-5},{10,10}}, 10, 10);
+	std::vector<Point> model{
+		{-4,2}, {-4,1}, {-3,1}, {-3,-1}, {-4,-1}, {-4,-2}, {3,-2}, {4,-1},{4,2}
+	};
+	auto trian = triangleCover(model);
+	std::vector<Point> cover(trian.begin(), trian.end());
 
-	//std::random_device rd;
-	//std::mt19937 mt{rd()};
-	//std::uniform_real_distribution<double> dist(-4, 4);
 
-	//std::generate_n(points.begin(), points.size(), [&]() {
-	//	return Point{dist(mt),dist(mt)};
-	//});
-	//std::sort(points.begin(), points.end());
+	std::sort(cover.begin(), cover.end());
 
-	
 	Subdivision dt;
 	EdgeRef l, r;
-	std::tie(dt, l, r) = delaunay_dnc(points.begin(), points.end());
 
-	VertexRef v = insertSite(dt, {0,0.1});
-	if (v == dt.vertices.end())
-		std::cerr << "404 not found\n";
-	else {
-		EdgeRef iter = v->leaves;
-		EdgeRef first{iter};
-		do {
-			std::cout << Org(iter)->point << ' ' << Dest(iter)->point << '\n';
-			iter = iter.Onext();
-		} while (iter != first);
+	std::tie(dt, l, r) = delaunay_dnc(cover.begin(), cover.end());
+
+
+	std::vector<VertexRef> inserted;
+	inserted.reserve(model.size());
+	for (Point const& p : model)
+		inserted.push_back(insertSite(dt, p));
+
+	for (unsigned i = 0; i < inserted.size(); ++i) {
+		auto ins = insertEdge(dt, inserted[i], inserted[(i + 1) % inserted.size()]);
+		ins.data().boundary = true;
+		ins.Sym().data().boundary = true;
 	}
 
-	Graphics g;
-	for (Point const& p : points)
-		g.addPoint(p);
+	std::vector<Point> hole{
+		{-1,-1},{1,-1},{-0.8,0},{1,1},{-1,1}
+	};
+	inserted.clear();
+	inserted.reserve(hole.size());
+	for (Point const& p : hole)
+		inserted.push_back(insertSite(dt, p));
+	for (unsigned i = 0; i < inserted.size(); ++i) {
+		auto ins = insertEdge(dt, inserted[i], inserted[(i + 1) % inserted.size()]);
+		ins.data().boundary = true;
+		ins.Sym().data().boundary = true;
+	}
 
+	VertexRef a = insertSite(dt, {-3.5,1.5});
+	VertexRef b = insertSite(dt, {3.5,1.5});
+	insertEdge(dt, a, b);
+
+	init_faces(dt);
+	mark_outer_faces(dt, r);
+
+	std::cout << dt.edges.size() << '\n';
+	int n = 60;
+	while (n--)
+	{
+		for (auto qref = dt.edges.begin(); qref != dt.edges.end(); ++qref)
+		{
+			EdgeRef e(qref);
+			if (e.data().var.which() != 0)
+				e = e.Rot();
+
+			if (!e.data().boundary) continue;
+			if (encroaches(e, Dest(e.Onext())) || encroaches(e, Dest(e.Oprev()))) {
+				splitBoundaryEdge(dt, e);
+				break;
+			}
+		}
+	}
+	// connectivity checks
+
+	for (auto v = dt.vertices.begin(); v != dt.vertices.end(); ++v)
+	{
+		if (Org(v->leaves) != v) {
+			std::cerr << "vertex connectivity check failed:\n";
+			std::exit(1);
+		}
+		auto eiter = v->leaves;
+		auto end = eiter;
+		do {
+			if (Org(eiter) != v) {
+				std::cerr << "Onext data fatal\n";
+				std::exit(1);
+			}
+			eiter = eiter.Onext();
+		} while (eiter != end);
+	}
+	std::cerr << "vertex connectivity check OK\n";
+	for (auto f = dt.faces.begin(); f != dt.faces.end(); ++f)
+	{
+		/*std::cout << "start\n";
+		auto eiter = f->bounds;
+		auto end = eiter;
+		do {
+			printEdge(eiter);
+			eiter = eiter.Lnext();
+		} while (eiter != end);
+		std::cout << "end\n";*/
+
+		if (Left(f->bounds) != f) {
+			std::cerr << "faces connectivity check failed, boundary of 'f' :\n";
+			auto eiter = f->bounds;
+			auto end = eiter;
+			do {
+				printEdge(eiter);
+				eiter = eiter.Lnext();
+			} while (eiter != end);
+
+			std::exit(1);
+		}
+		auto eiter = f->bounds;
+		auto end = eiter;
+		do {
+			if (Left(eiter) != f) {
+				std::cerr << "Lnext data fatal\n";
+				std::exit(1);
+			}
+			eiter = eiter.Lnext();
+		} while (eiter != end);
+	}
+	std::cerr << "faces connectivity check OK\n";
+
+	Graphics g;
+
+	for (auto face = dt.faces.begin(); face != dt.faces.end(); ++face)
+	{
+		if (face == dt.outer_face) continue;
+		auto e = face->bounds;
+		if (!face->mark) {
+			g.add_polygon(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point, "cornsilk");
+		}
+		else
+			g.add_polygon(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point, {}, 0.5);
+	}
 	for (auto qref = dt.edges.begin(); qref != dt.edges.end(); ++qref)
 	{
 		EdgeRef e(qref);
-		g.addLine(Org(e)->point, Dest(e)->point);
+		if (e.data().var.which() == 1) {
+			e = e.Rot();
+		}
+		if (e.data().fixed) {
+			g.addLine(Org(e)->point, Dest(e)->point, 2.0);
+		}
+		else  // if (Left(e)->mark || Right(e)->mark)
+			g.addLine(Org(e)->point, Dest(e)->point);
 	}
+	for (Subdivision::Vertex const& p : dt.vertices)
+		g.addPoint(p.point);
 
 	std::ofstream xml{"trian.xml"};
 	g.output(xml);
+
+	std::cout << "Euler invariant: " << dt.vertices.size() - dt.edges.size() + dt.faces.size() << '\n';
 }

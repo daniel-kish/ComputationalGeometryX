@@ -151,12 +151,16 @@
     <ClCompile Include="..\..\PathSearch\PathSearch\Point.cpp" />
     <ClCompile Include="adapt.cpp" />
     <ClCompile Include="delaunay.cpp" />
+    <ClCompile Include="geom.cpp" />
+    <ClCompile Include="mesh.cpp" />
     <ClCompile Include="predicates.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Subdivision.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="delaunay.h" />
+    <ClInclude Include="geom.h" />
+    <ClInclude Include="mesh.h" />
     <ClInclude Include="predicates.h" />
     <ClInclude Include="Subdivision.h" />
   </ItemGroup>

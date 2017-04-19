@@ -40,6 +40,7 @@ public:
 	EdgeRef Oprev() const;
 	EdgeRef Rprev() const;
 	EdgeRef Dprev() const;
+	EdgeRef Dnext() const;
 	bool operator==(EdgeRef const& other) const;
 	bool operator!=(EdgeRef const& other) const;
 	operator bool() const;
@@ -167,6 +168,12 @@ template <class T>
 typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Dprev() const
 {
 	return this->InvRot().Onext().InvRot();
+}
+
+template <class T>
+typename QuadEdgeList<T>::EdgeRef QuadEdgeList<T>::EdgeRef::Dnext() const
+{
+	return this->Sym().Onext().Sym();
 }
 
 template <class T>
