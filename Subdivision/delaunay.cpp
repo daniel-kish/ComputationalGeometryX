@@ -213,26 +213,11 @@ VertexRef insertSite(Subdivision& s, Point x)
 	EdgeRef base = s.add_vertex(e.Lprev(), x);
 	VertexRef X = Dest(base);
 	
-	for (auto v = s.vertices.begin(); v != s.vertices.end(); ++v)
-	{
-		if (Org(v->leaves) != v) {
-			std::cerr << "trouble 1\n";
-			std::exit(1);
-		}
-	}
-
 	do {
 		base = s.connect(e, base.Sym());
 		e = base.Oprev();
 	} while (Dest(e) != first);
 
-	for (auto v = s.vertices.begin(); v != s.vertices.end(); ++v)
-	{
-		if (Org(v->leaves) != v) {
-			std::cerr << "trouble 2\n";
-			std::exit(1);
-		}
-	}
 	assert(Dest(e) == first);
 	assert(Dest(e.Onext()) == X);
 	do {
@@ -247,14 +232,6 @@ VertexRef insertSite(Subdivision& s, Point x)
 		else
 			e = e.Onext().Lprev();
 	} while (true);
-
-	//for (auto v = s.vertices.begin(); v != s.vertices.end(); ++v)
-	//{
-	//	if (Org(v->leaves) != v) {
-	//		std::cerr << "trouble 3\n";
-	//		std::exit(1);
-	//	}
-	//}
 
 	return X;
 }

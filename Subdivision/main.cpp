@@ -13,14 +13,39 @@
 #include "boost/math/constants/constants.hpp"
 #include "geom.h"
 #include "mesh.h"
+#include <valarray>
 
+double step = 1.0 / 5.0;
 
+double red (double t)
+{
+	while (t > 1.0) t = -1.0;
+	while (t < 0.0) t += 1.0;
+	if (t < step)
+		return 1.0;
+	else if (t < 2 * step)
+		return -2 * t + 2;
+	else if (t < 4 * step)
+		return 0.0;
+	else if (t < 5 * step)
+		return 5 * t - 4;
+}
+
+double green (double t)
+{
+	return 1 - red(t + step);
+}
+
+double blue (double t)
+{
+	return 1 - red(t - step);
+}
 
 struct Graphics
 {
 	std::random_device rdev;
 	std::mt19937 mt;
-	double scale{100};
+	double scale{60};
 	double wid, height;
 	double X0, Y0;
 	std::string main_code;
@@ -95,12 +120,29 @@ struct Graphics
 		}
 		main_code.append(str.str());
 	}
+
+	void add_polygon(Point a, Point b, Point c, int R, int G, int B, double opacity = 1.0)
+	{
+		std::ostringstream str;
+		str << "<polygon points = \"" <<
+			a.x << ',' << a.y << ' ' <<
+			b.x << ',' << b.y << ' ' <<
+			c.x << ',' << c.y << "\" style=\"fill: rgb("
+			<< R << ',' << G << ',' << B << "); opacity:" << opacity << "; stroke-width:0\" />";
+		main_code.append(str.str());
+	}
+
 	void output(std::ofstream& svgfile)
 	{
 		svgfile << main_code << ending;
 	}
 };
 
+std::valarray<double> scale(double t)
+{
+	std::valarray<double> v{red(-t),green(-t),blue(-t)};
+	return v * 255.0;
+}
 
 int main()
 {
@@ -109,7 +151,9 @@ int main()
 	exactinit();
 
 	std::vector<Point> model{
-		{-4,2}, {-4,1}, {-3,1}, {-3,-1}, {-4,-1}, {-4,-2}, {3,-2}, {4,-1},{4,2}
+		{-4,2}, {-4,1},
+		{-3,1},{-3,0.75},{-3,0.5},{-3,0.25}, {-3,0}, {-3,-0.25},{-3,-0.5},{-3,-0.75}, {-3,-1},
+		{-4,-1}, {-4,-2}, {3,-2}, {4,-1},{4,2}
 	};
 	auto trian = triangleCover(model);
 	std::vector<Point> cover(trian.begin(), trian.end());
@@ -135,44 +179,52 @@ int main()
 	}
 
 	std::vector<Point> hole{
-		{-1,-1},{1,-1},{-0.8,0},{1,1},{-1,1}
+		{-1,-1},{1,-1},{0.5,0},{1,1},{-1,1}
 	};
 	inserted.clear();
 	inserted.reserve(hole.size());
-	for (Point const& p : hole)
+	/*for (Point const& p : hole)
 		inserted.push_back(insertSite(dt, p));
 	for (unsigned i = 0; i < inserted.size(); ++i) {
 		auto ins = insertEdge(dt, inserted[i], inserted[(i + 1) % inserted.size()]);
 		ins.data().boundary = true;
 		ins.Sym().data().boundary = true;
-	}
+	}*/
 
-	VertexRef a = insertSite(dt, {-3.5,1.5});
+	/*VertexRef a = insertSite(dt, {-3.5,1.5});
 	VertexRef b = insertSite(dt, {3.5,1.5});
-	insertEdge(dt, a, b);
+	insertEdge(dt, a, b);*/
+
+	/*a = insertSite(dt, {3.0,1.3});
+	b = insertSite(dt, {3.0,-1.4});
+	insertEdge(dt, a, b);*/
 
 	init_faces(dt);
 	mark_outer_faces(dt, r);
 
-	std::cout << dt.edges.size() << '\n';
-	int n = 60;
-	while (n--)
-	{
-		for (auto qref = dt.edges.begin(); qref != dt.edges.end(); ++qref)
-		{
-			EdgeRef e(qref);
-			if (e.data().var.which() != 0)
-				e = e.Rot();
+	splitEdges(dt);
 
-			if (!e.data().boundary) continue;
-			if (encroaches(e, Dest(e.Onext())) || encroaches(e, Dest(e.Oprev()))) {
-				splitBoundaryEdge(dt, e);
-				break;
-			}
-		}
-	}
+	FaceRef face; double max_ratio;
+	std::tie(face, max_ratio) = find_worst(dt);
+	std::cout << max_ratio << '\n';
+
+	int iters = 0;
+	do {
+		FaceRef face; double ratio;
+		std::tie(face,ratio) = find_worst(dt);
+		if (ratio > 1.0)
+			eliminate_triangle(dt, face);
+		else
+			break;
+		iters++;
+	} while (iters < 600);
+	std::cout << iters << '\n';
+
+	double ratio_after;
+	std::tie(face, ratio_after) = find_worst(dt);
+	std::cout << "after: " << ratio_after << '\n';
+	
 	// connectivity checks
-
 	for (auto v = dt.vertices.begin(); v != dt.vertices.end(); ++v)
 	{
 		if (Org(v->leaves) != v) {
@@ -192,24 +244,10 @@ int main()
 	std::cerr << "vertex connectivity check OK\n";
 	for (auto f = dt.faces.begin(); f != dt.faces.end(); ++f)
 	{
-		/*std::cout << "start\n";
-		auto eiter = f->bounds;
-		auto end = eiter;
-		do {
-			printEdge(eiter);
-			eiter = eiter.Lnext();
-		} while (eiter != end);
-		std::cout << "end\n";*/
-
+		auto edge = f->bounds;
+		auto face = Left(edge);
 		if (Left(f->bounds) != f) {
-			std::cerr << "faces connectivity check failed, boundary of 'f' :\n";
-			auto eiter = f->bounds;
-			auto end = eiter;
-			do {
-				printEdge(eiter);
-				eiter = eiter.Lnext();
-			} while (eiter != end);
-
+			std::cerr << "faces connectivity check failed\n";
 			std::exit(1);
 		}
 		auto eiter = f->bounds;
@@ -231,10 +269,15 @@ int main()
 		if (face == dt.outer_face) continue;
 		auto e = face->bounds;
 		if (!face->mark) {
-			g.add_polygon(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point, "cornsilk");
+			//g.add_polygon(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point, "green", 0.5);
 		}
-		else
-			g.add_polygon(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point, {}, 0.5);
+		else {
+			//double ratio = quality_measure(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+			//auto col = scale(0.8*ratio / max_ratio);
+			//g.add_polygon(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point,
+			//	col[0], col[1], col[2]);
+			g.add_polygon(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point, "blue",0.25);
+		}
 	}
 	for (auto qref = dt.edges.begin(); qref != dt.edges.end(); ++qref)
 	{
@@ -243,9 +286,9 @@ int main()
 			e = e.Rot();
 		}
 		if (e.data().fixed) {
-			g.addLine(Org(e)->point, Dest(e)->point, 2.0);
+			g.addLine(Org(e)->point, Dest(e)->point, 2.5);
 		}
-		else  // if (Left(e)->mark || Right(e)->mark)
+		if (Left(e)->mark || Right(e)->mark)
 			g.addLine(Org(e)->point, Dest(e)->point);
 	}
 	for (Subdivision::Vertex const& p : dt.vertices)

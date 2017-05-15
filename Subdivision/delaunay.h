@@ -21,6 +21,7 @@ delaunay_dnc(std::vector<Point>::iterator b, std::vector<Point>::iterator e);
 
 EdgeRef locate(Subdivision& s, Point x);
 EdgeRef locate(Subdivision & s, Point x, EdgeRef e);
+bool onEdge(Point c, EdgeRef e);
 VertexRef insertSite(Subdivision& s, Point x);
 VertexRef insertSite(Subdivision& s, Point x, EdgeRef start);
 void insertSiteSequence(Subdivision& s, std::vector<Point> seq);
