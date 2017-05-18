@@ -332,13 +332,51 @@ VertexRef insertMeshSite(Subdivision& s, Point x)
 	return X;
 }
 
-void eliminate_worst_triangle(Subdivision& dt)
+bool eliminate_worst_triangle(Subdivision& dt, double min_ratio)
 {
 	FaceRef face; double ratio;
 	std::tie(face,ratio) = find_worst(dt);
+	if (ratio <= min_ratio) return false;
 	auto e = face->bounds;
 	Point cc = circumCenter(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
 	insertMeshSite(dt, cc);
+	return true;
+}
+
+bool eliminate_worst_triangle(Subdivision& dt, double min_ratio, double min_area)
+{
+	FaceRef face; double ratio;
+	std::tie(face, ratio) = find_worst(dt);
+	if (ratio <= min_ratio) {
+		double area;
+		std::tie(face, area) = find_biggest(dt);
+		if (area <= min_area)
+			return false;
+	}
+	auto e = face->bounds;
+	Point cc = circumCenter(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+	insertMeshSite(dt, cc);
+	return true;
+}
+
+bool eliminate_bad_triangle(Subdivision& dt, double min_ratio)
+{
+	auto face = find_bad(dt,min_ratio);
+	if (face == dt.faces.end()) return false;
+	auto e = face->bounds;
+	Point cc = circumCenter(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+	insertMeshSite(dt, cc);
+	return true;
+}
+
+bool eliminate_bad_triangle(Subdivision& dt, double min_ratio, double min_area)
+{
+	auto face = find_bad(dt, min_ratio, min_area);
+	if (face == dt.faces.end()) return false;
+	auto e = face->bounds;
+	Point cc = circumCenter(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+	insertMeshSite(dt, cc);
+	return true;
 }
 
 
@@ -349,10 +387,10 @@ void eliminate_triangle(Subdivision& dt, FaceRef face)
 	insertMeshSite(dt, cc);
 }
 
-std::tuple<FaceRef,double> find_worst(Subdivision & dt)
+std::tuple<FaceRef, double> find_worst(Subdivision & dt)
 {
-	double max_ratio = -1.0;
 	FaceRef worst_face = dt.faces.end();
+	double max_ratio = -1.0;
 
 	for (auto face = dt.faces.begin(); face != dt.faces.end(); ++face)
 	{
@@ -366,3 +404,117 @@ std::tuple<FaceRef,double> find_worst(Subdivision & dt)
 	}
 	return {worst_face,max_ratio};
 }
+
+std::tuple<FaceRef, double> find_biggest(Subdivision & dt)
+{
+	FaceRef biggest_face = dt.faces.end();
+	double max_area = -1.0;
+
+	for (auto face = dt.faces.begin(); face != dt.faces.end(); ++face)
+	{
+		if (!face->mark || face == dt.outer_face) continue;
+		auto e = face->bounds;
+		double area = triangleArea(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+		if (area > max_area) {
+			max_area = area;
+			biggest_face = face;
+		}
+	}
+	return {biggest_face,max_area};
+}
+
+std::tuple<FaceRef, double> find_smallest(Subdivision & dt)
+{
+	FaceRef smallest_face = dt.faces.end();
+	double min_area = std::numeric_limits<double>::max();
+
+	for (auto face = dt.faces.begin(); face != dt.faces.end(); ++face)
+	{
+		if (!face->mark || face == dt.outer_face) continue;
+		auto e = face->bounds;
+		double area = triangleArea(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+		if (area < min_area) {
+			min_area = area;
+			smallest_face = face;
+		}
+	}
+	return{smallest_face,min_area};
+}
+
+FaceRef find_bad(Subdivision & dt, double min_ratio, double min_area)
+{
+	FaceRef bad_face = dt.faces.end();
+
+	for (auto face = dt.faces.begin(); face != dt.faces.end(); ++face)
+	{
+		if (!face->mark || face == dt.outer_face) continue;
+		auto e = face->bounds;
+		double ratio = quality_measure(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+		double area = triangleArea(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+		if (ratio > min_ratio) {
+			min_ratio = ratio;
+			bad_face = face;
+			break;
+		}
+		else if (area > min_area) {
+			min_area = area;
+			bad_face = face;
+			break;
+		}
+	}
+	return bad_face;
+}
+
+FaceRef find_bad(Subdivision & dt, double max_ratio)
+{
+	FaceRef worst_face = dt.faces.end();
+
+	for (auto face = dt.faces.begin(); face != dt.faces.end(); ++face)
+	{
+		if (!face->mark || face == dt.outer_face) continue;
+		auto e = face->bounds;
+		double ratio = quality_measure(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+		if (ratio > max_ratio) {
+			worst_face = face;
+			break;
+		}
+	}
+	return worst_face;
+}
+
+void ruppert_refinement(Subdivision & dt, double min_ratio, int max_iters)
+{
+	splitEdges(dt);
+	int iters = 0;
+	while (iters < max_iters && eliminate_worst_triangle(dt, min_ratio))
+		++iters;
+	std::cout << iters << '\n';
+}
+
+void ruppert_refinement(Subdivision & dt, double min_ratio, double min_area, int max_iters)
+{
+	splitEdges(dt);
+	int iters = 0;
+	while (iters < max_iters && eliminate_worst_triangle(dt, min_ratio, min_area))
+		++iters;
+	std::cout << iters << '\n';
+}
+
+void insertClosedLoop(Subdivision& dt, std::vector<Point> const & hole)
+{
+	std::vector<VertexRef> inserted;
+	inserted.reserve(hole.size());
+	for (Point const& p : hole)
+		inserted.push_back(insertSite(dt, p));
+	for (unsigned i = 0; i < inserted.size(); ++i) {
+		auto ins = insertEdge(dt, inserted[i], inserted[(i + 1) % inserted.size()]);
+		ins.data().boundary = true;
+		ins.Sym().data().boundary = true;
+	}
+}
+
+void deleteSite_wf(Subdivision & dt, VertexRef v)
+{
+
+}
+

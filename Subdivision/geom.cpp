@@ -53,6 +53,7 @@ std::vector<Point> circleHull(Point cen, double rad, int N)
 	{
 		double phi{step*i};
 		Point p{rad*cos(phi),rad*sin(phi)};
+		p = p + cen;
 		hull.push_back(p);
 	}
 	return hull;
@@ -144,4 +145,17 @@ double quality_measure(Point const& p1, Point const& p2, Point const& p3)
 	double circumradius = a*b*c / sqrt((a + b + c)*(-a + b + c)*(a - b + c)*(a + b - c));
 
 	return circumradius / min_edge_len;
+}
+
+double triangleArea(Point const& p1, Point const& p2, Point const& p3)
+{
+	double a = norm(p1 - p2);
+	double b = norm(p2 - p3);
+	double c = norm(p3 - p1);
+
+	std::array<double, 3> lens{a,b,c};
+	double  p = KahanSum(lens) / 2.0;
+	double area = sqrt(p*(p-a)*(p-b)*(p-c));
+	
+	return area;
 }
