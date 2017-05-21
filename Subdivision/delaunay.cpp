@@ -313,12 +313,15 @@ void triangulatePseudoPolygon(Subdivision& s, EdgeRef c)
 		} while (p != end);
 
 		if (fnd) {
+			bool done = false;
 			if (e != begin) {
 				auto r = s.connect(e, begin);
 				triangulatePseudoPolygon(s, r);
+				done = true;
 			}
 			if (e != last) {
-				auto l = s.connect(e, c).Sym();
+				auto l = s.connect( done? e.Dprev():e , c);
+				l = l.Sym();
 				triangulatePseudoPolygon(s, l);
 			}
 			break;

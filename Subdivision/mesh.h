@@ -36,3 +36,10 @@ void ruppert_refinement(Subdivision & dt, double min_ratio, double min_area, int
 void insertClosedLoop(Subdivision & dt, std::vector<Point> const& hole);
 
 void deleteSite_wf(Subdivision& dt, VertexRef v);
+
+bool chew_2nd_eliminate_worst(Subdivision& dt, double min_ratio);
+
+void chew_2nd_refinement(Subdivision& dt, double min_ratio, int max_iters=1000);
+void chew_2nd_refinement(Subdivision& dt, double min_ratio, double min_area, int max_iters = 1000);
+
+void off_center_correction(Subdivision& dt, VertexRef site, double min_angle);

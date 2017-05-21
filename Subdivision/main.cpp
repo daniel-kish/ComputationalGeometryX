@@ -45,13 +45,13 @@ struct Graphics
 {
 	std::random_device rdev;
 	std::mt19937 mt;
-	double scale{120};
+	double scale{100};
 	double wid, height;
 	double X0, Y0;
 	std::string main_code;
 	std::string ending;
-	double pointRad{1.0};
-	double lineWidth{0.5};
+	double pointRad{2.0};
+	double lineWidth{2.0};
 	Graphics(double w = 1000.0, double h = 500.0, double X = 0.0, double Y = 0.0)
 		: X0{X}, Y0{Y}, wid{w}, height{h}, mt{rdev()}
 	{
@@ -76,7 +76,7 @@ struct Graphics
 		ending = "\n</g>\n</svg>";
 	}
 
-	void addLine(Point const& p, Point const& q, std::string color = {}, double width=0.0)
+	void addLine(Point const& p, Point const& q, std::string color = {}, double width = 0.0)
 	{
 		if (width == 0.0) width = lineWidth;
 		if (color.empty()) color = "black";
@@ -88,11 +88,12 @@ struct Graphics
 		main_code.append(str.str());
 	}
 
-	void addPoint(Point const& p)
+	void addPoint(Point const& p, double rad = 0.0)
 	{
+		if (rad == 0.0) rad = pointRad;
 		std::ostringstream str;
 		str << R"(<circle cx=")" << p.x
-			<< R"(" cy=")" << p.y << R"(" r=")" << pointRad / scale << R"("  fill="black" />)"
+			<< R"(" cy=")" << p.y << R"(" r=")" << rad / scale << R"("  fill="black" />)"
 			<< '\n';
 		main_code.append(str.str());
 	}
@@ -121,6 +122,22 @@ struct Graphics
 		main_code.append(str.str());
 	}
 
+	void add_polygon(FaceRef face, std::string color = std::string{}, double opacity = 1.0)
+	{
+		std::ostringstream str;
+		str << "<polygon points = \"";
+		auto ei = face->bounds;
+		auto end = ei;
+		do {
+			Point const& p = Org(ei)->point;
+			str << p.x << ',' << p.y << ' ';
+			ei = ei.Lnext();
+		} while (ei != end);
+		str << "\" style=\"fill:" << color
+			<< "; opacity:" << opacity << "; stroke-width:0\" />\n";
+		main_code.append(str.str());
+	}
+
 	void add_polygon(Point a, Point b, Point c, int R, int G, int B, double opacity = 1.0)
 	{
 		std::ostringstream str;
@@ -144,17 +161,80 @@ std::valarray<double> scale(double t)
 	return v * 255.0;
 }
 
+EdgeRef insertEdge2(Subdivision& s, VertexRef a, VertexRef b)
+{
+	EdgeRef e = a->leaves;
+
+	EdgeRef p = e;
+	do {
+		if (Dest(e) == b) {
+			e.data().fixed = true;
+			e.Sym().data().fixed = true;
+			return e;
+		}
+		e = e.Onext();
+	} while (e != p);
+
+	p = e;
+	do {
+		if (rightOf(Dest(e), {a,b}) && leftOf(Dest(e.Onext()), {a,b}))
+			break;
+		e = e.Onext();
+	} while (e != p);
+
+	assert(Dest(e.Onext()) == Dest(e.Lnext()));
+
+	EdgeRef first = e.Onext().Sym();
+	assert(Dest(first) == a);
+
+	e = e.Lnext();
+	p = e;
+	do {
+		if (Dest(e.Oprev()) == b) {
+			s.deleteEdge(e);
+			break;
+		}
+		VertexRef n = Dest(e.Oprev());
+		double det = orient2d(a->point, b->point, n->point);
+		if (det > 0.0) // leftOf
+			p = e.Oprev();
+		else if (det < 0.0) // rightOf
+			p = e.Dnext();
+		s.deleteEdge(e);
+		e = p;
+	} while (true);
+
+	auto ei = first;
+	do
+		ei = ei.Lnext();
+	while (Dest(ei) != b);
+
+	EdgeRef last = ei;
+
+	auto c = s.connect(first, last.Lnext());
+
+	c.data().fixed = true;
+	c.Sym().data().fixed = true;
+
+	triangulatePseudoPolygon(s, c);
+	triangulatePseudoPolygon(s, c.Sym());
+
+	return c;
+}
+
+
 int main()
 {
 	using namespace std::chrono;
 	using namespace std::literals;
+
 	exactinit();
 
-	/*std::vector<Point> model{
-		{-4,4},{-4,1},{-3,1},{-3,-1},{-4,-1},{-4,-2},{3,-2},{4,-1},{4,2}
-	};*/
-	std::vector<Point> model = rectHull({{-5,-5},{10,10}}, 1, 1);
-	
+
+	std::vector<Point> model{
+	{-4,2},{-4,1},{-3,1},{-3,-1},{-4,-1},{-4,-2},{3,-2},{4,-1},{4,2}
+	};
+
 	auto trian = triangleCover(model);
 	std::vector<Point> cover(trian.begin(), trian.end());
 	std::sort(cover.begin(), cover.end());
@@ -165,24 +245,23 @@ int main()
 
 	insertClosedLoop(dt, model);
 
-	std::vector<Point> hole = anyHull([](double phi) {return 1.0+sin(phi)*sin(phi); }, 100);
-	insertClosedLoop(dt, hole);
+	std::vector<Point> hole = {
+	{-1,-1}, {1,-1}, {0.5, 0}, {1, 1}, {-1,1}
+	};
 
-	hole = circleHull({4,4}, 0.5, 50);
-	insertClosedLoop(dt, hole);
+	//insertClosedLoop(dt, hole);
 
-	hole = circleHull({-4,4}, 0.5, 50);
-	insertClosedLoop(dt, hole);
+	//VertexRef a = insertSite(dt, {1.5,-1});
+	//VertexRef b = insertSite(dt, {1.5,1});
+	//insertEdge(dt, a, b);
 
-	hole = circleHull({-4,-4}, 0.5, 50);
-	insertClosedLoop(dt, hole);
+	//a = insertSite(dt, {1.6,1.5});
+	//b = insertSite(dt, {1.6,-1.5});
+	//insertEdge(dt, a, b);
 
-	hole = circleHull({4,-4}, 0.5, 50);
-	insertClosedLoop(dt, hole);
-
+	/*  ONLY USE *_WF FROM HERE ON */
 	init_faces(dt);
 	mark_outer_faces(dt, r);
-
 
 	FaceRef face; double max_ratio, max_area, min_area;
 	std::tie(face, max_ratio) = find_worst(dt);
@@ -190,14 +269,23 @@ int main()
 	std::tie(face, min_area) = find_smallest(dt);
 	std::cout << "before: " << max_ratio << ' ' << max_area << '\n';
 
-	ruppert_refinement(dt, 1.0, 3000);
+
+	chew_2nd_refinement(dt, 1.0);
+	//ruppert_refinement(dt, 1.0);
+
+	for (VertexRef v = dt.vertices.begin(); v != dt.vertices.end(); ++v)
+	{
+		if (!v->circumcenter) continue;
+		off_center_correction(dt, v);
+		break;
+	}
 
 
 	double ratio_after, area_after;
 	std::tie(face, ratio_after) = find_worst(dt);
 	std::tie(face, area_after) = find_biggest(dt);
 	std::cout << "after: " << ratio_after << ' ' << area_after << '\n';
-	
+
 
 	// connectivity checks
 	for (auto v = dt.vertices.begin(); v != dt.vertices.end(); ++v)
@@ -237,22 +325,16 @@ int main()
 	}
 	std::cerr << "faces connectivity check OK\n";
 
-	Graphics g(1000,500,300,400);
+	Graphics g(1000, 500, 100, 350);
 
 	for (auto face = dt.faces.begin(); face != dt.faces.end(); ++face)
 	{
 		if (face == dt.outer_face) continue;
 		auto e = face->bounds;
-		if (!face->mark) {
-			//g.add_polygon(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point, "green", 0.5);
-		}
-		else {
-			//double ratio = quality_measure(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
-			//auto col = scale(ratio*0.8 / max_ratio);
-			//g.add_polygon(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point,
-			//	col[0], col[1], col[2]);
-			g.add_polygon(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point, "blue",0.25);
-		}
+		if (!face->mark)
+			; // g.add_polygon(face, "green"s, 0.25);
+		else
+			g.add_polygon(face, "blue"s, 0.25);
 	}
 	for (auto qref = dt.edges.begin(); qref != dt.edges.end(); ++qref)
 	{
@@ -260,21 +342,21 @@ int main()
 		if (e.data().var.which() == 1) {
 			e = e.Rot();
 		}
-		if (e.data().fixed) {
-			g.addLine(Org(e)->point, Dest(e)->point, "red"s, 2.5);
-		}
+		if (e.data().fixed)
+			g.addLine(Org(e)->point, Dest(e)->point, "black"s, 2.0);
 		if (Left(e)->mark || Right(e)->mark)
-			g.addLine(Org(e)->point, Dest(e)->point);
+			g.addLine(Org(e)->point, Dest(e)->point, "black"s, 1.0);
 	}
-	for (Subdivision::Vertex const& p : dt.vertices)
-		g.addPoint(p.point);
+	for (Subdivision::Vertex const& v : dt.vertices)
+	{
+		double rad = 1.5;
+		if (!v.circumcenter)
+			rad = 3.0;
+		g.addPoint(v.point, rad);
+	}
 
-	std::ofstream xml{"trian.xml"};
+	std::ofstream xml{"chew2.xml"};
 	g.output(xml);
 
 	std::cout << "Euler invariant: " << dt.vertices.size() - dt.edges.size() + dt.faces.size() << '\n';
 }
-
-/*std::vector<Point> hole = {
-{-1,-1}, {1,-1}, {0.5, 0}, {1, 1}, {-1,1}
-};*/

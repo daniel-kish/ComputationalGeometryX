@@ -26,4 +26,6 @@ VertexRef insertSite(Subdivision& s, Point x);
 VertexRef insertSite(Subdivision& s, Point x, EdgeRef start);
 void insertSiteSequence(Subdivision& s, std::vector<Point> seq);
 
+void triangulatePseudoPolygon(Subdivision& s, EdgeRef c);
+
 EdgeRef insertEdge(Subdivision&, VertexRef, VertexRef);

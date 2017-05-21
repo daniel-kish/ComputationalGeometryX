@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg version = "1.1" 
+baseProfile="full" 
+xmlns = "http://www.w3.org/2000/svg" 
+xmlns:xlink = "http://www.w3.org/1999/xlink" 
+xmlns:ev = "http://www.w3.org/2001/xml-events" 
+height = "5000px"  width = "5000px">
+
+<g transform="translate(600,600) scale(100,-100)"> 
+<polygon points = "-4,2 -4,1 -3,1 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "-2.25,-2 -3,-1 -4,-2 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "-4,-2 -3,-1 -4,-1 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "4,2 1.78571,0.214286 4,-1 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "1.78571,0.214286 3,-2 4,-1 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "1.78571,0.214286 -0.5,-2 3,-2 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "1.78571,0.214286 4,2 0,2 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "-3,1 -2,2 -4,2 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "-3,1 -1.06818,0.0681818 -2,2 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "1.78571,0.214286 -1.06818,0.0681818 -0.5,-2 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.06818,0.0681818 0,2 -2,2 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.06818,0.0681818 1.78571,0.214286 0,2 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "-3,-1 -1.06818,0.0681818 -3,1 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.06818,0.0681818 -2.25,-2 -0.5,-2 " style="fill:blue; opacity:0.25; stroke-width:0" />
+<polygon points = "-2.25,-2 -1.06818,0.0681818 -3,-1 " style="fill:blue; opacity:0.25; stroke-width:0" />
+ <line x1="0" y1="2" x2="4" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0" y1="2" x2="4" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-4" y1="2" x2="-4" y2="1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-4" y1="2" x2="-4" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-4" y1="2" x2="-3" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-4" y1="1" x2="-3" y2="1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-4" y1="1" x2="-3" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.25" y1="-2" x2="-4" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-2.25" y1="-2" x2="-4" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="1" x2="-3" y2="-1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-3" y1="1" x2="-3" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-4" y1="-2" x2="-4" y2="-1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-4" y1="-2" x2="-4" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="-1" x2="-4" y2="-1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-3" y1="-1" x2="-4" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="-1" x2="-4" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3" y1="-2" x2="4" y2="-1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="3" y1="-2" x2="4" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="-1" x2="4" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="4" y1="-1" x2="4" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="2" x2="0" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-2" y1="2" x2="0" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3" y1="-2" x2="-0.5" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="3" y1="-2" x2="-0.5" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="-1" x2="1.78571" y2="0.214286" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="2" x2="1.78571" y2="0.214286" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3" y1="-2" x2="1.78571" y2="0.214286" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-0.5" y1="-2" x2="1.78571" y2="0.214286" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="2" x2="1.78571" y2="0.214286" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-4" y1="2" x2="-2" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-4" y1="2" x2="-2" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="2" x2="-3" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="2" x2="-1.06818" y2="0.0681818" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-0.5" y1="-2" x2="-1.06818" y2="0.0681818" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="2" x2="-1.06818" y2="0.0681818" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.78571" y1="0.214286" x2="-1.06818" y2="0.0681818" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="1" x2="-1.06818" y2="0.0681818" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="-1" x2="-1.06818" y2="0.0681818" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-0.5" y1="-2" x2="-2.25" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-0.5" y1="-2" x2="-2.25" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.25" y1="-2" x2="-3" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1.06818" y1="0.0681818" x2="-2.25" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+<circle cx="-9.29516" cy="-5.36656" r="0.03"  fill="black" />
+<circle cx="0" cy="10.7331" r="0.03"  fill="black" />
+<circle cx="9.29516" cy="-5.36656" r="0.03"  fill="black" />
+<circle cx="-4" cy="2" r="0.03"  fill="black" />
+<circle cx="-4" cy="1" r="0.03"  fill="black" />
+<circle cx="-3" cy="1" r="0.03"  fill="black" />
+<circle cx="-3" cy="-1" r="0.03"  fill="black" />
+<circle cx="-4" cy="-1" r="0.03"  fill="black" />
+<circle cx="-4" cy="-2" r="0.03"  fill="black" />
+<circle cx="3" cy="-2" r="0.03"  fill="black" />
+<circle cx="4" cy="-1" r="0.03"  fill="black" />
+<circle cx="4" cy="2" r="0.03"  fill="black" />
+<circle cx="0" cy="2" r="0.03"  fill="black" />
+<circle cx="-0.5" cy="-2" r="0.03"  fill="black" />
+<circle cx="1.78571" cy="0.214286" r="0.015"  fill="black" />
+<circle cx="-2" cy="2" r="0.03"  fill="black" />
+<circle cx="-1.06818" cy="0.0681818" r="0.015"  fill="black" />
+<circle cx="-2.25" cy="-2" r="0.03"  fill="black" />
+
+</g>
+</svg>

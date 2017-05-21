@@ -25,6 +25,11 @@ void printEdge(EdgeRef e)
 	std::cout << Org(e)->point << ' ' << Dest(e)->point << '\n';
 }
 
+std::ostream& operator<< (std::ostream& os, EdgeRef e)
+{
+	return os << Org(e)->point << " -> " << Dest(e)->point;
+}
+
 Subdivision::Subdivision()
 {
 }

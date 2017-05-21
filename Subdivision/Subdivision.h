@@ -19,6 +19,7 @@ struct Subdivision
 	struct Vertex {
 		Point point;
 		Edges::EdgeRef leaves;
+		bool circumcenter;
 	};
 	struct Face {
 		int mark{-1};
@@ -57,3 +58,4 @@ Subdivision::FaceRef& Left(EdgeRef e);
 Subdivision::FaceRef& Right(EdgeRef e);
 
 void printEdge(EdgeRef);
+std::ostream& operator<< (std::ostream& os, EdgeRef e);

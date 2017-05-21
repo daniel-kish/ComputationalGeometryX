@@ -2,7 +2,9 @@
 #include <vector>
 #include "Subdivision.h"
 #include "delaunay.h"
+#include "predicates.h"
 #include "geom.h"
+#include "boost/math/constants/constants.hpp"
 
 void init_faces(Subdivision& s)
 {
@@ -128,13 +130,15 @@ EdgeRef splitBoundaryEdge(Subdivision& s, EdgeRef e)
 	e1 = e1.Lnext();
 	auto e2 = e1.Onext();
 
+	auto mark1 = Left(e1)->mark;
 	auto div1 = s.splitFace(e1, e1.Lnext().Lnext());
-	Right(div1)->mark = Left(div1)->mark;
-
+	Right(div1)->mark = Left(div1)->mark = mark1;
 
 	e2 = div1.Onext();
+	auto mark2 = Left(e2)->mark;
 	auto div2 = s.splitFace(e2, e2.Lnext().Lnext());
-	Right(div2)->mark = Left(div2)->mark;
+	Right(div2)->mark = Left(div2)->mark = mark2;
+
 
 	auto X = Org(div1);
 	e = div2.Lnext();
@@ -319,7 +323,7 @@ VertexRef insertMeshSite(Subdivision& s, Point x)
 		if (!e.data().fixed
 			&& rightOf(Dest(t), e)
 			&& incircle(Org(e), Dest(t), Dest(e), X)) {
-			e = swap_wf(s,e);
+			e = swap_wf(s, e);
 			assert(X == Dest(e));
 			e = e.Oprev();
 		}
@@ -329,13 +333,15 @@ VertexRef insertMeshSite(Subdivision& s, Point x)
 			e = e.Onext().Lprev();
 	} while (true);
 
+	X->circumcenter = true;
 	return X;
 }
+
 
 bool eliminate_worst_triangle(Subdivision& dt, double min_ratio)
 {
 	FaceRef face; double ratio;
-	std::tie(face,ratio) = find_worst(dt);
+	std::tie(face, ratio) = find_worst(dt);
 	if (ratio <= min_ratio) return false;
 	auto e = face->bounds;
 	Point cc = circumCenter(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
@@ -361,7 +367,7 @@ bool eliminate_worst_triangle(Subdivision& dt, double min_ratio, double min_area
 
 bool eliminate_bad_triangle(Subdivision& dt, double min_ratio)
 {
-	auto face = find_bad(dt,min_ratio);
+	auto face = find_bad(dt, min_ratio);
 	if (face == dt.faces.end()) return false;
 	auto e = face->bounds;
 	Point cc = circumCenter(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
@@ -402,7 +408,7 @@ std::tuple<FaceRef, double> find_worst(Subdivision & dt)
 			worst_face = face;
 		}
 	}
-	return {worst_face,max_ratio};
+	return{worst_face,max_ratio};
 }
 
 std::tuple<FaceRef, double> find_biggest(Subdivision & dt)
@@ -420,7 +426,7 @@ std::tuple<FaceRef, double> find_biggest(Subdivision & dt)
 			biggest_face = face;
 		}
 	}
-	return {biggest_face,max_area};
+	return{biggest_face,max_area};
 }
 
 std::tuple<FaceRef, double> find_smallest(Subdivision & dt)
@@ -513,8 +519,236 @@ void insertClosedLoop(Subdivision& dt, std::vector<Point> const & hole)
 	}
 }
 
-void deleteSite_wf(Subdivision & dt, VertexRef v)
+EdgeRef clip_delaunay_ear(Subdivision& dt, EdgeRef e)
 {
+	auto mark = Left(e)->mark;
+	if (Dest(e.Lnext().Lnext()) == Org(e))
+		return e;
+	if (!leftOf(Dest(e.Lnext()), e))
+		return e.Lnext();
 
+	VertexRef a = Org(e), b = Dest(e), c = Dest(e.Lnext());
+	auto ei = e.Lnext().Lnext();
+	do {
+		if (incircle(a, b, c, Dest(ei)))
+			return e.Lnext();
+		ei = ei.Lnext();
+	} while (Dest(ei) != Org(e));
+
+	auto new_e = dt.splitFace(e, e.Lnext().Lnext());
+	Left(new_e)->mark = Right(new_e)->mark = mark;
+	return new_e;
 }
 
+void deleteSite_wf(Subdivision & dt, VertexRef v)
+{
+	assert(v->circumcenter);
+	auto e = v->leaves;
+	auto b = e.Lnext();
+
+	do {
+		e = e.Onext();
+		dt.joinFace(e.Oprev());
+		Right(e)->mark = 1;
+	} while (e != e.Onext());
+	dt.joinVertex(e.Sym());
+
+	auto res = b;
+	do {
+		b = res;
+		res = clip_delaunay_ear(dt, b);
+	} while (res != b);
+}
+
+VertexRef insertSite_wf(Subdivision& s, Point x, EdgeRef e)
+{
+	if (x == Org(e)->point || x == Dest(e)->point) // ignore
+		return s.vertices.end();
+	else if (onEdge(x, e)) {
+		e = e.Oprev();
+		s.joinFace(e.Onext());
+	}
+
+	// connect
+	VertexRef first = Org(e);
+	EdgeRef base = s.splitVertex(e, e, x);
+	VertexRef X = Dest(base);
+	X->circumcenter = true;
+	do {
+		base = s.splitFace(e.Lnext(), base.Sym());
+		Left(base)->mark = Right(base)->mark = 1;
+		e = base.Oprev();
+	} while (Dest(e) != first);
+
+	// inspect edges
+	do {
+		auto t = e.Oprev();
+		if (!e.data().fixed && rightOf(Dest(t), e) && incircle(Org(e), Dest(t), Dest(e), X)) {
+			e = swap_wf(s, e);
+			assert(X == Dest(e));
+			e = e.Oprev();
+		}
+		else if (Org(e) == first)
+			break;
+		else
+			e = e.Onext().Lprev();
+	} while (true);
+	return X;
+}
+
+bool chew_2nd_eliminate_worst(Subdivision& dt, double min_ratio)
+{
+	FaceRef face; double ratio;
+
+	std::tie(face, ratio) = find_worst(dt);
+	if (ratio <= min_ratio)
+		return false;
+	auto e = face->bounds;
+	Point c = circumCenter(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+
+	bool found_edge{true};
+	do
+	{
+		if (rightOf(c, e))
+			e = e.Sym();
+		else if (!rightOf(c, e.Onext()))
+			e = e.Onext();
+		else if (!rightOf(c, e.Dprev()))
+			e = e.Dprev();
+		else {
+			found_edge = false;
+			break;
+		}
+	} while (!e.data().fixed);
+
+	if (!found_edge) {
+		auto v = insertSite_wf(dt, c, e);
+		v->circumcenter = true;
+		return true;
+	}
+
+	// found encroached edge
+	// delete all encroaching vertices
+	bool all_done = false;
+	while (!all_done)
+	{
+		all_done = true;
+		for (auto v = dt.vertices.begin(); v != dt.vertices.end(); ++v)
+		{
+			if (v->circumcenter && encroaches(e, v->point)) {
+				deleteSite_wf(dt, v);
+				all_done = false;
+				break;
+			}
+		}
+	}
+	// split e
+	if (e.data().boundary)
+		splitBoundaryEdge(dt, e);
+	else
+		splitRegularEdge(dt, e);
+
+	return true;
+}
+
+bool chew_2nd_eliminate_worst(Subdivision& dt, double min_ratio, double min_area)
+{
+	FaceRef face; double ratio;
+
+	std::tie(face, ratio) = find_worst(dt);
+	if (ratio <= min_ratio)
+	{
+		double area;
+		std::tie(face, area) = find_biggest(dt);
+		if (area <= min_area)
+			return false;
+	}
+	
+	auto e = face->bounds;
+	Point c = circumCenter(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+
+	bool found_edge{true};
+	do
+	{
+		if (rightOf(c, e))
+			e = e.Sym();
+		else if (!rightOf(c, e.Onext()))
+			e = e.Onext();
+		else if (!rightOf(c, e.Dprev()))
+			e = e.Dprev();
+		else {
+			found_edge = false;
+			break;
+		}
+	} while (!e.data().fixed);
+
+	// here c can be on edge or inside a triangle
+	if (e.data().fixed && onEdge(c, e)) // and if 'c' is on a fixed edge, then work with edge
+		found_edge = true;
+
+	if (!found_edge) {
+		auto v = insertSite_wf(dt, c, e);
+		v->circumcenter = true;
+		return true;
+	}
+	// found encroached edge
+	// delete all encroaching vertices
+	bool all_done = false;
+	while (!all_done)
+	{
+		all_done = true;
+		for (auto v = dt.vertices.begin(); v != dt.vertices.end(); ++v)
+		{
+			if (v->circumcenter && encroaches(e, v->point)) {
+				deleteSite_wf(dt, v);
+				all_done = false;
+				break;
+			}
+		}
+	}
+	// split e
+	if (e.data().boundary) {
+		splitBoundaryEdge(dt, e);
+	}
+	else
+		splitRegularEdge(dt, e);
+
+	return true;
+}
+
+void chew_2nd_refinement(Subdivision& dt, double min_ratio, int iters)
+{
+	int i = 0;
+	while (i++ < iters && chew_2nd_eliminate_worst(dt, min_ratio))
+		;
+	std::cout << "iters: " << i << '\n';
+}
+
+void chew_2nd_refinement(Subdivision& dt, double min_ratio, double min_area, int iters)
+{
+	int i = 0;
+	while (i++ < iters && chew_2nd_eliminate_worst(dt, min_ratio, min_area))
+		;
+	std::cout << "iters: " << i << '\n';
+}
+
+void off_center_correction(Subdivision& dt, VertexRef v, double min_angle)
+{
+	assert(v->circumcenter);
+	using boost::math::double_constants::pi;
+
+	auto e = v->leaves;
+	auto end = e;
+	do {
+		Point AB = Dest(e)->point - Org(e)->point;
+		Point AC = Dest(e.Onext())->point - Org(e)->point;
+		double angle = acos(AB*AC / (norm(AB) * norm(AC))) * 180.0 / pi;
+		if (angle < min_angle)
+		{
+			// to do
+			break;
+		}
+
+		e = e.Onext();
+	} while (e != end);
+}
