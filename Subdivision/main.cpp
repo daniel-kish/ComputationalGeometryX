@@ -222,6 +222,45 @@ EdgeRef insertEdge2(Subdivision& s, VertexRef a, VertexRef b)
 	return c;
 }
 
+int nr_triangles(double q)
+{
+	std::vector<Point> model{
+		{-4,2},{-4,1},{-3,1},{-3,-1},{-4,-1},{-4,-2},{3,-2},{4,-1},{4,2}
+	};
+
+	auto trian = triangleCover(model);
+	std::vector<Point> cover(trian.begin(), trian.end());
+	std::sort(cover.begin(), cover.end());
+	Subdivision dt;
+	EdgeRef l, r;
+	std::tie(dt, l, r) = delaunay_dnc(cover.begin(), cover.end());
+
+	insertClosedLoop(dt, model);
+
+	std::vector<Point> hole = {
+		{-1,-1},{1,-1},{0.5, 0},{1, 1},{-1,1}
+	};
+	insertClosedLoop(dt, hole);
+
+	insertClosedLoop(dt, circleHull({2.5,0}, 0.25, 20));
+
+	auto a = insertSite(dt, {-3.5,1.5});
+	auto b = insertSite(dt, {3.5,1.5});
+	insertEdge(dt, a, b);
+
+
+	/*  ONLY USE *_WF FROM HERE ON */
+	init_faces(dt);
+	mark_outer_faces(dt, r);
+
+	chew_2nd_refinement_alper(dt, q, 1.0, 0.5);
+
+	int trs = std::count_if(dt.faces.begin(), dt.faces.end(), [](Subdivision::Face const& f) {
+		return f.mark == 1;
+	});
+
+	return trs;
+}
 
 int main()
 {
@@ -229,7 +268,6 @@ int main()
 	using namespace std::literals;
 
 	exactinit();
-
 
 	std::vector<Point> model{
 	{-4,2},{-4,1},{-3,1},{-3,-1},{-4,-1},{-4,-2},{3,-2},{4,-1},{4,2}
@@ -242,22 +280,18 @@ int main()
 	EdgeRef l, r;
 	std::tie(dt, l, r) = delaunay_dnc(cover.begin(), cover.end());
 
-
 	insertClosedLoop(dt, model);
 
 	std::vector<Point> hole = {
 	{-1,-1}, {1,-1}, {0.5, 0}, {1, 1}, {-1,1}
 	};
+	insertClosedLoop(dt, hole);
 
-	//insertClosedLoop(dt, hole);
+	insertClosedLoop(dt, circleHull({2.5,0},0.25,20));
 
-	//VertexRef a = insertSite(dt, {1.5,-1});
-	//VertexRef b = insertSite(dt, {1.5,1});
-	//insertEdge(dt, a, b);
-
-	//a = insertSite(dt, {1.6,1.5});
-	//b = insertSite(dt, {1.6,-1.5});
-	//insertEdge(dt, a, b);
+	auto a = insertSite(dt, {-3.5,1.5});
+	auto b = insertSite(dt, {3.5,1.5});
+	insertEdge(dt, a, b);
 
 	/*  ONLY USE *_WF FROM HERE ON */
 	init_faces(dt);
@@ -267,24 +301,15 @@ int main()
 	std::tie(face, max_ratio) = find_worst(dt);
 	std::tie(face, max_area) = find_biggest(dt);
 	std::tie(face, min_area) = find_smallest(dt);
-	std::cout << "before: " << max_ratio << ' ' << max_area << '\n';
+	std::cout << "before: " << ratio_to_angle(max_ratio) << ' ' << max_area << '\n';
 
 
-	chew_2nd_refinement(dt, 1.0);
-	//ruppert_refinement(dt, 1.0);
-
-	for (VertexRef v = dt.vertices.begin(); v != dt.vertices.end(); ++v)
-	{
-		if (!v->circumcenter) continue;
-		off_center_correction(dt, v);
-		break;
-	}
-
+	chew_2nd_refinement_alper(dt, 0.2, 1.0);
 
 	double ratio_after, area_after;
 	std::tie(face, ratio_after) = find_worst(dt);
 	std::tie(face, area_after) = find_biggest(dt);
-	std::cout << "after: " << ratio_after << ' ' << area_after << '\n';
+	std::cout << "after: " << ratio_to_angle(ratio_after) << ' ' << area_after << '\n';
 
 
 	// connectivity checks
@@ -325,7 +350,7 @@ int main()
 	}
 	std::cerr << "faces connectivity check OK\n";
 
-	Graphics g(1000, 500, 100, 350);
+	Graphics g(1000, 500, 100, 200);
 
 	for (auto face = dt.faces.begin(); face != dt.faces.end(); ++face)
 	{
@@ -334,7 +359,7 @@ int main()
 		if (!face->mark)
 			; // g.add_polygon(face, "green"s, 0.25);
 		else
-			g.add_polygon(face, "blue"s, 0.25);
+			g.add_polygon(face, "white"s, 0.25);
 	}
 	for (auto qref = dt.edges.begin(); qref != dt.edges.end(); ++qref)
 	{
@@ -355,7 +380,12 @@ int main()
 		g.addPoint(v.point, rad);
 	}
 
-	std::ofstream xml{"chew2.xml"};
+
+	int trs = std::count_if(dt.faces.begin(), dt.faces.end(), [](Subdivision::Face const& f) {
+		return f.mark == 1;
+	});
+	std::cout << "triangles:\t" << trs << '\n';
+	std::ofstream xml{"trian.xml"};
 	g.output(xml);
 
 	std::cout << "Euler invariant: " << dt.vertices.size() - dt.edges.size() + dt.faces.size() << '\n';

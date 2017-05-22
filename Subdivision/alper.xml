@@ -8,7 +8,6 @@ height = "5000px"  width = "5000px">
 
 <g transform="translate(600,450) scale(100,-100)"> 
 <polygon points = "-4,2 -4,1 -3.5,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
-<polygon points = "-4,-2 -3,-1 -4,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "-4,1 -3,1 -3.5,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "0.875,1.5 1,1 1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "2.1875,1.5 2,2 1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
@@ -23,9 +22,6 @@ height = "5000px"  width = "5000px">
 <polygon points = "2.65623,0.322174 2.55267,0.332527 2.57725,0.237764 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "2.4406,0.375036 2.35444,0.285685 2.42275,0.237764 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "2.5,0.25 2.4406,0.375036 2.42275,0.237764 " style="fill:white; opacity:0.25; stroke-width:0" />
-<polygon points = "1.25,-2 1,-1 -0.5,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
-<polygon points = "-2.25,-2 -3,-1 -4,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
-<polygon points = "-0.5,-2 1,-1 -1,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "0.75,-0.5 1.03212,-0.0296156 0.5,0 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "2.13272,0.0581714 2.17689,-0.0511757 2.25,3.06162e-17 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "2.58891,-0.527353 2.76209,-0.567932 2.70376,-0.399893 " style="fill:white; opacity:0.25; stroke-width:0" />
@@ -77,7 +73,6 @@ height = "5000px"  width = "5000px">
 <polygon points = "-3,2 -3.5,1.5 -2.625,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "2.625,1.5 3,2 2,2 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "3,2 3.5,1.5 4,2 " style="fill:white; opacity:0.25; stroke-width:0" />
-<polygon points = "-1,-1 -2.25,-2 -0.5,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "2.773,-0.273004 2.65621,-0.306576 2.70376,-0.399893 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "2.65621,-0.306576 2.64695,-0.202254 2.57725,-0.237764 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "2.65621,-0.306576 2.773,-0.273004 2.64695,-0.202254 " style="fill:white; opacity:0.25; stroke-width:0" />
@@ -189,16 +184,11 @@ height = "5000px"  width = "5000px">
 <polygon points = "2.98156,-0.694185 2.76209,-0.567932 2.73321,-0.743447 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "3.42946,0.355886 4,0.125 4,0.5 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "4,0.125 3.42946,0.355886 3.38447,0.00234237 " style="fill:white; opacity:0.25; stroke-width:0" />
-<polygon points = "-1,1 -2,-0.5 -1,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "-2.625,1.5 -2.1875,0.78125 -1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "-2.1875,0.78125 -1,1 -1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "-2.1875,0.78125 -3,1 -3,0 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "-2.1875,0.78125 -2.625,1.5 -3,1 " style="fill:white; opacity:0.25; stroke-width:0" />
-<polygon points = "-3,0 -2,-0.5 -2.1875,0.78125 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "-3,-1 -2,-0.5 -3,0 " style="fill:white; opacity:0.25; stroke-width:0" />
-<polygon points = "-2.25,-2 -2,-0.5 -3,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
-<polygon points = "-2,-0.5 -2.25,-2 -1,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
-<polygon points = "-2,-0.5 -1,1 -2.1875,0.78125 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "0.75,0.5 1.44137,0.802633 1,1 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "1.50869,0.323859 1.03212,-0.0296156 1.55122,-0.150271 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "1.50869,0.323859 0.75,0.5 1.03212,-0.0296156 " style="fill:white; opacity:0.25; stroke-width:0" />
@@ -246,29 +236,49 @@ height = "5000px"  width = "5000px">
 <polygon points = "2.13358,-0.566211 1.93273,-0.674101 2.22799,-0.712718 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "2.13358,-0.566211 2.1944,-0.402874 2.06355,-0.406605 " style="fill:white; opacity:0.25; stroke-width:0" />
 <polygon points = "2.13358,-0.566211 2.41744,-0.521245 2.1944,-0.402874 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-0.5,-2 0,-1 -1,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1,0 -2,-0.5 -1,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1,1 -1.72248,0.194957 -1,0 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1,-1 -1.375,-2 -0.5,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0.375,-2 0,-1 -0.5,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1,-1 0.375,-2 1.25,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0.375,-2 1,-1 0,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-4,-1 -3.125,-2 -3,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3.125,-2 -4,-1 -4,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3,0 -1.72248,0.194957 -2.1875,0.78125 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.72248,0.194957 -2,-0.5 -1,0 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.72248,0.194957 -3,0 -2,-0.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.72248,0.194957 -1,1 -2.1875,0.78125 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3,-1 -2.26136,-1.22727 -2,-0.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3.125,-2 -2.26136,-1.22727 -3,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2.26136,-1.22727 -3.125,-2 -2.25,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2,-0.5 -1.58814,-1.34976 -1,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2.25,-2 -1.58814,-1.34976 -2.26136,-1.22727 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.58814,-1.34976 -1.375,-2 -1,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.58814,-1.34976 -2.25,-2 -1.375,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.58814,-1.34976 -2,-0.5 -2.26136,-1.22727 " style="fill:white; opacity:0.25; stroke-width:0" />
  <line x1="3" y1="2" x2="4" y2="2" style="stroke:black;stroke-width:0.02"/> 
  <line x1="3" y1="2" x2="4" y2="2" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-4" y1="2" x2="-4" y2="1" style="stroke:black;stroke-width:0.02"/> 
  <line x1="-4" y1="2" x2="-4" y2="1" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-4" y1="1" x2="-3" y2="1" style="stroke:black;stroke-width:0.02"/> 
  <line x1="-4" y1="1" x2="-3" y2="1" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-2.25" y1="-2" x2="-4" y2="-2" style="stroke:black;stroke-width:0.02"/> 
- <line x1="-2.25" y1="-2" x2="-4" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3.125" y1="-2" x2="-4" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-3.125" y1="-2" x2="-4" y2="-2" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-3" y1="1" x2="-3" y2="0" style="stroke:black;stroke-width:0.02"/> 
  <line x1="-3" y1="1" x2="-3" y2="0" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-4" y1="-2" x2="-4" y2="-1" style="stroke:black;stroke-width:0.02"/> 
  <line x1="-4" y1="-2" x2="-4" y2="-1" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-3" y1="-1" x2="-4" y2="-1" style="stroke:black;stroke-width:0.02"/> 
  <line x1="-3" y1="-1" x2="-4" y2="-1" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-3" y1="-1" x2="-4" y2="-2" style="stroke:black;stroke-width:0.01"/> 
  <line x1="3" y1="-2" x2="3.5" y2="-1.5" style="stroke:black;stroke-width:0.02"/> 
  <line x1="3" y1="-2" x2="3.5" y2="-1.5" style="stroke:black;stroke-width:0.01"/> 
  <line x1="4" y1="-1" x2="4" y2="-0.25" style="stroke:black;stroke-width:0.02"/> 
  <line x1="4" y1="-1" x2="4" y2="-0.25" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-1" y1="-1" x2="1" y2="-1" style="stroke:black;stroke-width:0.02"/> 
- <line x1="-1" y1="-1" x2="1" y2="-1" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-1" y1="-1" x2="-1" y2="1" style="stroke:black;stroke-width:0.02"/> 
- <line x1="-1" y1="-1" x2="-1" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="-1" x2="1" y2="-1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0" y1="-1" x2="1" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="-1" x2="-1" y2="0" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-1" y1="-1" x2="-1" y2="0" style="stroke:black;stroke-width:0.01"/> 
  <line x1="0.75" y1="-0.5" x2="0.5" y2="0" style="stroke:black;stroke-width:0.02"/> 
  <line x1="0.75" y1="-0.5" x2="0.5" y2="0" style="stroke:black;stroke-width:0.01"/> 
  <line x1="0.75" y1="0.5" x2="1" y2="1" style="stroke:black;stroke-width:0.02"/> 
@@ -347,10 +357,9 @@ height = "5000px"  width = "5000px">
  <line x1="2.80419" y1="0.540136" x2="2.56798" y2="0.429222" style="stroke:black;stroke-width:0.01"/> 
  <line x1="2.41118" y1="0.560781" x2="2.56798" y2="0.429222" style="stroke:black;stroke-width:0.01"/> 
  <line x1="2.41118" y1="0.560781" x2="2.31655" y2="0.360033" style="stroke:black;stroke-width:0.01"/> 
- <line x1="1.25" y1="-2" x2="-0.5" y2="-2" style="stroke:black;stroke-width:0.02"/> 
- <line x1="1.25" y1="-2" x2="-0.5" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.375" y1="-2" x2="-0.5" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0.375" y1="-2" x2="-0.5" y2="-2" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-0.5" y1="-2" x2="-1" y2="-1" style="stroke:black;stroke-width:0.01"/> 
- <line x1="1" y1="-1" x2="-0.5" y2="-2" style="stroke:black;stroke-width:0.01"/> 
  <line x1="1.55122" y1="-0.150271" x2="1.93518" y2="0.112403" style="stroke:black;stroke-width:0.01"/> 
  <line x1="1.88638" y1="0.613624" x2="1.93518" y2="0.112403" style="stroke:black;stroke-width:0.01"/> 
  <line x1="1.93518" y1="0.112403" x2="2.08875" y2="-0.0651362" style="stroke:black;stroke-width:0.01"/> 
@@ -447,10 +456,8 @@ height = "5000px"  width = "5000px">
  <line x1="2" y1="2" x2="3" y2="2" style="stroke:black;stroke-width:0.01"/> 
  <line x1="3" y1="2" x2="2.625" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
  <line x1="3.5" y1="1.5" x2="3" y2="2" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-0.5" y1="-2" x2="-2.25" y2="-2" style="stroke:black;stroke-width:0.02"/> 
- <line x1="-0.5" y1="-2" x2="-2.25" y2="-2" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-2.25" y1="-2" x2="-3" y2="-1" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-1" y1="-1" x2="-2.25" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1.375" y1="-2" x2="-2.25" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-1.375" y1="-2" x2="-2.25" y2="-2" style="stroke:black;stroke-width:0.01"/> 
  <line x1="2.57725" y1="-0.237764" x2="2.65621" y2="-0.306576" style="stroke:black;stroke-width:0.01"/> 
  <line x1="2.70376" y1="-0.399893" x2="2.65621" y2="-0.306576" style="stroke:black;stroke-width:0.01"/> 
  <line x1="2.64695" y1="-0.202254" x2="2.65621" y2="-0.306576" style="stroke:black;stroke-width:0.01"/> 
@@ -635,11 +642,8 @@ height = "5000px"  width = "5000px">
  <line x1="-3" y1="1" x2="-2.1875" y2="0.78125" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-2.625" y1="1.5" x2="-2.1875" y2="0.78125" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-1" y1="-1" x2="-2" y2="-0.5" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-2.1875" y1="0.78125" x2="-2" y2="-0.5" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-3" y1="0" x2="-2" y2="-0.5" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-3" y1="-1" x2="-2" y2="-0.5" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-2.25" y1="-2" x2="-2" y2="-0.5" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-1" y1="1" x2="-2" y2="-0.5" style="stroke:black;stroke-width:0.01"/> 
  <line x1="1.55122" y1="-0.150271" x2="1.50869" y2="0.323859" style="stroke:black;stroke-width:0.01"/> 
  <line x1="1.88638" y1="0.613624" x2="1.50869" y2="0.323859" style="stroke:black;stroke-width:0.01"/> 
  <line x1="1.03212" y1="-0.0296156" x2="1.50869" y2="0.323859" style="stroke:black;stroke-width:0.01"/> 
@@ -702,6 +706,37 @@ height = "5000px"  width = "5000px">
  <line x1="1.93273" y1="-0.674101" x2="2.13358" y2="-0.566211" style="stroke:black;stroke-width:0.01"/> 
  <line x1="2.1944" y1="-0.402874" x2="2.13358" y2="-0.566211" style="stroke:black;stroke-width:0.01"/> 
  <line x1="2.41744" y1="-0.521245" x2="2.13358" y2="-0.566211" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="-1" x2="0" y2="-1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-1" y1="-1" x2="0" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="-1" x2="-0.5" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="1" x2="-1" y2="0" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-1" y1="1" x2="-1" y2="0" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="0" x2="-2" y2="-0.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-0.5" y1="-2" x2="-1.375" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-0.5" y1="-2" x2="-1.375" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1.375" y1="-2" x2="-1" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.25" y1="-2" x2="0.375" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="1.25" y1="-2" x2="0.375" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.375" y1="-2" x2="0" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1" y1="-1" x2="0.375" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.25" y1="-2" x2="-3.125" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-2.25" y1="-2" x2="-3.125" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3.125" y1="-2" x2="-3" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-4" y1="-1" x2="-3.125" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="0" x2="-1.72248" y2="0.194957" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.1875" y1="0.78125" x2="-1.72248" y2="0.194957" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="-0.5" x2="-1.72248" y2="0.194957" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="0" x2="-1.72248" y2="0.194957" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="1" x2="-1.72248" y2="0.194957" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.25" y1="-2" x2="-2.26136" y2="-1.22727" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="-0.5" x2="-2.26136" y2="-1.22727" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="-1" x2="-2.26136" y2="-1.22727" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3.125" y1="-2" x2="-2.26136" y2="-1.22727" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="-1" x2="-1.58814" y2="-1.34976" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.26136" y1="-1.22727" x2="-1.58814" y2="-1.34976" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1.375" y1="-2" x2="-1.58814" y2="-1.34976" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.25" y1="-2" x2="-1.58814" y2="-1.34976" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="-0.5" x2="-1.58814" y2="-1.34976" style="stroke:black;stroke-width:0.01"/> 
 <circle cx="-9.29516" cy="-5.36656" r="0.03"  fill="black" />
 <circle cx="0" cy="10.7331" r="0.03"  fill="black" />
 <circle cx="9.29516" cy="-5.36656" r="0.03"  fill="black" />
@@ -853,6 +888,14 @@ height = "5000px"  width = "5000px">
 <circle cx="-0.5" cy="2" r="0.03"  fill="black" />
 <circle cx="2.1944" cy="-0.402874" r="0.015"  fill="black" />
 <circle cx="2.13358" cy="-0.566211" r="0.015"  fill="black" />
+<circle cx="0" cy="-1" r="0.03"  fill="black" />
+<circle cx="-1" cy="0" r="0.03"  fill="black" />
+<circle cx="-1.375" cy="-2" r="0.03"  fill="black" />
+<circle cx="0.375" cy="-2" r="0.03"  fill="black" />
+<circle cx="-3.125" cy="-2" r="0.03"  fill="black" />
+<circle cx="-1.72248" cy="0.194957" r="0.015"  fill="black" />
+<circle cx="-2.26136" cy="-1.22727" r="0.015"  fill="black" />
+<circle cx="-1.58814" cy="-1.34976" r="0.015"  fill="black" />
 
 </g>
 </svg>

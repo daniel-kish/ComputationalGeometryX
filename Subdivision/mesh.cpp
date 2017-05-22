@@ -621,6 +621,10 @@ bool chew_2nd_eliminate_worst(Subdivision& dt, double min_ratio)
 		}
 	} while (!e.data().fixed);
 
+	// here c can be on edge or inside a triangle
+	if (e.data().fixed && onEdge(c, e)) // and if 'c' is on a fixed edge, then work with edge
+		found_edge = true;
+
 	if (!found_edge) {
 		auto v = insertSite_wf(dt, c, e);
 		v->circumcenter = true;
@@ -732,7 +736,7 @@ void chew_2nd_refinement(Subdivision& dt, double min_ratio, double min_area, int
 	std::cout << "iters: " << i << '\n';
 }
 
-void off_center_correction(Subdivision& dt, VertexRef v, double min_angle)
+bool off_center_correction(Subdivision& dt, VertexRef v, double min_angle, double q)
 {
 	assert(v->circumcenter);
 	using boost::math::double_constants::pi;
@@ -740,15 +744,170 @@ void off_center_correction(Subdivision& dt, VertexRef v, double min_angle)
 	auto e = v->leaves;
 	auto end = e;
 	do {
-		Point AB = Dest(e)->point - Org(e)->point;
-		Point AC = Dest(e.Onext())->point - Org(e)->point;
+		Point& A = Org(e)->point;
+		Point& B = Dest(e)->point;
+		Point& C = Dest(e.Onext())->point;
+		Point AB = B - A, AC = C - A;
 		double angle = acos(AB*AC / (norm(AB) * norm(AC))) * 180.0 / pi;
 		if (angle < min_angle)
 		{
-			// to do
-			break;
+			Point BA = A - B, BC = C - B;
+			double t_P = (BA*BC) / (BC*BC);
+			Point BP = BC*t_P;
+			Point AP = BP - BA;
+			A = A + AP*q;
+			return false;
 		}
 
 		e = e.Onext();
 	} while (e != end);
+	return true;
+}
+
+double ratio_to_angle(double ratio) 
+{
+	return asin(1.0 / (2.0*ratio)) / boost::math::double_constants::pi * 180.0;
+}
+
+bool chew_2nd_eliminate_worst_correction(Subdivision& dt, double min_ratio, double q)
+{
+	FaceRef face; double ratio;
+
+	std::tie(face, ratio) = find_worst(dt);
+	if (ratio <= min_ratio)
+		return false;
+	auto e = face->bounds;
+	Point c = circumCenter(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+
+	bool found_edge{true};
+	do
+	{
+		if (rightOf(c, e))
+			e = e.Sym();
+		else if (!rightOf(c, e.Onext()))
+			e = e.Onext();
+		else if (!rightOf(c, e.Dprev()))
+			e = e.Dprev();
+		else {
+			found_edge = false;
+			break;
+		}
+	} while (!e.data().fixed);
+
+	// here c can be on edge or inside a triangle
+	if (e.data().fixed && onEdge(c, e)) // and if 'c' is on a fixed edge, then work with edge
+		found_edge = true;
+
+	if (!found_edge) {
+		auto v = insertSite_wf(dt, c, e);
+		v->circumcenter = true;
+		off_center_correction(dt, v, ratio_to_angle(min_ratio), q);
+		return true;
+	}
+
+	// found encroached edge
+	// delete all encroaching vertices
+	bool all_done = false;
+	while (!all_done)
+	{
+		all_done = true;
+		for (auto v = dt.vertices.begin(); v != dt.vertices.end(); ++v)
+		{
+			if (v->circumcenter && encroaches(e, v->point)) {
+				deleteSite_wf(dt, v);
+				all_done = false;
+				break;
+			}
+		}
+	}
+	// split e
+	if (e.data().boundary)
+		splitBoundaryEdge(dt, e);
+	else
+		splitRegularEdge(dt, e);
+
+	return true;
+}
+
+bool chew_2nd_eliminate_worst_correction(Subdivision& dt, double min_ratio,
+	double min_area, double q)
+{
+	FaceRef face; double ratio;
+
+	std::tie(face, ratio) = find_worst(dt);
+	if (ratio <= min_ratio)
+	{
+		double area;
+		std::tie(face, area) = find_biggest(dt);
+		if (area <= min_area)
+			return false;
+	}
+
+	auto e = face->bounds;
+	Point c = circumCenter(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+
+	bool found_edge{true};
+	do
+	{
+		if (rightOf(c, e))
+			e = e.Sym();
+		else if (!rightOf(c, e.Onext()))
+			e = e.Onext();
+		else if (!rightOf(c, e.Dprev()))
+			e = e.Dprev();
+		else {
+			found_edge = false;
+			break;
+		}
+	} while (!e.data().fixed);
+
+	// here c can be on edge or inside a triangle
+	if (e.data().fixed && onEdge(c, e)) // and if 'c' is on a fixed edge, then work with edge
+		found_edge = true;
+
+	if (!found_edge) {
+		auto v = insertSite_wf(dt, c, e);
+		v->circumcenter = true;
+		off_center_correction(dt, v, ratio_to_angle(min_ratio), q);
+		return true;
+	}
+
+	// found encroached edge
+	// delete all encroaching vertices
+	bool all_done = false;
+	while (!all_done)
+	{
+		all_done = true;
+		for (auto v = dt.vertices.begin(); v != dt.vertices.end(); ++v)
+		{
+			if (v->circumcenter && encroaches(e, v->point)) {
+				deleteSite_wf(dt, v);
+				all_done = false;
+				break;
+			}
+		}
+	}
+	// split e
+	if (e.data().boundary)
+		splitBoundaryEdge(dt, e);
+	else
+		splitRegularEdge(dt, e);
+
+	return true;
+}
+
+void chew_2nd_refinement_alper(Subdivision& dt, double q, double min_ratio, int iters)
+{
+	int i = 0;
+	while (i++ < iters && chew_2nd_eliminate_worst_correction(dt, min_ratio, q))
+		;
+	//std::cout << "iters: " << i << '\n';
+}
+
+void chew_2nd_refinement_alper(Subdivision& dt, double q, double min_ratio, double min_area, int iters)
+{
+	int i = 0;
+	while (i++ < iters && chew_2nd_eliminate_worst_correction(dt, min_ratio, min_area, q))
+		;
+	//std::cout << "iters: " << i << '\n';
 }

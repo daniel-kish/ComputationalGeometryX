@@ -6,64 +6,795 @@ xmlns:xlink = "http://www.w3.org/1999/xlink"
 xmlns:ev = "http://www.w3.org/2001/xml-events" 
 height = "5000px"  width = "5000px">
 
-<g transform="translate(600,600) scale(100,-100)"> 
-<polygon points = "-4,2 -4,1 -3,1 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "-2.25,-2 -3,-1 -4,-2 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "-4,-2 -3,-1 -4,-1 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "4,2 1.78571,0.214286 4,-1 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "1.78571,0.214286 3,-2 4,-1 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "1.78571,0.214286 -0.5,-2 3,-2 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "1.78571,0.214286 4,2 0,2 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "-3,1 -2,2 -4,2 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "-3,1 -1.06818,0.0681818 -2,2 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "1.78571,0.214286 -1.06818,0.0681818 -0.5,-2 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "-1.06818,0.0681818 0,2 -2,2 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "-1.06818,0.0681818 1.78571,0.214286 0,2 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "-3,-1 -1.06818,0.0681818 -3,1 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "-1.06818,0.0681818 -2.25,-2 -0.5,-2 " style="fill:blue; opacity:0.25; stroke-width:0" />
-<polygon points = "-2.25,-2 -1.06818,0.0681818 -3,-1 " style="fill:blue; opacity:0.25; stroke-width:0" />
- <line x1="0" y1="2" x2="4" y2="2" style="stroke:black;stroke-width:0.02"/> 
- <line x1="0" y1="2" x2="4" y2="2" style="stroke:black;stroke-width:0.01"/> 
+<g transform="translate(600,450) scale(100,-100)"> 
+<polygon points = "-4,2 -4,1 -3.5,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-4,1 -3,1 -3.5,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2.33698,0.893363 -1.6375,0.85625 -1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.1875,1.5 2,2 1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.1182,-0.314989 2.78086,-0.551221 2.95055,-0.884261 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3,2 -2.625,1.5 -2,2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.98701,-0.0771344 3.1182,-0.314989 3.15799,0.104215 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.1182,-0.314989 2.83158,-0.33158 2.78086,-0.551221 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.75065,-0.250654 2.78154,-0.143454 2.70225,-0.146946 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.23781,-0.262194 2.35209,-0.290294 2.35305,-0.202254 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.57336,-0.463151 2.40122,-0.623649 2.78086,-0.551221 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.67949,-0.35226 2.55545,-0.350114 2.57336,-0.463151 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.32683,0.339867 2.2605,0.239502 2.35305,0.202254 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.29775,0.146946 2.16013,0.173171 2.26224,0.0772542 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.5583,0.368108 2.64899,0.292414 2.68993,0.372768 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.57725,0.237764 2.5583,0.368108 2.5,0.25 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.23781,-0.262194 2.20971,-0.147912 2.13126,-0.187884 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.42275,-0.237764 2.44199,-0.366233 2.5,-0.25 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.15799,0.104215 2.90176,0.0636333 2.98701,-0.0771344 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.90176,0.0636333 3.15799,0.104215 2.93934,0.223853 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.81653,0.161281 2.8181,0.0503818 2.90176,0.0636333 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.1182,-0.314989 2.85226,-0.179485 2.83158,-0.33158 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.73776,-0.0772542 2.85888,-0.0568408 2.75,0 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.85226,-0.179485 3.1182,-0.314989 2.98701,-0.0771344 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.78086,-0.551221 2.67949,-0.35226 2.57336,-0.463151 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.67949,-0.35226 2.78086,-0.551221 2.83158,-0.33158 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.75065,-0.250654 2.64345,-0.281544 2.67949,-0.35226 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.21627,-0.545277 2.01566,-0.518079 2.01221,-0.720494 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.23074,-0.768563 2.55284,-0.974761 2.40122,-0.623649 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.13126,-0.187884 1.88112,-0.359902 2.14094,-0.359058 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1,2 1.75,1.5 2,2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-0.875,1.5 -1,2 -1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.75,1.5 -1,2 -2,2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.32683,0.339867 2.35305,0.202254 2.42275,0.237764 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.80948,0.406692 1.60368,0.545388 1.58922,0.297638 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.58922,0.297638 1.375,-0.178182 1.81641,-0.108271 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.16013,0.173171 2.01757,0.275913 1.99991,0.079207 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.01757,0.275913 1.8212,0.1944 1.99991,0.079207 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.68993,0.372768 2.84044,0.394765 2.76977,0.529452 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.70225,0.146946 2.81653,0.161281 2.76354,0.263537 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.76354,0.263537 2.64695,0.202254 2.70225,0.146946 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.5,0.25 2.44443,0.350877 2.42275,0.237764 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.68993,0.372768 2.61927,0.507455 2.5583,0.368108 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.14094,-0.359058 2.23781,-0.262194 2.13126,-0.187884 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.23781,-0.262194 2.14094,-0.359058 2.31212,-0.368743 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.23781,-0.262194 2.35305,-0.202254 2.29775,-0.146946 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.99991,0.079207 1.98093,-0.120015 2.13377,-0.0580056 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.25,3.06162e-17 2.14972,0.0554783 2.13377,-0.0580056 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.13377,-0.0580056 2.26224,-0.0772542 2.25,3.06162e-17 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.57336,-0.463151 2.37939,-0.488254 2.40122,-0.623649 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3,1 -2.625,1.5 -3.5,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2,2 -2.625,1.5 -1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.0625,1.5 3,2 2.625,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.98701,-0.0771344 2.85888,-0.0568408 2.85226,-0.179485 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.85888,-0.0568408 2.98701,-0.0771344 2.90176,0.0636333 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.31873,0.705542 2.65879,0.76288 2.53688,0.990784 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.18995,0.31005 2.22409,0.48243 2.05171,0.448293 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.42291,0.486723 2.44443,0.350877 2.5583,0.368108 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.44443,0.350877 2.32683,0.339867 2.42275,0.237764 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.44443,0.350877 2.42291,0.486723 2.32683,0.339867 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.44443,0.350877 2.5,0.25 2.5583,0.368108 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.93934,0.223853 2.81653,0.161281 2.90176,0.0636333 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.81653,0.161281 2.93934,0.223853 2.76354,0.263537 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.81653,0.161281 2.70225,0.146946 2.73776,0.0772542 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.16013,0.173171 2.14972,0.0554783 2.26224,0.0772542 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.99991,0.079207 2.14972,0.0554783 2.16013,0.173171 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.14972,0.0554783 1.99991,0.079207 2.13377,-0.0580056 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.14972,0.0554783 2.25,3.06162e-17 2.26224,0.0772542 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.5,-0.25 2.55545,-0.350114 2.57725,-0.237764 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.44199,-0.366233 2.55545,-0.350114 2.5,-0.25 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.55545,-0.350114 2.44199,-0.366233 2.57336,-0.463151 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.85226,-0.179485 2.75065,-0.250654 2.83158,-0.33158 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.75065,-0.250654 2.70225,-0.146946 2.64695,-0.202254 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.75065,-0.250654 2.67949,-0.35226 2.83158,-0.33158 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3.5,1.5 -3,2 -4,2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3,2 -3.5,1.5 -2.625,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.625,1.5 3,2 2,2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3,2 3.5,1.5 4,2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3,-1 -2.38677,-0.206101 -3,0 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.16013,0.173171 2.2605,0.239502 2.18995,0.31005 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.2605,0.239502 2.29775,0.146946 2.35305,0.202254 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.2605,0.239502 2.16013,0.173171 2.29775,0.146946 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.2605,0.239502 2.32683,0.339867 2.18995,0.31005 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.98093,-0.120015 2.13126,-0.187884 2.13377,-0.0580056 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.98093,-0.120015 1.99991,0.079207 1.81641,-0.108271 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.81641,-0.108271 1.61944,-0.293068 1.88112,-0.359902 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.88112,-0.359902 1.98093,-0.120015 1.81641,-0.108271 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.88112,-0.359902 2.13126,-0.187884 1.98093,-0.120015 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.21627,-0.545277 2.23074,-0.768563 2.40122,-0.623649 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "4,-0.25 3.52196,-0.705307 4,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.05171,0.448293 2.081,0.752673 1.77662,0.72338 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.22409,0.48243 2.32683,0.339867 2.42291,0.486723 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.22409,0.48243 2.18995,0.31005 2.32683,0.339867 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.31873,0.705542 2.25037,0.98386 2.081,0.752673 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.22409,0.48243 2.31873,0.705542 2.081,0.752673 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.081,0.752673 2.05171,0.448293 2.22409,0.48243 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.89242,1.11612 1.77662,0.72338 2.081,0.752673 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.18995,0.31005 2.01757,0.275913 2.16013,0.173171 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.01757,0.275913 2.18995,0.31005 2.05171,0.448293 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.77662,0.72338 1.80948,0.406692 2.05171,0.448293 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.80948,0.406692 2.01757,0.275913 2.05171,0.448293 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.31873,0.705542 2.22409,0.48243 2.42291,0.486723 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.25037,0.98386 1.89242,1.11612 2.081,0.752673 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.25037,0.98386 2.31873,0.705542 2.53688,0.990784 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.21627,-0.545277 2.31212,-0.368743 2.14094,-0.359058 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.61927,0.507455 2.42291,0.486723 2.5583,0.368108 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.61927,0.507455 2.68993,0.372768 2.76977,0.529452 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.65879,0.76288 2.61927,0.507455 2.76977,0.529452 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.42291,0.486723 2.65879,0.76288 2.31873,0.705542 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.65879,0.76288 2.42291,0.486723 2.61927,0.507455 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.76977,0.529452 2.99859,0.78133 2.65879,0.76288 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.65879,0.76288 2.81665,0.993888 2.53688,0.990784 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.93934,0.223853 2.84044,0.394765 2.76354,0.263537 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.76977,0.529452 2.9901,0.55917 2.99859,0.78133 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.84044,0.394765 2.68993,0.372768 2.76354,0.263537 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.9901,0.55917 3.30034,0.624004 2.99859,0.78133 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.84044,0.394765 3.15719,0.362375 2.9901,0.55917 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.9901,0.55917 2.76977,0.529452 2.84044,0.394765 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.64695,0.202254 2.64899,0.292414 2.57725,0.237764 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.76354,0.263537 2.64899,0.292414 2.64695,0.202254 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.64899,0.292414 2.76354,0.263537 2.68993,0.372768 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.64899,0.292414 2.5583,0.368108 2.57725,0.237764 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2,2 2.1875,1.5 2.625,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.89242,1.11612 2.1875,1.5 1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.89242,1.11612 2.38698,1.2624 2.1875,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0.875,1.5 1.43245,1.16383 1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1,2 0.875,1.5 1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.43245,1.16383 1.89242,1.11612 1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.43245,1.16383 0.875,1.5 1,1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.26224,-0.0772542 2.20971,-0.147912 2.29775,-0.146946 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.13377,-0.0580056 2.20971,-0.147912 2.26224,-0.0772542 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.20971,-0.147912 2.13377,-0.0580056 2.13126,-0.187884 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.20971,-0.147912 2.23781,-0.262194 2.29775,-0.146946 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.44199,-0.366233 2.35209,-0.290294 2.31212,-0.368743 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.35209,-0.290294 2.42275,-0.237764 2.35305,-0.202254 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.35209,-0.290294 2.44199,-0.366233 2.42275,-0.237764 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.35209,-0.290294 2.23781,-0.262194 2.31212,-0.368743 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1,1 -0.875,1.5 -1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.5,1.5 4,1.25 4,2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "4,1.25 3.30034,0.624004 4,0.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.01221,-0.720494 2.05964,-1.02561 2.23074,-0.768563 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.23074,-0.768563 2.21627,-0.545277 2.01221,-0.720494 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.78086,-0.551221 2.55284,-0.974761 2.95055,-0.884261 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.55284,-0.974761 2.78086,-0.551221 2.40122,-0.623649 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.05964,-1.02561 2.55284,-0.974761 2.23074,-0.768563 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.05964,-1.02561 2.01221,-0.720494 1.75175,-1.00223 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.86666,-1.52794 2.86941,-1.44682 2.55284,-0.974761 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1,-1 1.86666,-1.52794 1.75175,-1.00223 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.86666,-1.52794 1.25,-2 2.125,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.86666,-1.52794 1,-1 1.25,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.86666,-1.52794 2.05964,-1.02561 1.75175,-1.00223 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.86666,-1.52794 2.55284,-0.974761 2.05964,-1.02561 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.5,-1.5 2.86941,-1.44682 3,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.86941,-1.44682 2.95055,-0.884261 2.55284,-0.974761 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.86941,-1.44682 3.5,-1.5 2.95055,-0.884261 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.86941,-1.44682 2.125,-2 3,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.86941,-1.44682 1.86666,-1.52794 2.125,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.75,0 2.8181,0.0503818 2.73776,0.0772542 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.85888,-0.0568408 2.8181,0.0503818 2.75,0 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.8181,0.0503818 2.85888,-0.0568408 2.90176,0.0636333 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.8181,0.0503818 2.81653,0.161281 2.73776,0.0772542 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.81665,0.993888 2.65879,0.76288 2.99859,0.78133 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.38698,1.2624 2.625,1.5 2.1875,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.38698,1.2624 2.25037,0.98386 2.53688,0.990784 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.38698,1.2624 1.89242,1.11612 2.25037,0.98386 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.58922,0.297638 1.8212,0.1944 1.80948,0.406692 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.81641,-0.108271 1.8212,0.1944 1.58922,0.297638 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.8212,0.1944 1.81641,-0.108271 1.99991,0.079207 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.8212,0.1944 2.01757,0.275913 1.80948,0.406692 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3,1 -2.33698,0.893363 -2.625,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2.33698,0.893363 -1.75,1.5 -2.625,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2.33698,0.893363 -3,0 -2,0.3125 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3,0 -2.33698,0.893363 -3,1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.31212,-0.368743 2.37939,-0.488254 2.44199,-0.366233 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.21627,-0.545277 2.37939,-0.488254 2.31212,-0.368743 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.37939,-0.488254 2.21627,-0.545277 2.40122,-0.623649 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.37939,-0.488254 2.57336,-0.463151 2.44199,-0.366233 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.75175,-1.00223 1.30573,-0.643041 1,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.61944,-0.293068 1.81641,-0.108271 1.375,-0.178182 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.375,-0.178182 1.30573,-0.643041 1.61944,-0.293068 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.30573,-0.643041 1.67001,-0.640766 1.61944,-0.293068 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.75175,-1.00223 1.67001,-0.640766 1.30573,-0.643041 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.67001,-0.640766 1.75175,-1.00223 2.01221,-0.720494 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.67001,-0.640766 1.88112,-0.359902 1.61944,-0.293068 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.375,-0.178182 0.75,-0.5 1.30573,-0.643041 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.30573,-0.643041 0.75,-0.5 1,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0.75,-0.5 1.375,-0.178182 0.5,0 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.1182,-0.314989 3.54892,-0.144379 3.15799,0.104215 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.15719,0.362375 3.59255,0.294138 3.30034,0.624004 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.95055,-0.884261 3.52196,-0.705307 3.1182,-0.314989 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.5,-1.5 3.52196,-0.705307 2.95055,-0.884261 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.52196,-0.705307 3.5,-1.5 4,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.52196,-0.705307 3.54892,-0.144379 3.1182,-0.314989 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.52196,-0.705307 4,-0.25 3.54892,-0.144379 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.15719,0.362375 3.30034,0.624004 2.9901,0.55917 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.15719,0.362375 2.93934,0.223853 3.15799,0.104215 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.15719,0.362375 2.84044,0.394765 2.93934,0.223853 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "4,-0.25 3.59255,0.294138 3.54892,-0.144379 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.59255,0.294138 4,0.5 3.30034,0.624004 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.59255,0.294138 4,-0.25 4,0.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.15799,0.104215 3.59255,0.294138 3.15719,0.362375 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.59255,0.294138 3.15799,0.104215 3.54892,-0.144379 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.85888,-0.0568408 2.78154,-0.143454 2.85226,-0.179485 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.78154,-0.143454 2.73776,-0.0772542 2.70225,-0.146946 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.78154,-0.143454 2.85888,-0.0568408 2.73776,-0.0772542 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.78154,-0.143454 2.75065,-0.250654 2.85226,-0.179485 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.57725,-0.237764 2.64345,-0.281544 2.64695,-0.202254 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.55545,-0.350114 2.64345,-0.281544 2.57725,-0.237764 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.64345,-0.281544 2.55545,-0.350114 2.67949,-0.35226 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.64345,-0.281544 2.75065,-0.250654 2.64695,-0.202254 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.77662,0.72338 1.4756,0.842849 1.60368,0.545388 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.60368,0.545388 1.80948,0.406692 1.77662,0.72338 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0.5,0 1.18093,0.445763 0.75,0.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.18093,0.445763 1.58922,0.297638 1.60368,0.545388 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.18093,0.445763 1.375,-0.178182 1.58922,0.297638 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.18093,0.445763 0.5,0 1.375,-0.178182 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.18093,0.445763 1,1 0.75,0.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1,1 1.4756,0.842849 1.43245,1.16383 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.18093,0.445763 1.4756,0.842849 1,1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.4756,0.842849 1.18093,0.445763 1.60368,0.545388 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.89242,1.11612 1.4756,0.842849 1.77662,0.72338 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.4756,0.842849 1.89242,1.11612 1.43245,1.16383 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.88112,-0.359902 2.01566,-0.518079 2.14094,-0.359058 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1.67001,-0.640766 2.01566,-0.518079 1.88112,-0.359902 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.01566,-0.518079 1.67001,-0.640766 2.01221,-0.720494 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.01566,-0.518079 2.21627,-0.545277 2.14094,-0.359058 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0,1.5 0.5,1 0.875,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0.875,1.5 0.5,1 1,1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0.5,1 0,1.5 0,1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0,1.5 -0.5,2 -0.875,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-0.875,1.5 -0.5,2 -1,2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-0.5,2 0,1.5 0,2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0.5,2 0.875,1.5 1,2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0,1.5 0.5,2 0,2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0.5,2 0,1.5 0.875,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-0.5,1 -0.875,1.5 -1,1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0,1.5 -0.5,1 0,1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-0.5,1 0,1.5 -0.875,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.625,1.5 2.53688,0.990784 2.81665,0.993888 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.53688,0.990784 2.625,1.5 2.38698,1.2624 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3,2 3.0625,1.5 3.5,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.81665,0.993888 3.0625,1.5 2.625,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "2.81665,0.993888 3.18701,1.12675 3.0625,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.30034,0.624004 3.18701,1.12675 2.99859,0.78133 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.18701,1.12675 3.5,1.5 3.0625,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "4,1.25 3.18701,1.12675 3.30034,0.624004 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.18701,1.12675 4,1.25 3.5,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "3.18701,1.12675 2.81665,0.993888 2.99859,0.78133 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-0.5,-2 0,-1 -1,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1,-1 -1.61323,-0.206101 -2,-0.724702 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2.37589,-1.31317 -1.66646,-1.35204 -2,-0.724702 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1,-1 -1.375,-2 -0.5,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0.375,-2 0,-1 -0.5,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "1,-1 0.375,-2 1.25,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "0.375,-2 1,-1 0,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-4,-1 -3.125,-2 -3,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3.125,-2 -4,-1 -4,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3,-1 -2.37589,-1.31317 -2,-0.724702 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-3.125,-2 -2.37589,-1.31317 -3,-1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2.37589,-1.31317 -3.125,-2 -2.25,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1,-1 -1.66646,-1.35204 -1.375,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.66646,-1.35204 -1,-1 -2,-0.724702 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2.25,-2 -1.66646,-1.35204 -2.37589,-1.31317 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.66646,-1.35204 -2.25,-2 -1.375,-2 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2.38677,-0.206101 -2,0.3125 -3,0 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2.38677,-0.206101 -3,-1 -2,-0.724702 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2,0.3125 -1.61323,-0.206101 -1,0 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-2.38677,-0.206101 -1.61323,-0.206101 -2,0.3125 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.61323,-0.206101 -2.38677,-0.206101 -2,-0.724702 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.61323,-0.206101 -1,-1 -1,0 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1,0 -1.6375,0.85625 -2,0.3125 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.6375,0.85625 -1,1 -1.75,1.5 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.6375,0.85625 -1,0 -1,1 " style="fill:white; opacity:0.25; stroke-width:0" />
+<polygon points = "-1.6375,0.85625 -2.33698,0.893363 -2,0.3125 " style="fill:white; opacity:0.25; stroke-width:0" />
+ <line x1="3" y1="2" x2="4" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="3" y1="2" x2="4" y2="2" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-4" y1="2" x2="-4" y2="1" style="stroke:black;stroke-width:0.02"/> 
  <line x1="-4" y1="2" x2="-4" y2="1" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-4" y1="2" x2="-3" y2="1" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-4" y1="1" x2="-3" y2="1" style="stroke:black;stroke-width:0.02"/> 
  <line x1="-4" y1="1" x2="-3" y2="1" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-2.25" y1="-2" x2="-4" y2="-2" style="stroke:black;stroke-width:0.02"/> 
- <line x1="-2.25" y1="-2" x2="-4" y2="-2" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-3" y1="1" x2="-3" y2="-1" style="stroke:black;stroke-width:0.02"/> 
- <line x1="-3" y1="1" x2="-3" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3.125" y1="-2" x2="-4" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-3.125" y1="-2" x2="-4" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="1" x2="-3" y2="0" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-3" y1="1" x2="-3" y2="0" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-4" y1="-2" x2="-4" y2="-1" style="stroke:black;stroke-width:0.02"/> 
  <line x1="-4" y1="-2" x2="-4" y2="-1" style="stroke:black;stroke-width:0.01"/> 
  <line x1="-3" y1="-1" x2="-4" y2="-1" style="stroke:black;stroke-width:0.02"/> 
  <line x1="-3" y1="-1" x2="-4" y2="-1" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-3" y1="-1" x2="-4" y2="-2" style="stroke:black;stroke-width:0.01"/> 
- <line x1="3" y1="-2" x2="4" y2="-1" style="stroke:black;stroke-width:0.02"/> 
- <line x1="3" y1="-2" x2="4" y2="-1" style="stroke:black;stroke-width:0.01"/> 
- <line x1="4" y1="-1" x2="4" y2="2" style="stroke:black;stroke-width:0.02"/> 
- <line x1="4" y1="-1" x2="4" y2="2" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-2" y1="2" x2="0" y2="2" style="stroke:black;stroke-width:0.02"/> 
- <line x1="-2" y1="2" x2="0" y2="2" style="stroke:black;stroke-width:0.01"/> 
- <line x1="3" y1="-2" x2="-0.5" y2="-2" style="stroke:black;stroke-width:0.02"/> 
- <line x1="3" y1="-2" x2="-0.5" y2="-2" style="stroke:black;stroke-width:0.01"/> 
- <line x1="4" y1="-1" x2="1.78571" y2="0.214286" style="stroke:black;stroke-width:0.01"/> 
- <line x1="0" y1="2" x2="1.78571" y2="0.214286" style="stroke:black;stroke-width:0.01"/> 
- <line x1="3" y1="-2" x2="1.78571" y2="0.214286" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-0.5" y1="-2" x2="1.78571" y2="0.214286" style="stroke:black;stroke-width:0.01"/> 
- <line x1="4" y1="2" x2="1.78571" y2="0.214286" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-4" y1="2" x2="-2" y2="2" style="stroke:black;stroke-width:0.02"/> 
- <line x1="-4" y1="2" x2="-2" y2="2" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-2" y1="2" x2="-3" y2="1" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-2" y1="2" x2="-1.06818" y2="0.0681818" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-0.5" y1="-2" x2="-1.06818" y2="0.0681818" style="stroke:black;stroke-width:0.01"/> 
- <line x1="0" y1="2" x2="-1.06818" y2="0.0681818" style="stroke:black;stroke-width:0.01"/> 
- <line x1="1.78571" y1="0.214286" x2="-1.06818" y2="0.0681818" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-3" y1="1" x2="-1.06818" y2="0.0681818" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-3" y1="-1" x2="-1.06818" y2="0.0681818" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-0.5" y1="-2" x2="-2.25" y2="-2" style="stroke:black;stroke-width:0.02"/> 
- <line x1="-0.5" y1="-2" x2="-2.25" y2="-2" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-2.25" y1="-2" x2="-3" y2="-1" style="stroke:black;stroke-width:0.01"/> 
- <line x1="-1.06818" y1="0.0681818" x2="-2.25" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3" y1="-2" x2="3.5" y2="-1.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="3" y1="-2" x2="3.5" y2="-1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="-1" x2="4" y2="-0.25" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="4" y1="-1" x2="4" y2="-0.25" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="-1" x2="1" y2="-1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0" y1="-1" x2="1" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="-1" x2="-1" y2="0" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-1" y1="-1" x2="-1" y2="0" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.75" y1="-0.5" x2="0.5" y2="0" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0.75" y1="-0.5" x2="0.5" y2="0" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.75" y1="0.5" x2="1" y2="1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0.75" y1="0.5" x2="1" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-0.5" y1="1" x2="-1" y2="1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-0.5" y1="1" x2="-1" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.75" y1="0" x2="2.73776" y2="0.0772542" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.75" y1="0" x2="2.73776" y2="0.0772542" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.73776" y1="0.0772542" x2="2.70225" y2="0.146946" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.73776" y1="0.0772542" x2="2.70225" y2="0.146946" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.70225" y1="0.146946" x2="2.64695" y2="0.202254" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.70225" y1="0.146946" x2="2.64695" y2="0.202254" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.64695" y1="0.202254" x2="2.57725" y2="0.237764" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.64695" y1="0.202254" x2="2.57725" y2="0.237764" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.57725" y1="0.237764" x2="2.5" y2="0.25" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.57725" y1="0.237764" x2="2.5" y2="0.25" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.5" y1="0.25" x2="2.42275" y2="0.237764" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.5" y1="0.25" x2="2.42275" y2="0.237764" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.42275" y1="0.237764" x2="2.35305" y2="0.202254" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.42275" y1="0.237764" x2="2.35305" y2="0.202254" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.35305" y1="0.202254" x2="2.29775" y2="0.146946" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.35305" y1="0.202254" x2="2.29775" y2="0.146946" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.29775" y1="0.146946" x2="2.26224" y2="0.0772542" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.29775" y1="0.146946" x2="2.26224" y2="0.0772542" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.26224" y1="0.0772542" x2="2.25" y2="3.06162e-17" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.26224" y1="0.0772542" x2="2.25" y2="3.06162e-17" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.25" y1="3.06162e-17" x2="2.26224" y2="-0.0772542" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.25" y1="3.06162e-17" x2="2.26224" y2="-0.0772542" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.26224" y1="-0.0772542" x2="2.29775" y2="-0.146946" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.26224" y1="-0.0772542" x2="2.29775" y2="-0.146946" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.29775" y1="-0.146946" x2="2.35305" y2="-0.202254" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.29775" y1="-0.146946" x2="2.35305" y2="-0.202254" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.35305" y1="-0.202254" x2="2.42275" y2="-0.237764" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.35305" y1="-0.202254" x2="2.42275" y2="-0.237764" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.42275" y1="-0.237764" x2="2.5" y2="-0.25" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.42275" y1="-0.237764" x2="2.5" y2="-0.25" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.5" y1="-0.25" x2="2.57725" y2="-0.237764" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.5" y1="-0.25" x2="2.57725" y2="-0.237764" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.57725" y1="-0.237764" x2="2.64695" y2="-0.202254" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.57725" y1="-0.237764" x2="2.64695" y2="-0.202254" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.64695" y1="-0.202254" x2="2.70225" y2="-0.146946" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.64695" y1="-0.202254" x2="2.70225" y2="-0.146946" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.75" y1="0" x2="2.73776" y2="-0.0772542" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.75" y1="0" x2="2.73776" y2="-0.0772542" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.70225" y1="-0.146946" x2="2.73776" y2="-0.0772542" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.70225" y1="-0.146946" x2="2.73776" y2="-0.0772542" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="1" x2="-3.5" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-4" y1="2" x2="-3.5" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-4" y1="1" x2="-3.5" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="2" x2="3.5" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.1875" y1="1.5" x2="2.625" y2="1.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.1875" y1="1.5" x2="2.625" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-0.875" y1="1.5" x2="0" y2="1.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-0.875" y1="1.5" x2="0" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.875" y1="1.5" x2="1.75" y2="1.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0.875" y1="1.5" x2="1.75" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="1.25" x2="4" y2="0.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="4" y1="1.25" x2="4" y2="0.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-0.5" y1="2" x2="0" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-0.5" y1="2" x2="0" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="2" x2="0" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.95055" y1="-0.884261" x2="3.1182" y2="-0.314989" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.1182" y1="-0.314989" x2="3.15799" y2="0.104215" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.95055" y1="-0.884261" x2="2.78086" y2="-0.551221" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.1182" y1="-0.314989" x2="2.78086" y2="-0.551221" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="2" x2="-2" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-3" y1="2" x2="-2" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.15799" y1="0.104215" x2="2.93934" y2="0.223853" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.15799" y1="0.104215" x2="2.98701" y2="-0.0771344" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.1182" y1="-0.314989" x2="2.98701" y2="-0.0771344" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.78086" y1="-0.551221" x2="2.83158" y2="-0.33158" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.1182" y1="-0.314989" x2="2.83158" y2="-0.33158" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3.5" y1="1.5" x2="-2.625" y2="1.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-3.5" y1="1.5" x2="-2.625" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1.75" y1="1.5" x2="-2" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1.75" y1="1.5" x2="-1" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1" y1="2" x2="2" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="1" y1="2" x2="2" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2" y1="2" x2="1.75" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.77662" y1="0.72338" x2="2.05171" y2="0.448293" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.375" y1="-2" x2="-0.5" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0.375" y1="-2" x2="-0.5" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-0.5" y1="-2" x2="-1" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.5" y1="0" x2="1.375" y2="-0.178182" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.375" y1="-0.178182" x2="1.81641" y2="-0.108271" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.78086" y1="-0.551221" x2="2.40122" y2="-0.623649" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.81641" y1="-0.108271" x2="1.99991" y2="0.079207" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.78086" y1="-0.551221" x2="2.57336" y2="-0.463151" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.40122" y1="-0.623649" x2="2.57336" y2="-0.463151" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.05171" y1="0.448293" x2="2.18995" y2="0.31005" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.76977" y1="0.529452" x2="2.68993" y2="0.372768" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.14094" y1="-0.359058" x2="2.13126" y2="-0.187884" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.14094" y1="-0.359058" x2="2.31212" y2="-0.368743" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="0.5" x2="3.30034" y2="0.624004" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.93934" y1="0.223853" x2="2.90176" y2="0.0636333" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.98701" y1="-0.0771344" x2="2.90176" y2="0.0636333" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.15799" y1="0.104215" x2="2.90176" y2="0.0636333" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.83158" y1="-0.33158" x2="2.85226" y2="-0.179485" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.98701" y1="-0.0771344" x2="2.85226" y2="-0.179485" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.1182" y1="-0.314989" x2="2.85226" y2="-0.179485" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.83158" y1="-0.33158" x2="2.67949" y2="-0.35226" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.57336" y1="-0.463151" x2="2.67949" y2="-0.35226" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.78086" y1="-0.551221" x2="2.67949" y2="-0.35226" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.125" y1="-2" x2="1.25" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.125" y1="-2" x2="1.25" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.25" y1="-2" x2="1" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1" y1="-1" x2="1.75175" y2="-1.00223" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.5" y1="2" x2="1" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0.5" y1="2" x2="1" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1" y1="2" x2="1.75" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="2" x2="-1" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-2" y1="2" x2="-1" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="2" x2="-1.75" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.26224" y1="0.0772542" x2="2.16013" y2="0.173171" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.18995" y1="0.31005" x2="2.16013" y2="0.173171" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.99991" y1="0.079207" x2="2.16013" y2="0.173171" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.29775" y1="0.146946" x2="2.16013" y2="0.173171" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.18995" y1="0.31005" x2="2.32683" y2="0.339867" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.42275" y1="0.237764" x2="2.32683" y2="0.339867" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.42291" y1="0.486723" x2="2.32683" y2="0.339867" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.35305" y1="0.202254" x2="2.32683" y2="0.339867" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.81641" y1="-0.108271" x2="1.58922" y2="0.297638" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.375" y1="-0.178182" x2="1.58922" y2="0.297638" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.68993" y1="0.372768" x2="2.76354" y2="0.263537" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.70225" y1="0.146946" x2="2.76354" y2="0.263537" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.93934" y1="0.223853" x2="2.76354" y2="0.263537" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.64695" y1="0.202254" x2="2.76354" y2="0.263537" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.5" y1="0.25" x2="2.5583" y2="0.368108" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.68993" y1="0.372768" x2="2.5583" y2="0.368108" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.42291" y1="0.486723" x2="2.5583" y2="0.368108" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.57725" y1="0.237764" x2="2.5583" y2="0.368108" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.31212" y1="-0.368743" x2="2.23781" y2="-0.262194" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.29775" y1="-0.146946" x2="2.23781" y2="-0.262194" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.13126" y1="-0.187884" x2="2.23781" y2="-0.262194" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.14094" y1="-0.359058" x2="2.23781" y2="-0.262194" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.35305" y1="-0.202254" x2="2.23781" y2="-0.262194" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.13126" y1="-0.187884" x2="2.13377" y2="-0.0580056" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.25" y1="3.06162e-17" x2="2.13377" y2="-0.0580056" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.99991" y1="0.079207" x2="2.13377" y2="-0.0580056" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.26224" y1="-0.0772542" x2="2.13377" y2="-0.0580056" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.5" y1="-0.25" x2="2.44199" y2="-0.366233" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.31212" y1="-0.368743" x2="2.44199" y2="-0.366233" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.57336" y1="-0.463151" x2="2.44199" y2="-0.366233" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.42275" y1="-0.237764" x2="2.44199" y2="-0.366233" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1.75" y1="1.5" x2="-2.625" y2="1.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-1.75" y1="1.5" x2="-2.625" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.625" y1="1.5" x2="-3" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.625" y1="1.5" x2="-2" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.5" y1="1.5" x2="3.0625" y2="1.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="3.5" y1="1.5" x2="3.0625" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.625" y1="1.5" x2="2" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.75" y1="0" x2="2.85888" y2="-0.0568408" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.85226" y1="-0.179485" x2="2.85888" y2="-0.0568408" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.90176" y1="0.0636333" x2="2.85888" y2="-0.0568408" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.98701" y1="-0.0771344" x2="2.85888" y2="-0.0568408" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.73776" y1="-0.0772542" x2="2.85888" y2="-0.0568408" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.42275" y1="0.237764" x2="2.44443" y2="0.350877" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.5583" y1="0.368108" x2="2.44443" y2="0.350877" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.32683" y1="0.339867" x2="2.44443" y2="0.350877" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.42291" y1="0.486723" x2="2.44443" y2="0.350877" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.5" y1="0.25" x2="2.44443" y2="0.350877" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.76354" y1="0.263537" x2="2.81653" y2="0.161281" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.73776" y1="0.0772542" x2="2.81653" y2="0.161281" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.90176" y1="0.0636333" x2="2.81653" y2="0.161281" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.93934" y1="0.223853" x2="2.81653" y2="0.161281" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.70225" y1="0.146946" x2="2.81653" y2="0.161281" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.13377" y1="-0.0580056" x2="2.14972" y2="0.0554783" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.26224" y1="0.0772542" x2="2.14972" y2="0.0554783" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.16013" y1="0.173171" x2="2.14972" y2="0.0554783" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.99991" y1="0.079207" x2="2.14972" y2="0.0554783" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.25" y1="3.06162e-17" x2="2.14972" y2="0.0554783" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.57336" y1="-0.463151" x2="2.55545" y2="-0.350114" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.57725" y1="-0.237764" x2="2.55545" y2="-0.350114" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.5" y1="-0.25" x2="2.55545" y2="-0.350114" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.44199" y1="-0.366233" x2="2.55545" y2="-0.350114" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.67949" y1="-0.35226" x2="2.55545" y2="-0.350114" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.64695" y1="-0.202254" x2="2.75065" y2="-0.250654" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.83158" y1="-0.33158" x2="2.75065" y2="-0.250654" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.70225" y1="-0.146946" x2="2.75065" y2="-0.250654" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.85226" y1="-0.179485" x2="2.75065" y2="-0.250654" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.67949" y1="-0.35226" x2="2.75065" y2="-0.250654" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-4" y1="2" x2="-3" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-4" y1="2" x2="-3" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="2" x2="-2.625" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3.5" y1="1.5" x2="-3" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2" y1="2" x2="3" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2" y1="2" x2="3" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3" y1="2" x2="2.625" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.5" y1="1.5" x2="3" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1.375" y1="-2" x2="-2.25" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-1.375" y1="-2" x2="-2.25" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.35305" y1="0.202254" x2="2.2605" y2="0.239502" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.18995" y1="0.31005" x2="2.2605" y2="0.239502" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.29775" y1="0.146946" x2="2.2605" y2="0.239502" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.16013" y1="0.173171" x2="2.2605" y2="0.239502" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.32683" y1="0.339867" x2="2.2605" y2="0.239502" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.13377" y1="-0.0580056" x2="1.98093" y2="-0.120015" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.81641" y1="-0.108271" x2="1.98093" y2="-0.120015" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.13126" y1="-0.187884" x2="1.98093" y2="-0.120015" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.99991" y1="0.079207" x2="1.98093" y2="-0.120015" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.14094" y1="-0.359058" x2="1.88112" y2="-0.359902" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.81641" y1="-0.108271" x2="1.88112" y2="-0.359902" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.98093" y1="-0.120015" x2="1.88112" y2="-0.359902" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.13126" y1="-0.187884" x2="1.88112" y2="-0.359902" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.75175" y1="-1.00223" x2="2.01221" y2="-0.720494" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="-1" x2="3.5" y2="-1.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="4" y1="-1" x2="3.5" y2="-1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.95055" y1="-0.884261" x2="3.5" y2="-1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.05171" y1="0.448293" x2="2.22409" y2="0.48243" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.42291" y1="0.486723" x2="2.22409" y2="0.48243" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.32683" y1="0.339867" x2="2.22409" y2="0.48243" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.18995" y1="0.31005" x2="2.22409" y2="0.48243" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.77662" y1="0.72338" x2="2.081" y2="0.752673" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.22409" y1="0.48243" x2="2.081" y2="0.752673" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.05171" y1="0.448293" x2="2.081" y2="0.752673" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.081" y1="0.752673" x2="1.89242" y2="1.11612" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.75" y1="1.5" x2="1.89242" y2="1.11612" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.77662" y1="0.72338" x2="1.89242" y2="1.11612" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.99991" y1="0.079207" x2="2.01757" y2="0.275913" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.05171" y1="0.448293" x2="2.01757" y2="0.275913" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.16013" y1="0.173171" x2="2.01757" y2="0.275913" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.18995" y1="0.31005" x2="2.01757" y2="0.275913" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.58922" y1="0.297638" x2="1.80948" y2="0.406692" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.05171" y1="0.448293" x2="1.80948" y2="0.406692" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.77662" y1="0.72338" x2="1.80948" y2="0.406692" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.01757" y1="0.275913" x2="1.80948" y2="0.406692" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.081" y1="0.752673" x2="2.31873" y2="0.705542" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.42291" y1="0.486723" x2="2.31873" y2="0.705542" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.53688" y1="0.990784" x2="2.31873" y2="0.705542" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.22409" y1="0.48243" x2="2.31873" y2="0.705542" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.081" y1="0.752673" x2="2.25037" y2="0.98386" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.53688" y1="0.990784" x2="2.25037" y2="0.98386" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.89242" y1="1.11612" x2="2.25037" y2="0.98386" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.31873" y1="0.705542" x2="2.25037" y2="0.98386" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.40122" y1="-0.623649" x2="2.21627" y2="-0.545277" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.14094" y1="-0.359058" x2="2.21627" y2="-0.545277" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.01221" y1="-0.720494" x2="2.21627" y2="-0.545277" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.31212" y1="-0.368743" x2="2.21627" y2="-0.545277" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.5583" y1="0.368108" x2="2.61927" y2="0.507455" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.76977" y1="0.529452" x2="2.61927" y2="0.507455" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.42291" y1="0.486723" x2="2.61927" y2="0.507455" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.68993" y1="0.372768" x2="2.61927" y2="0.507455" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.53688" y1="0.990784" x2="2.65879" y2="0.76288" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.76977" y1="0.529452" x2="2.65879" y2="0.76288" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.61927" y1="0.507455" x2="2.65879" y2="0.76288" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.31873" y1="0.705542" x2="2.65879" y2="0.76288" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.42291" y1="0.486723" x2="2.65879" y2="0.76288" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.65879" y1="0.76288" x2="2.99859" y2="0.78133" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.30034" y1="0.624004" x2="2.99859" y2="0.78133" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.76977" y1="0.529452" x2="2.99859" y2="0.78133" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.76977" y1="0.529452" x2="2.84044" y2="0.394765" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.76354" y1="0.263537" x2="2.84044" y2="0.394765" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.93934" y1="0.223853" x2="2.84044" y2="0.394765" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.68993" y1="0.372768" x2="2.84044" y2="0.394765" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.99859" y1="0.78133" x2="2.9901" y2="0.55917" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.84044" y1="0.394765" x2="2.9901" y2="0.55917" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.30034" y1="0.624004" x2="2.9901" y2="0.55917" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.76977" y1="0.529452" x2="2.9901" y2="0.55917" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.68993" y1="0.372768" x2="2.64899" y2="0.292414" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.57725" y1="0.237764" x2="2.64899" y2="0.292414" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.64695" y1="0.202254" x2="2.64899" y2="0.292414" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.76354" y1="0.263537" x2="2.64899" y2="0.292414" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.5583" y1="0.368108" x2="2.64899" y2="0.292414" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.75" y1="1.5" x2="2.1875" y2="1.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="1.75" y1="1.5" x2="2.1875" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.1875" y1="1.5" x2="2" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.1875" y1="1.5" x2="1.89242" y2="1.11612" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="1.5" x2="0.875" y2="1.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0" y1="1.5" x2="0.875" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.875" y1="1.5" x2="1" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.875" y1="1.5" x2="1" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.75" y1="1.5" x2="1.43245" y2="1.16383" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1" y1="1" x2="1.43245" y2="1.16383" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.89242" y1="1.11612" x2="1.43245" y2="1.16383" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.875" y1="1.5" x2="1.43245" y2="1.16383" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.13126" y1="-0.187884" x2="2.20971" y2="-0.147912" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.29775" y1="-0.146946" x2="2.20971" y2="-0.147912" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.26224" y1="-0.0772542" x2="2.20971" y2="-0.147912" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.13377" y1="-0.0580056" x2="2.20971" y2="-0.147912" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.23781" y1="-0.262194" x2="2.20971" y2="-0.147912" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.35305" y1="-0.202254" x2="2.35209" y2="-0.290294" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.31212" y1="-0.368743" x2="2.35209" y2="-0.290294" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.42275" y1="-0.237764" x2="2.35209" y2="-0.290294" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.44199" y1="-0.366233" x2="2.35209" y2="-0.290294" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.23781" y1="-0.262194" x2="2.35209" y2="-0.290294" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.5" y1="1" x2="0" y2="1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0.5" y1="1" x2="0" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="1" x2="0" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1.75" y1="1.5" x2="-0.875" y2="1.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-1.75" y1="1.5" x2="-0.875" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-0.875" y1="1.5" x2="-1" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-0.875" y1="1.5" x2="-1" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="2" x2="4" y2="1.25" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="4" y1="2" x2="4" y2="1.25" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="1.25" x2="3.5" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.30034" y1="0.624004" x2="4" y2="1.25" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.40122" y1="-0.623649" x2="2.23074" y2="-0.768563" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.01221" y1="-0.720494" x2="2.23074" y2="-0.768563" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.21627" y1="-0.545277" x2="2.23074" y2="-0.768563" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.40122" y1="-0.623649" x2="2.55284" y2="-0.974761" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.95055" y1="-0.884261" x2="2.55284" y2="-0.974761" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.78086" y1="-0.551221" x2="2.55284" y2="-0.974761" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.23074" y1="-0.768563" x2="2.55284" y2="-0.974761" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.23074" y1="-0.768563" x2="2.05964" y2="-1.02561" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.75175" y1="-1.00223" x2="2.05964" y2="-1.02561" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.55284" y1="-0.974761" x2="2.05964" y2="-1.02561" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.01221" y1="-0.720494" x2="2.05964" y2="-1.02561" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3" y1="-2" x2="2.125" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="3" y1="-2" x2="2.125" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.125" y1="-2" x2="1.86666" y2="-1.52794" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.75175" y1="-1.00223" x2="1.86666" y2="-1.52794" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.25" y1="-2" x2="1.86666" y2="-1.52794" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1" y1="-1" x2="1.86666" y2="-1.52794" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.05964" y1="-1.02561" x2="1.86666" y2="-1.52794" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.55284" y1="-0.974761" x2="1.86666" y2="-1.52794" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.55284" y1="-0.974761" x2="2.86941" y2="-1.44682" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3" y1="-2" x2="2.86941" y2="-1.44682" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.95055" y1="-0.884261" x2="2.86941" y2="-1.44682" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.5" y1="-1.5" x2="2.86941" y2="-1.44682" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.125" y1="-2" x2="2.86941" y2="-1.44682" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.86666" y1="-1.52794" x2="2.86941" y2="-1.44682" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.5" y1="0" x2="0.75" y2="0.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0.5" y1="0" x2="0.75" y2="0.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.90176" y1="0.0636333" x2="2.8181" y2="0.0503818" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.73776" y1="0.0772542" x2="2.8181" y2="0.0503818" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.75" y1="0" x2="2.8181" y2="0.0503818" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.85888" y1="-0.0568408" x2="2.8181" y2="0.0503818" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.81653" y1="0.161281" x2="2.8181" y2="0.0503818" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.53688" y1="0.990784" x2="2.81665" y2="0.993888" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.99859" y1="0.78133" x2="2.81665" y2="0.993888" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.65879" y1="0.76288" x2="2.81665" y2="0.993888" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.1875" y1="1.5" x2="2.38698" y2="1.2624" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.53688" y1="0.990784" x2="2.38698" y2="1.2624" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.625" y1="1.5" x2="2.38698" y2="1.2624" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.25037" y1="0.98386" x2="2.38698" y2="1.2624" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.89242" y1="1.11612" x2="2.38698" y2="1.2624" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.99991" y1="0.079207" x2="1.8212" y2="0.1944" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.80948" y1="0.406692" x2="1.8212" y2="0.1944" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.58922" y1="0.297638" x2="1.8212" y2="0.1944" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.81641" y1="-0.108271" x2="1.8212" y2="0.1944" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.01757" y1="0.275913" x2="1.8212" y2="0.1944" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="0.3125" x2="-2.33698" y2="0.893363" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.625" y1="1.5" x2="-2.33698" y2="0.893363" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="1" x2="-2.33698" y2="0.893363" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1.75" y1="1.5" x2="-2.33698" y2="0.893363" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="-1" x2="-3" y2="0" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-3" y1="-1" x2="-3" y2="0" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="0" x2="-2" y2="0.3125" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.33698" y1="0.893363" x2="-3" y2="0" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.40122" y1="-0.623649" x2="2.37939" y2="-0.488254" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.44199" y1="-0.366233" x2="2.37939" y2="-0.488254" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.31212" y1="-0.368743" x2="2.37939" y2="-0.488254" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.21627" y1="-0.545277" x2="2.37939" y2="-0.488254" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.57336" y1="-0.463151" x2="2.37939" y2="-0.488254" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.88112" y1="-0.359902" x2="1.61944" y2="-0.293068" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.375" y1="-0.178182" x2="1.61944" y2="-0.293068" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.81641" y1="-0.108271" x2="1.61944" y2="-0.293068" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1" y1="-1" x2="1.30573" y2="-0.643041" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.61944" y1="-0.293068" x2="1.30573" y2="-0.643041" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.375" y1="-0.178182" x2="1.30573" y2="-0.643041" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.75175" y1="-1.00223" x2="1.30573" y2="-0.643041" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.01221" y1="-0.720494" x2="1.67001" y2="-0.640766" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.61944" y1="-0.293068" x2="1.67001" y2="-0.640766" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.30573" y1="-0.643041" x2="1.67001" y2="-0.640766" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.75175" y1="-1.00223" x2="1.67001" y2="-0.640766" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.88112" y1="-0.359902" x2="1.67001" y2="-0.640766" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1" y1="-1" x2="0.75" y2="-0.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="1" y1="-1" x2="0.75" y2="-0.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.75" y1="-0.5" x2="1.30573" y2="-0.643041" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.375" y1="-0.178182" x2="0.75" y2="-0.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="0.5" x2="4" y2="-0.25" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="4" y1="0.5" x2="4" y2="-0.25" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="-0.25" x2="3.54892" y2="-0.144379" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.15799" y1="0.104215" x2="3.54892" y2="-0.144379" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.1182" y1="-0.314989" x2="3.54892" y2="-0.144379" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="-1" x2="3.52196" y2="-0.705307" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.1182" y1="-0.314989" x2="3.52196" y2="-0.705307" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.95055" y1="-0.884261" x2="3.52196" y2="-0.705307" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.5" y1="-1.5" x2="3.52196" y2="-0.705307" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.54892" y1="-0.144379" x2="3.52196" y2="-0.705307" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="-0.25" x2="3.52196" y2="-0.705307" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.9901" y1="0.55917" x2="3.15719" y2="0.362375" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.15799" y1="0.104215" x2="3.15719" y2="0.362375" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.30034" y1="0.624004" x2="3.15719" y2="0.362375" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.93934" y1="0.223853" x2="3.15719" y2="0.362375" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.84044" y1="0.394765" x2="3.15719" y2="0.362375" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.30034" y1="0.624004" x2="3.59255" y2="0.294138" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.54892" y1="-0.144379" x2="3.59255" y2="0.294138" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="0.5" x2="3.59255" y2="0.294138" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="-0.25" x2="3.59255" y2="0.294138" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.15719" y1="0.362375" x2="3.59255" y2="0.294138" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.15799" y1="0.104215" x2="3.59255" y2="0.294138" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.70225" y1="-0.146946" x2="2.78154" y2="-0.143454" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.85226" y1="-0.179485" x2="2.78154" y2="-0.143454" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.73776" y1="-0.0772542" x2="2.78154" y2="-0.143454" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.85888" y1="-0.0568408" x2="2.78154" y2="-0.143454" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.75065" y1="-0.250654" x2="2.78154" y2="-0.143454" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.67949" y1="-0.35226" x2="2.64345" y2="-0.281544" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.64695" y1="-0.202254" x2="2.64345" y2="-0.281544" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.57725" y1="-0.237764" x2="2.64345" y2="-0.281544" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.55545" y1="-0.350114" x2="2.64345" y2="-0.281544" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.75065" y1="-0.250654" x2="2.64345" y2="-0.281544" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.58922" y1="0.297638" x2="1.60368" y2="0.545388" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.77662" y1="0.72338" x2="1.60368" y2="0.545388" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.80948" y1="0.406692" x2="1.60368" y2="0.545388" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.60368" y1="0.545388" x2="1.18093" y2="0.445763" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.75" y1="0.5" x2="1.18093" y2="0.445763" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.58922" y1="0.297638" x2="1.18093" y2="0.445763" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.375" y1="-0.178182" x2="1.18093" y2="0.445763" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.5" y1="0" x2="1.18093" y2="0.445763" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1" y1="1" x2="1.18093" y2="0.445763" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.60368" y1="0.545388" x2="1.4756" y2="0.842849" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.43245" y1="1.16383" x2="1.4756" y2="0.842849" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1" y1="1" x2="1.4756" y2="0.842849" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.18093" y1="0.445763" x2="1.4756" y2="0.842849" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.77662" y1="0.72338" x2="1.4756" y2="0.842849" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.89242" y1="1.11612" x2="1.4756" y2="0.842849" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.01221" y1="-0.720494" x2="2.01566" y2="-0.518079" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.14094" y1="-0.359058" x2="2.01566" y2="-0.518079" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.88112" y1="-0.359902" x2="2.01566" y2="-0.518079" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.67001" y1="-0.640766" x2="2.01566" y2="-0.518079" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.21627" y1="-0.545277" x2="2.01566" y2="-0.518079" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1" y1="1" x2="0.5" y2="1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="1" y1="1" x2="0.5" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.5" y1="1" x2="0.875" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="1.5" x2="0.5" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="2" x2="-0.5" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-1" y1="2" x2="-0.5" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-0.5" y1="2" x2="-0.875" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="1.5" x2="-0.5" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="2" x2="0.5" y2="2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0" y1="2" x2="0.5" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.5" y1="2" x2="0.875" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="1.5" x2="0.5" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="1" x2="-0.5" y2="1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="0" y1="1" x2="-0.5" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-0.5" y1="1" x2="-0.875" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="1.5" x2="-0.5" y2="1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.81665" y1="0.993888" x2="2.625" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.625" y1="1.5" x2="2.53688" y2="0.990784" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.625" y1="1.5" x2="3.0625" y2="1.5" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="2.625" y1="1.5" x2="3.0625" y2="1.5" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.0625" y1="1.5" x2="3" y2="2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.0625" y1="1.5" x2="2.81665" y2="0.993888" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.0625" y1="1.5" x2="3.18701" y2="1.12675" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.99859" y1="0.78133" x2="3.18701" y2="1.12675" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.5" y1="1.5" x2="3.18701" y2="1.12675" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="3.30034" y1="0.624004" x2="3.18701" y2="1.12675" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="4" y1="1.25" x2="3.18701" y2="1.12675" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="2.81665" y1="0.993888" x2="3.18701" y2="1.12675" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="-1" x2="-2" y2="-0.724702" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="-1" x2="-2" y2="-0.724702" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="-1" x2="0" y2="-1" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-1" y1="-1" x2="0" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0" y1="-1" x2="-0.5" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="1" x2="-1" y2="0" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-1" y1="1" x2="-1" y2="0" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="0" x2="-2" y2="0.3125" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-0.5" y1="-2" x2="-1.375" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-0.5" y1="-2" x2="-1.375" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1.375" y1="-2" x2="-1" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1.25" y1="-2" x2="0.375" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="1.25" y1="-2" x2="0.375" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="0.375" y1="-2" x2="0" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="1" y1="-1" x2="0.375" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.25" y1="-2" x2="-3.125" y2="-2" style="stroke:black;stroke-width:0.02"/> 
+ <line x1="-2.25" y1="-2" x2="-3.125" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3.125" y1="-2" x2="-3" y2="-1" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-4" y1="-1" x2="-3.125" y2="-2" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.25" y1="-2" x2="-2.37589" y2="-1.31317" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="-0.724702" x2="-2.37589" y2="-1.31317" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="-1" x2="-2.37589" y2="-1.31317" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3.125" y1="-2" x2="-2.37589" y2="-1.31317" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="-0.724702" x2="-1.66646" y2="-1.35204" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1.375" y1="-2" x2="-1.66646" y2="-1.35204" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="-1" x2="-1.66646" y2="-1.35204" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.37589" y1="-1.31317" x2="-1.66646" y2="-1.35204" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.25" y1="-2" x2="-1.66646" y2="-1.35204" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="0" x2="-2.38677" y2="-0.206101" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="-0.724702" x2="-2.38677" y2="-0.206101" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="0.3125" x2="-2.38677" y2="-0.206101" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-3" y1="-1" x2="-2.38677" y2="-0.206101" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="-0.724702" x2="-1.61323" y2="-0.206101" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="0" x2="-1.61323" y2="-0.206101" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="0.3125" x2="-1.61323" y2="-0.206101" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.38677" y1="-0.206101" x2="-1.61323" y2="-0.206101" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="-1" x2="-1.61323" y2="-0.206101" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1.75" y1="1.5" x2="-1.6375" y2="0.85625" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2" y1="0.3125" x2="-1.6375" y2="0.85625" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="1" x2="-1.6375" y2="0.85625" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-1" y1="0" x2="-1.6375" y2="0.85625" style="stroke:black;stroke-width:0.01"/> 
+ <line x1="-2.33698" y1="0.893363" x2="-1.6375" y2="0.85625" style="stroke:black;stroke-width:0.01"/> 
 <circle cx="-9.29516" cy="-5.36656" r="0.03"  fill="black" />
 <circle cx="0" cy="10.7331" r="0.03"  fill="black" />
 <circle cx="9.29516" cy="-5.36656" r="0.03"  fill="black" />
@@ -76,12 +807,164 @@ height = "5000px"  width = "5000px">
 <circle cx="3" cy="-2" r="0.03"  fill="black" />
 <circle cx="4" cy="-1" r="0.03"  fill="black" />
 <circle cx="4" cy="2" r="0.03"  fill="black" />
+<circle cx="-1" cy="-1" r="0.03"  fill="black" />
+<circle cx="1" cy="-1" r="0.03"  fill="black" />
+<circle cx="0.5" cy="0" r="0.03"  fill="black" />
+<circle cx="1" cy="1" r="0.03"  fill="black" />
+<circle cx="-1" cy="1" r="0.03"  fill="black" />
+<circle cx="2.75" cy="0" r="0.03"  fill="black" />
+<circle cx="2.73776" cy="0.0772542" r="0.03"  fill="black" />
+<circle cx="2.70225" cy="0.146946" r="0.03"  fill="black" />
+<circle cx="2.64695" cy="0.202254" r="0.03"  fill="black" />
+<circle cx="2.57725" cy="0.237764" r="0.03"  fill="black" />
+<circle cx="2.5" cy="0.25" r="0.03"  fill="black" />
+<circle cx="2.42275" cy="0.237764" r="0.03"  fill="black" />
+<circle cx="2.35305" cy="0.202254" r="0.03"  fill="black" />
+<circle cx="2.29775" cy="0.146946" r="0.03"  fill="black" />
+<circle cx="2.26224" cy="0.0772542" r="0.03"  fill="black" />
+<circle cx="2.25" cy="3.06162e-17" r="0.03"  fill="black" />
+<circle cx="2.26224" cy="-0.0772542" r="0.03"  fill="black" />
+<circle cx="2.29775" cy="-0.146946" r="0.03"  fill="black" />
+<circle cx="2.35305" cy="-0.202254" r="0.03"  fill="black" />
+<circle cx="2.42275" cy="-0.237764" r="0.03"  fill="black" />
+<circle cx="2.5" cy="-0.25" r="0.03"  fill="black" />
+<circle cx="2.57725" cy="-0.237764" r="0.03"  fill="black" />
+<circle cx="2.64695" cy="-0.202254" r="0.03"  fill="black" />
+<circle cx="2.70225" cy="-0.146946" r="0.03"  fill="black" />
+<circle cx="2.73776" cy="-0.0772542" r="0.03"  fill="black" />
+<circle cx="-3.5" cy="1.5" r="0.03"  fill="black" />
+<circle cx="3.5" cy="1.5" r="0.03"  fill="black" />
+<circle cx="0" cy="1.5" r="0.03"  fill="black" />
+<circle cx="1.75" cy="1.5" r="0.03"  fill="black" />
+<circle cx="4" cy="0.5" r="0.03"  fill="black" />
+<circle cx="2.95055" cy="-0.884261" r="0.015"  fill="black" />
 <circle cx="0" cy="2" r="0.03"  fill="black" />
-<circle cx="-0.5" cy="-2" r="0.03"  fill="black" />
-<circle cx="1.78571" cy="0.214286" r="0.015"  fill="black" />
+<circle cx="3.1182" cy="-0.314989" r="0.015"  fill="black" />
+<circle cx="3.15799" cy="0.104215" r="0.015"  fill="black" />
+<circle cx="2.78086" cy="-0.551221" r="0.015"  fill="black" />
 <circle cx="-2" cy="2" r="0.03"  fill="black" />
-<circle cx="-1.06818" cy="0.0681818" r="0.015"  fill="black" />
+<circle cx="2.93934" cy="0.223853" r="0.015"  fill="black" />
+<circle cx="2.98701" cy="-0.0771344" r="0.015"  fill="black" />
+<circle cx="2.83158" cy="-0.33158" r="0.015"  fill="black" />
+<circle cx="-1.75" cy="1.5" r="0.03"  fill="black" />
+<circle cx="2" cy="2" r="0.03"  fill="black" />
+<circle cx="1.77662" cy="0.72338" r="0.015"  fill="black" />
+<circle cx="2.05171" cy="0.448293" r="0.015"  fill="black" />
+<circle cx="2.76977" cy="0.529452" r="0.015"  fill="black" />
+<circle cx="2.42291" cy="0.486723" r="0.015"  fill="black" />
+<circle cx="-0.5" cy="-2" r="0.03"  fill="black" />
+<circle cx="1.375" cy="-0.178182" r="0.015"  fill="black" />
+<circle cx="1.81641" cy="-0.108271" r="0.015"  fill="black" />
+<circle cx="2.40122" cy="-0.623649" r="0.015"  fill="black" />
+<circle cx="2.14094" cy="-0.359058" r="0.015"  fill="black" />
+<circle cx="1.99991" cy="0.079207" r="0.015"  fill="black" />
+<circle cx="2.57336" cy="-0.463151" r="0.015"  fill="black" />
+<circle cx="2.18995" cy="0.31005" r="0.015"  fill="black" />
+<circle cx="2.68993" cy="0.372768" r="0.015"  fill="black" />
+<circle cx="2.13126" cy="-0.187884" r="0.015"  fill="black" />
+<circle cx="2.31212" cy="-0.368743" r="0.015"  fill="black" />
+<circle cx="3.30034" cy="0.624004" r="0.015"  fill="black" />
+<circle cx="2.90176" cy="0.0636333" r="0.015"  fill="black" />
+<circle cx="2.85226" cy="-0.179485" r="0.015"  fill="black" />
+<circle cx="2.67949" cy="-0.35226" r="0.015"  fill="black" />
+<circle cx="1.25" cy="-2" r="0.03"  fill="black" />
+<circle cx="1.75175" cy="-1.00223" r="0.015"  fill="black" />
+<circle cx="1" cy="2" r="0.03"  fill="black" />
+<circle cx="-1" cy="2" r="0.03"  fill="black" />
+<circle cx="2.16013" cy="0.173171" r="0.015"  fill="black" />
+<circle cx="2.32683" cy="0.339867" r="0.015"  fill="black" />
+<circle cx="1.58922" cy="0.297638" r="0.015"  fill="black" />
+<circle cx="2.76354" cy="0.263537" r="0.015"  fill="black" />
+<circle cx="2.5583" cy="0.368108" r="0.015"  fill="black" />
+<circle cx="2.23781" cy="-0.262194" r="0.015"  fill="black" />
+<circle cx="2.13377" cy="-0.0580056" r="0.015"  fill="black" />
+<circle cx="2.44199" cy="-0.366233" r="0.015"  fill="black" />
+<circle cx="-2.625" cy="1.5" r="0.03"  fill="black" />
+<circle cx="2.625" cy="1.5" r="0.03"  fill="black" />
+<circle cx="2.85888" cy="-0.0568408" r="0.015"  fill="black" />
+<circle cx="2.53688" cy="0.990784" r="0.015"  fill="black" />
+<circle cx="2.44443" cy="0.350877" r="0.015"  fill="black" />
+<circle cx="2.81653" cy="0.161281" r="0.015"  fill="black" />
+<circle cx="2.14972" cy="0.0554783" r="0.015"  fill="black" />
+<circle cx="2.55545" cy="-0.350114" r="0.015"  fill="black" />
+<circle cx="2.75065" cy="-0.250654" r="0.015"  fill="black" />
+<circle cx="-3" cy="2" r="0.03"  fill="black" />
+<circle cx="3" cy="2" r="0.03"  fill="black" />
+<circle cx="-2" cy="0.3125" r="0.015"  fill="black" />
 <circle cx="-2.25" cy="-2" r="0.03"  fill="black" />
+<circle cx="2.2605" cy="0.239502" r="0.015"  fill="black" />
+<circle cx="1.98093" cy="-0.120015" r="0.015"  fill="black" />
+<circle cx="1.88112" cy="-0.359902" r="0.015"  fill="black" />
+<circle cx="2.01221" cy="-0.720494" r="0.015"  fill="black" />
+<circle cx="3.5" cy="-1.5" r="0.03"  fill="black" />
+<circle cx="2.22409" cy="0.48243" r="0.015"  fill="black" />
+<circle cx="2.081" cy="0.752673" r="0.015"  fill="black" />
+<circle cx="1.89242" cy="1.11612" r="0.015"  fill="black" />
+<circle cx="2.01757" cy="0.275913" r="0.015"  fill="black" />
+<circle cx="1.80948" cy="0.406692" r="0.015"  fill="black" />
+<circle cx="2.31873" cy="0.705542" r="0.015"  fill="black" />
+<circle cx="2.25037" cy="0.98386" r="0.015"  fill="black" />
+<circle cx="2.21627" cy="-0.545277" r="0.015"  fill="black" />
+<circle cx="2.61927" cy="0.507455" r="0.015"  fill="black" />
+<circle cx="2.65879" cy="0.76288" r="0.015"  fill="black" />
+<circle cx="2.99859" cy="0.78133" r="0.015"  fill="black" />
+<circle cx="2.84044" cy="0.394765" r="0.015"  fill="black" />
+<circle cx="2.9901" cy="0.55917" r="0.015"  fill="black" />
+<circle cx="2.64899" cy="0.292414" r="0.015"  fill="black" />
+<circle cx="2.1875" cy="1.5" r="0.03"  fill="black" />
+<circle cx="0.875" cy="1.5" r="0.03"  fill="black" />
+<circle cx="1.43245" cy="1.16383" r="0.015"  fill="black" />
+<circle cx="2.20971" cy="-0.147912" r="0.015"  fill="black" />
+<circle cx="2.35209" cy="-0.290294" r="0.015"  fill="black" />
+<circle cx="0" cy="1" r="0.03"  fill="black" />
+<circle cx="-0.875" cy="1.5" r="0.03"  fill="black" />
+<circle cx="4" cy="1.25" r="0.03"  fill="black" />
+<circle cx="2.23074" cy="-0.768563" r="0.015"  fill="black" />
+<circle cx="2.55284" cy="-0.974761" r="0.015"  fill="black" />
+<circle cx="2.05964" cy="-1.02561" r="0.015"  fill="black" />
+<circle cx="2.125" cy="-2" r="0.03"  fill="black" />
+<circle cx="1.86666" cy="-1.52794" r="0.015"  fill="black" />
+<circle cx="2.86941" cy="-1.44682" r="0.015"  fill="black" />
+<circle cx="0.75" cy="0.5" r="0.03"  fill="black" />
+<circle cx="2.8181" cy="0.0503818" r="0.015"  fill="black" />
+<circle cx="2.81665" cy="0.993888" r="0.015"  fill="black" />
+<circle cx="2.38698" cy="1.2624" r="0.015"  fill="black" />
+<circle cx="1.8212" cy="0.1944" r="0.015"  fill="black" />
+<circle cx="-2.33698" cy="0.893363" r="0.015"  fill="black" />
+<circle cx="-3" cy="0" r="0.03"  fill="black" />
+<circle cx="2.37939" cy="-0.488254" r="0.015"  fill="black" />
+<circle cx="1.61944" cy="-0.293068" r="0.015"  fill="black" />
+<circle cx="1.30573" cy="-0.643041" r="0.015"  fill="black" />
+<circle cx="1.67001" cy="-0.640766" r="0.015"  fill="black" />
+<circle cx="0.75" cy="-0.5" r="0.03"  fill="black" />
+<circle cx="4" cy="-0.25" r="0.03"  fill="black" />
+<circle cx="3.54892" cy="-0.144379" r="0.015"  fill="black" />
+<circle cx="3.52196" cy="-0.705307" r="0.015"  fill="black" />
+<circle cx="3.15719" cy="0.362375" r="0.015"  fill="black" />
+<circle cx="3.59255" cy="0.294138" r="0.015"  fill="black" />
+<circle cx="2.78154" cy="-0.143454" r="0.015"  fill="black" />
+<circle cx="2.64345" cy="-0.281544" r="0.015"  fill="black" />
+<circle cx="1.60368" cy="0.545388" r="0.015"  fill="black" />
+<circle cx="1.18093" cy="0.445763" r="0.015"  fill="black" />
+<circle cx="1.4756" cy="0.842849" r="0.015"  fill="black" />
+<circle cx="2.01566" cy="-0.518079" r="0.015"  fill="black" />
+<circle cx="0.5" cy="1" r="0.03"  fill="black" />
+<circle cx="-0.5" cy="2" r="0.03"  fill="black" />
+<circle cx="0.5" cy="2" r="0.03"  fill="black" />
+<circle cx="-0.5" cy="1" r="0.03"  fill="black" />
+<circle cx="3.0625" cy="1.5" r="0.03"  fill="black" />
+<circle cx="3.18701" cy="1.12675" r="0.015"  fill="black" />
+<circle cx="-2" cy="-0.724702" r="0.015"  fill="black" />
+<circle cx="0" cy="-1" r="0.03"  fill="black" />
+<circle cx="-1" cy="0" r="0.03"  fill="black" />
+<circle cx="-1.375" cy="-2" r="0.03"  fill="black" />
+<circle cx="0.375" cy="-2" r="0.03"  fill="black" />
+<circle cx="-3.125" cy="-2" r="0.03"  fill="black" />
+<circle cx="-2.37589" cy="-1.31317" r="0.015"  fill="black" />
+<circle cx="-1.66646" cy="-1.35204" r="0.015"  fill="black" />
+<circle cx="-2.38677" cy="-0.206101" r="0.015"  fill="black" />
+<circle cx="-1.61323" cy="-0.206101" r="0.015"  fill="black" />
+<circle cx="-1.6375" cy="0.85625" r="0.015"  fill="black" />
 
 </g>
 </svg>
