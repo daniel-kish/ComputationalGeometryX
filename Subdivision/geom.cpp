@@ -3,6 +3,7 @@
 #include "boost\math\constants\constants.hpp"
 #include <algorithm>
 #include <random>
+#include "predicates.h"
 
 std::vector<Point> rectHull(Rect r, int Nx, int Ny)
 {
@@ -158,4 +159,45 @@ double triangleArea(Point const& p1, Point const& p2, Point const& p3)
 	double area = sqrt(p*(p-a)*(p-b)*(p-c));
 	
 	return area;
+}
+
+Point off_center(Point A, Point B, Point C, double beta_req)
+{
+	double det = orient2d(A, B, C);
+	// precondition: C lies on {A,B} bisector
+	double l = dist(A, C);
+	double L = dist(A, B);
+	double h = dist(C, (A + B) * 0.5);
+	double R = 0.5*l*l / h;
+	double beta = R / L;
+
+	if (beta <= beta_req) {
+		//std::cout << "C\n";
+		return C;
+	}
+	beta_req *= 0.9;
+	double Rnew = L*beta_req;
+	double a = 1;
+	double b = -2 * Rnew;
+	double c = L*L / 4;
+
+	double disc = b*b - 4*a*c;
+	double newh1 = (-b + sqrt(disc))*0.5;
+	double newh2 = (-b - sqrt(disc))*0.5;
+	double newh = std::max({newh1,newh2});
+
+	double t = 1 - newh / h;
+	if (t < 0 || t > 1) {
+		std::cerr << "t out of range\n";
+		std::exit(1);
+	}
+	Point CM = (A + B)*0.5 - C;
+	Point newC = C + CM*t;
+
+	// check:
+	double newl = dist(newC, A);
+	double newR = 0.5*newl*newl / newh;
+	double newbeta = newR / L;
+	//std::cout << "newC\n";
+	return newC;
 }

@@ -61,3 +61,5 @@ T KahanSum(std::array<T,N> const& v)
 }
 
 double triangleArea(Point const& p1, Point const& p2, Point const& p3);
+
+Point off_center(Point a, Point b, Point c, double beta);

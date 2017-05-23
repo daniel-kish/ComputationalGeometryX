@@ -44,8 +44,10 @@ void chew_2nd_refinement(Subdivision& dt, double min_ratio, double min_area, int
 
 bool off_center_correction(Subdivision& dt, VertexRef site, double min_angle, double q);
 
-void chew_2nd_refinement_alper(Subdivision& dt, double q, double min_ratio, int iters=1000);
+void chew_2nd_refinement_alper(Subdivision& dt, double min_ratio, int iters=1000);
 void chew_2nd_refinement_alper(Subdivision& dt, double q,
 	double min_ratio, double min_area, int iters = 1000);
 
 double ratio_to_angle(double ratio);
+
+EdgeRef min_edge(FaceRef);

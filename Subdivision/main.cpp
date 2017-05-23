@@ -269,9 +269,10 @@ int main()
 
 	exactinit();
 
-	std::vector<Point> model{
-	{-4,2},{-4,1},{-3,1},{-3,-1},{-4,-1},{-4,-2},{3,-2},{4,-1},{4,2}
-	};
+	//std::vector<Point> model{
+	//{-4,2},{-4,1},{-3,1},{-3,-1},{-4,-1},{-4,-2},{3,-2},{4,-1},{4,2}
+	//};
+	auto model = rectHull({{-4,-4},{8,8}}, 1, 1);
 
 	auto trian = triangleCover(model);
 	std::vector<Point> cover(trian.begin(), trian.end());
@@ -285,13 +286,14 @@ int main()
 	std::vector<Point> hole = {
 	{-1,-1}, {1,-1}, {0.5, 0}, {1, 1}, {-1,1}
 	};
-	insertClosedLoop(dt, hole);
 
-	insertClosedLoop(dt, circleHull({2.5,0},0.25,20));
+	//insertClosedLoop(dt, hole);
+	insertClosedLoop(dt, circleHull({0,0}, 1.0, 20));
 
-	auto a = insertSite(dt, {-3.5,1.5});
-	auto b = insertSite(dt, {3.5,1.5});
-	insertEdge(dt, a, b);
+	insertClosedLoop(dt, circleHull({3.5,3.5}, 0.25, 10));
+	insertClosedLoop(dt, circleHull({-3.5,3.5}, 0.25, 10));
+	insertClosedLoop(dt, circleHull({-3.5,-3.5}, 0.25, 10));
+	insertClosedLoop(dt, circleHull({3.5,-3.5}, 0.25, 10));
 
 	/*  ONLY USE *_WF FROM HERE ON */
 	init_faces(dt);
@@ -301,16 +303,41 @@ int main()
 	std::tie(face, max_ratio) = find_worst(dt);
 	std::tie(face, max_area) = find_biggest(dt);
 	std::tie(face, min_area) = find_smallest(dt);
-	std::cout << "before: " << ratio_to_angle(max_ratio) << ' ' << max_area << '\n';
+	std::cout << "before: " << max_ratio << ' ' << max_area << '\n';
 
 
-	chew_2nd_refinement_alper(dt, 0.2, 1.0);
+	chew_2nd_refinement_alper(dt, 0.895);
+	//chew_2nd_refinement(dt, 0.895);
+	//ruppert_refinement(dt, 0.895);
+	/*for (auto face = dt.faces.begin(); face != dt.faces.end(); ++face)
+	{
+		if (!face->mark || face == dt.outer_face) continue;
+		auto e = face->bounds;
+		double ratio = quality_measure(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+		if (ratio > 1.0) {
+			auto ei = e;
+			double min_l=std::numeric_limits<double>::max();
+			EdgeRef min_e = e;
+			do {
+				double l = dist(Org(ei)->point, Dest(ei)->point);
+				if (l < min_l) {
+					min_e = ei;
+					min_l = l;
+				}
+				ei = ei.Lnext();
+			} while (ei != e);
+			Point C = circumCenter(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+			Point off = off_center(Org(min_e)->point, Dest(min_e)->point, C, 1.0);
+			std::cout << off << '\n';
+			break;
+		}
+	}*/
+
 
 	double ratio_after, area_after;
 	std::tie(face, ratio_after) = find_worst(dt);
 	std::tie(face, area_after) = find_biggest(dt);
-	std::cout << "after: " << ratio_to_angle(ratio_after) << ' ' << area_after << '\n';
-
+	std::cout << "after: " << ratio_after << ' ' << area_after << '\n';
 
 	// connectivity checks
 	for (auto v = dt.vertices.begin(); v != dt.vertices.end(); ++v)
@@ -385,7 +412,7 @@ int main()
 		return f.mark == 1;
 	});
 	std::cout << "triangles:\t" << trs << '\n';
-	std::ofstream xml{"trian.xml"};
+	std::ofstream xml{"alper.xml"};
 	g.output(xml);
 
 	std::cout << "Euler invariant: " << dt.vertices.size() - dt.edges.size() + dt.faces.size() << '\n';

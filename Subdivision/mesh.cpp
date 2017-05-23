@@ -756,6 +756,10 @@ bool off_center_correction(Subdivision& dt, VertexRef v, double min_angle, doubl
 			Point BP = BC*t_P;
 			Point AP = BP - BA;
 			A = A + AP*q;
+			AB = B - A; AC = C - A;
+			std::cout << angle;
+			angle = acos(AB*AC / (norm(AB) * norm(AC))) * 180.0 / pi;
+			std::cout << " -> " << angle << '\n';
 			return false;
 		}
 
@@ -769,7 +773,7 @@ double ratio_to_angle(double ratio)
 	return asin(1.0 / (2.0*ratio)) / boost::math::double_constants::pi * 180.0;
 }
 
-bool chew_2nd_eliminate_worst_correction(Subdivision& dt, double min_ratio, double q)
+bool chew_2nd_eliminate_worst_correction(Subdivision& dt, double min_ratio)
 {
 	FaceRef face; double ratio;
 
@@ -778,6 +782,8 @@ bool chew_2nd_eliminate_worst_correction(Subdivision& dt, double min_ratio, doub
 		return false;
 	auto e = face->bounds;
 	Point c = circumCenter(Org(e)->point, Dest(e)->point, Dest(e.Onext())->point);
+	//std::cout << "face " << Org(e)->point << ' ' << Dest(e)->point << ' ' << Dest(e.Onext())->point
+	//	<< '\n';
 
 	bool found_edge{true};
 	do
@@ -799,9 +805,10 @@ bool chew_2nd_eliminate_worst_correction(Subdivision& dt, double min_ratio, doub
 		found_edge = true;
 
 	if (!found_edge) {
+		auto min_e = min_edge(face);
+		c = off_center(Org(min_e)->point, Dest(min_e)->point, c, min_ratio);
 		auto v = insertSite_wf(dt, c, e);
 		v->circumcenter = true;
-		off_center_correction(dt, v, ratio_to_angle(min_ratio), q);
 		return true;
 	}
 
@@ -896,12 +903,12 @@ bool chew_2nd_eliminate_worst_correction(Subdivision& dt, double min_ratio,
 	return true;
 }
 
-void chew_2nd_refinement_alper(Subdivision& dt, double q, double min_ratio, int iters)
+void chew_2nd_refinement_alper(Subdivision& dt, double min_ratio, int iters)
 {
 	int i = 0;
-	while (i++ < iters && chew_2nd_eliminate_worst_correction(dt, min_ratio, q))
+	while (i++ < iters && chew_2nd_eliminate_worst_correction(dt, min_ratio))
 		;
-	//std::cout << "iters: " << i << '\n';
+	std::cout << "iters: " << i << '\n';
 }
 
 void chew_2nd_refinement_alper(Subdivision& dt, double q, double min_ratio, double min_area, int iters)
@@ -909,5 +916,24 @@ void chew_2nd_refinement_alper(Subdivision& dt, double q, double min_ratio, doub
 	int i = 0;
 	while (i++ < iters && chew_2nd_eliminate_worst_correction(dt, min_ratio, min_area, q))
 		;
-	//std::cout << "iters: " << i << '\n';
+	std::cout << "iters: " << i << '\n';
+}
+
+
+EdgeRef min_edge(FaceRef f)
+{
+	auto e = f->bounds;
+	double min_l = std::numeric_limits<double>::max();
+	EdgeRef min_e = e;
+	
+	auto ei = e;
+	do {
+		double l = dist(Org(ei)->point, Dest(ei)->point);
+		if (l < min_l) {
+			min_e = ei;
+			min_l = l;
+		}
+		ei = ei.Lnext();
+	} while (ei != e);
+	return min_e;
 }
