@@ -30,7 +30,8 @@ And here comes the refined version of it:
 ![result](/2del_res.png)
 
 Here's how A. Ungors technique helps with mesh size optimization:
-![ruppert](/ruppert_5.png)
 
-![alper](/alper_5.png)
+![ruppert](/3ruppert_5.png)
+
+![alper](/4alper_5.png)
 
