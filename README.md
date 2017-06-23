@@ -31,5 +31,5 @@ And here comes the refined version of it:
 
 Here's how A. Ungors technique helps with mesh size optimization:
 
-![ruppert](/3ruppert_5.png) ![alper](/4alper_5.png)
+![comb](/comb.png)
 
