@@ -25,7 +25,7 @@ Here's what we start with - a Delaunay triangulation of the points constrained w
 ![init](/1del_init.png)
 
 And here comes the refined version of it:
-![result](/символ.png)
+![result](/2del_res.png)
 
 Here's how A. Ungors technique helps with mesh size optimization:
 ![ruppert](/ruppert_5.png)
