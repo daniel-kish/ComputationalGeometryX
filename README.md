@@ -3,7 +3,7 @@
 ## About
 This project is a part of my master's thesis (defense took place in June, 2017). The thesis is dedicated to a research of the so-called Delaunay refinement algorithms.
 
-## Rationale
+## Work relevance
 The Delaunay refinement meshing techniques are distinguished among all other approaches by its mathematical strictness and great amount of proofs and formal analysis. Resulting meshes can be used in **Finite Element** or **Finite Volume Analysis**. 
 I have been studying in CAD/CAE field for six years now and the subject of computational geometry (and meshing for that matter) was always a mystery to me. Mostly this is due to unawareness of even simple meshing techniques among our tutors and professors. I have chosen such a subject simply to fully educate myself.
 
