@@ -22,9 +22,11 @@ Aforementioned Delaunay meshing algorithms were programmed on the top of that CG
 The most interesting meshes are presented below for your visual amusement :^)
 
 Here's what we start with - a Delaunay triangulation of the points constrained with a number of edges:
+
 ![init](/1del_init.png)
 
 And here comes the refined version of it:
+
 ![result](/2del_res.png)
 
 Here's how A. Ungors technique helps with mesh size optimization:
